@@ -12,4 +12,5 @@ Angular:
 - Angular material: ng add @angular/material
 
 React:
+- React typescript: npx create-react-app my-app --template typescript
 - Material UI : npm install @mui/material @emotion/react @emotion/styled
