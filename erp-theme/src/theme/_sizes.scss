@@ -1,0 +1,429 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "@material/button";
+@import "./mixins";
+@include mat.core();
+
+//CONFIG ALERT
+[class*="mat-alert"] {
+  & div {
+    align-items: center;
+  }
+  & .mat-icon.icon-variant {
+    @include icon-size(2.2rem !important, 2.2rem !important);
+  }
+}
+// COLORES FORM FIELD ESTADO ERROR
+[class*="mat-form-field-appearance-outline"] {
+  &.mat-form-field-invalid.mat-focused {
+    & .mdc-notched-outline {
+      &__leading,
+      &__trailing,
+      &__notch {
+        --mdc-theme-error: #d14343 !important;
+      }
+    }
+  }
+}
+// Eliminacion hint elemento de form field componente
+[class*="mat-mdc-form-field-subscript-wrapper"] {
+  &:not(:has(:only-child mat-hint)) {
+    display: none;
+  }
+}
+// CONFIGURACION
+[class*="mdc-menu-surface--open"] {
+  max-width: fit-content !important;
+  .mat-mdc-option {
+    min-height: 2.6rem;
+  }
+  --mdc-menu-max-width: fit-content;
+}
+//////////// SMALL CONFIGURATION
+
+:not(.medium) {
+  &.mat-mdc-chip,
+  &.mat-md-chip-option {
+    border-radius: 4px;
+    height: 22px !important;
+    &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
+      @include icon-size(1.4rem, null);
+    }
+    .mat-mdc-chip-remove .mat-icon {
+      @include icon-size(1.4rem !important, 1.4rem !important);
+    }
+  }
+  .mat-mdc-form-field {
+    &:not(.mat-form-field-appearance-fill) {
+      @include mat.form-field-density(-6);
+      & .mat-mdc-form-field-infix {
+        display: flex;
+      }
+      & label:not(.mdc-floating-label--float-above) {
+        top: 50% !important;
+      }
+    }
+    &:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-4.5);
+      & .mat-mdc-form-field-infix {
+        padding-bottom: 0px !important;
+      }
+    }
+    &.standard:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-5.25);
+      .mat-mdc-form-field-infix {
+        padding-bottom: 0px !important;
+      }
+    }
+    & .mat-icon {
+      @include icon-size(16px!important, 16px!important);
+      padding: 0px 12px !important;
+      color: rgba(16, 24, 64, 0.54);
+    }
+    & .mat-mdc-select-arrow {
+      color: rgba(16, 24, 64, 0.54);
+    }
+    & input,
+    .mat-mdc-select {
+      place-self: center;
+    }
+    @include mat.icon-button-density(-4);
+  }
+}
+// ICONS
+.mat-icon {
+  @include icon-size(1.6rem !important, 1.6rem!important);
+}
+// BUTTON
+.mdc-button {
+  &:not(.large, .medium) {
+    &.mdc-button {
+      @include button.density(-2.5);
+    }
+    & .mat-icon {
+      @include icon-size(14px !important, 16px!important);
+    }
+    .mat-mdc-button-touch-target {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+//TOOLBAR
+.mat-toolbar-single-row {
+  height: 60px !important;
+}
+//PROGRES SPINER
+.mat-mdc-progress-spinner {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+//BUTTON TOGGLE
+.mat-button-toggle-group {
+  @include mat.button-toggle-density(-4.5);
+  .mat-icon {
+    @include icon-size(2rem !important, 2rem);
+  }
+}
+
+// EXPANSION PANEL
+.mat-expansion-panel {
+  .mat-expansion-panel-header.mat-expanded {
+    height: 6rem;
+  }
+  & .mat-expansion-panel-header {
+    height: 4.4rem;
+  }
+  & .material-icons {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+// LIST with icon
+.mdc-list:not(.medium, .large) {
+  .mdc-list-item.mdc-list-item--with-one-line{
+    --mdc-list-list-item-one-line-container-height: 44px;
+    & > .mat-mdc-icon-button.mat-mdc-button-base{
+      padding: 4px !important
+    }
+  }
+  & .mat-icon {
+    @include icon-size(1.8rem, 1.8rem);
+  }
+  & .mat-mdc-icon-button .mat-mdc-button-touch-target {
+    @include icon-size(3.6rem, null);
+  }
+}
+// ICON BUTTON
+.mat-mdc-icon-button.mat-mdc-button-base:not(.mdc-list, .mdc-list-item) {
+  @include icon-size(2.4rem !important, null);
+  padding: 0 !important;
+  & > .mat-icon {
+    @include icon-size(1.6rem !important, 1.4rem !important);
+  }
+  & .mat-mdc-button-touch-target {
+    @include icon-size(24px !important, null);
+  }
+}
+// SUFFIX
+.mat-mdc-form-field-icon-suffix > .mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 16px;
+  padding: 0.5714285714285714rem;
+}
+// TAB
+.mat-mdc-tab-header {
+  & .mat-mdc-tab.mdc-tab {
+    height: 4rem;
+  }
+}
+// SLIDER
+.mdc-slider {
+  --mdc-slider-inactive-track-height: 0.2rem;
+  --mdc-slider-handle-width: 1.2rem;
+  --mdc-slider-handle-height: 1.2rem;
+  &.mat-mdc-slider .mdc-slider__track--active {
+    --mdc-slider-active-track-height: 0.2rem;
+  }
+}
+// FAB
+.mat-mdc-fab {
+  &:not(.mdc-fab--extended) {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  &.mat-mdc-extended-fab {
+    height: 3.2rem;
+  }
+  .material-icons,
+  .mat-icon {
+    @include icon-size(18px, 16px);
+  }
+}
+// EXTEND FAB
+.mat-mdc-extended-fab > .mat-icon,
+.mat-mdc-extended-fab > .material-icons {
+  @include icon-size(18px !important, 18px !important);
+}
+// MINI FAB
+.mdc-fab--mini {
+  width: 3.6rem !important;
+  height: 3.6rem !important;
+  .material-icons,
+  .mat-icon {
+    @include icon-size(16px, 14px);
+  }
+}
+// MAT CALENDAR
+.mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
+  @include icon-size(4rem !important, null);
+}
+// CHECKBOX
+.mdc-checkbox {
+  @include mat.checkbox-density(-3);
+  --mdc-checkbox-state-layer-size: 32px;
+  padding: 5.5px !important;
+  .mdc-checkbox__background {
+    @include icon-size(15px, null);
+  }
+}
+// DATA TABLE
+.mat-mdc-table {
+  &.mat-mdc-table .mdc-data-table__header-row {
+    height: 36px;
+  }
+  &.mat-mdc-table .mdc-data-table__row {
+    height: 32px;
+  }
+}
+// RADIO BUTTON
+.mdc-radio {
+  --mdc-radio-state-layer-size: 24px;
+  padding: 0px !important;
+  .mdc-radio__background {
+    @include icon-size(16px !important, null);
+    .mdc-radio__outer-circle {
+      margin: 0.2rem;
+    }
+  }
+  .mdc-radio__native-control:checked
+    + .mdc-radio__background
+    .mdc-radio__inner-circle {
+    transform: scale(0.45);
+  }
+  .mat-mdc-radio-touch-target {
+    @include icon-size(24px, null);
+  }
+}
+
+
+//DATAPICKER
+.mat-mdc-form-field:has(.mat-datepicker-toggle) {
+  --mdc-icon-button-icon-size: 20px;
+  &:not(.mat-form-field-appearance-fill) {
+    & .mat-datepicker-toggle > .mdc-icon-button {
+      vertical-align: middle;
+    }
+  }
+  &:not(.mat-form-field-appearance-outline) {
+    & .mat-datepicker-toggle > .mdc-icon-button {
+      vertical-align: baseline;
+    }
+  }
+  &.standard:not(.mat-form-field-appearance-outline) {
+    & .mat-datepicker-toggle > .mdc-icon-button {
+      vertical-align: sub;
+    }
+  }
+  & .mat-datepicker-toggle[matTextPrefix] {
+    padding-right: 5px;
+  }
+}
+
+/// MEDIUM CONFIGURATION
+
+.medium {
+  //////////////// MEDIUM ////////////////
+  .mat-mdc-menu-item.mdc-list-item {
+    min-height: 4.4rem !important;
+  }
+  // CHECKBOX
+  &.mat-mdc-checkbox .mdc-checkbox {
+    padding: calc(
+      (var(--mdc-checkbox-state-layer-size, 4.2rem) - 1.8rem) / 2
+    ) !important;
+  }
+  .mdc-checkbox__background {
+    margin: 0.1rem;
+  }
+  // Componentes con pseudo-clase  :not()
+  // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
+  &.mat-mdc-chip,
+  &.mat-md-chip-option {
+    &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
+      width: 2rem;
+      height: 2rem;
+    }
+    &.mat-mdc-standard-chip .mdc-evolution-chip__icon--trailing {
+      @include icon-size(2.4rem !important, null);
+    }
+    .mat-mdc-chip-remove .mat-icon {
+      @include icon-size(2.2rem !important, 2rem !important);
+    }
+  }
+  // //FORM FIELD
+  &.mat-mdc-form-field {
+    &:not(.mat-form-field-appearance-fill) {
+      @include mat.form-field-density(-1);
+      & .mat-mdc-form-field-infix {
+        display: flex;
+      }
+    }
+    &:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-2.5);
+    }
+    &.standard:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-4.5);
+    }
+  }
+
+  // BUTTON
+  &.mdc-button {
+    &:not(.large, .small) {
+      &.mdc-button {
+        @include button.density(-1);
+      }
+      & .mat-icon {
+        @include icon-size(2rem, 1.8rem);
+      }
+    }
+  }
+
+  /// LIST with icon
+  .mdc-list:not(.small) {
+    @include mat.list-density(-1);
+    .mat-icon{
+      @include icon-size(2.4rem, 2.4rem);
+    }
+  }
+  // ICON
+  .mat-icon {
+    @include icon-size(2rem, 1.8rem);
+  }
+  //BUTTON TOGGLE
+  .mat-button-toggle-group {
+    @include mat.button-toggle-density(-3);
+  }
+  // ICON BUTTON
+  @include mat.icon-button-density(-1);
+  &.mat-mdc-icon-button.mat-mdc-button-base {
+    @include icon-size(4.4rem, null);
+    padding: 1.1rem;
+    & > .mat-icon {
+      @include icon-size(2rem, 1.8rem);
+    }
+  }
+  // TAB
+  .mat-mdc-tab.mdc-tab {
+    height: 2.857142857142857rem;
+  }
+  // SLIDER
+  .mat-mdc-slider
+    .mdc-slider__track--inactive
+    .mat-mdc-slider
+    .mdc-slider__track {
+    --mdc-slider-inactive-track-height: 0.2857142857142857rem;
+  }
+  .mat-mdc-slider .mdc-slider__track--active {
+    --mdc-slider-inactive-track-height: 0.4285714285714286rem;
+  }
+  // FAB
+  &.mat-mdc-extended-fab {
+    height: 3.8rem !important;
+    & > .mat-icon {
+      @include icon-size(2.2rem !important, 2rem !important);
+    }
+  }
+  &.mdc-fab:not(.mdc-fab--extended) {
+    & > .mat-icon {
+      @include icon-size(2.4rem !important, 2.2rem !important);
+    }
+  }
+}
+//////////////// LARGE ////////////////
+.large {
+  // Componentes con pseudo-clase  :not()
+  // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, TEXTFIELD )
+  &:not(.small) {
+    &.mdc-button {
+      @include button.density(0);
+    }
+  }
+  .mat-button-toggle > .mat-icon {
+    @include icon-size(1.285714285714286rem, 1.285714285714286rem);
+  }
+  &.mat-mdc-chip .mat-icon {
+    @include icon-size(1.714285714285714rem, 1.714285714285714rem);
+  }
+  // BUTTON TOGGLE
+  &.mat-mdc-button-base > .mat-icon {
+    @include icon-size(1.285714285714286rem, 1.285714285714286rem);
+  }
+  // ICON
+  &.mat-icon {
+    @include icon-size(
+      1.714285714285714rem !important,
+      1.714285714285714rem!important
+    );
+  }
+  // FAB
+  &.mat-mdc-extended-fab {
+    height: 3.571428571428571rem;
+  }
+  &.mdc-fab:not(.mdc-fab--extended) {
+    width: 4rem;
+    height: 4rem;
+  }
+}

@@ -1,0 +1,132 @@
+@use "sass:map";
+@use "@material/textfield"
+  with(
+    $minimum-height-for-filled-label: 32px,
+    $minimum-height: 32px,
+    $icon-color: rgba(255, 0, 0, 0.267)
+  );
+@use "@material/chips";
+@use "@angular/material" as mat;
+@use "./mixins.scss" as variants;
+@import "@angular/material/theming";
+@import "./colors";
+@import "./elevations";
+@import "./typography";
+@import "./sizes";
+@import "./_orientacion.scss";
+@include mat.core();
+$light-theme-background: (
+  status-bar: map.get($grey, 300),
+  app-bar: map.get($grey, 100),
+  background: map.get($grey, 50),
+  card: #fff,
+  dialog: #fbfbfb,
+  disabled-button: rgba(16, 24, 64, 0.12),
+  selected-button: map.get($grey, 300),
+  selected-disabled-button: map_get($grey, 400),
+  disabled-button-toggle: map.get($grey, 200),
+  unselected-chip: map.get($grey, 300),
+  disabled-list-option: map.get($grey, 200),
+  tooltip: map.get($grey, 700),
+);
+$light-theme-foreground: (
+  base: black,
+  divider: rgba(16, 24, 64, 0.12),
+  dividers: rgba(16, 24, 64, 0.12),
+  disabled: rgba(16, 24, 64, 0.26),
+  disabled-button: rgba(16, 24, 64, 0.12),
+  disabled-text: rgba(16, 24, 64, 0.26),
+  hint-text: map.get($grey, 800),
+  secondary-text: rgba(black, 0.54),
+); //LIGHT MODE COLORS
+$primary-color: mat.define-palette($primary);
+$accent-color: mat.define-palette($accent);
+$warn-color: mat.define-palette($warn);
+$success-color: mat.define-palette($success);
+$warning-color: mat.define-palette($warning);
+$info-color: mat.define-palette($info);
+//DARK MODE COLOR
+
+$dark-primary-color: mat.define-palette($dark-primary);
+$dark-accent-color: mat.define-palette($dark-accent);
+$dark-warn-color: mat.define-palette($dark-warn);
+$dark-success-color: mat.define-palette($dark-success);
+$dark-info-color: mat.define-palette($dark-info);
+$dark-warning-color: mat.define-palette($dark-warning); // DEFINITION THEME
+$light-background-default: #fbfbfb;
+$dark-background-default: #1a1a1b;
+// LIGHT THEME
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-color,
+      accent: $accent-color,
+      warn: $warn-color,
+    ),
+    density: 0,
+  )
+);
+$light-theme: map.deep-merge(
+  $light-theme,
+  (
+    success: $success-color,
+    warning: $warning-color,
+    info: $info-color,
+    color: (
+      success: $success-color,
+      warning: $warning-color,
+      info: $info-color,
+    ),
+  )
+);
+//DARK THEME
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary-color,
+      accent: $dark-accent-color,
+      warn: $dark-warn-color,
+    ),
+    density: 0,
+  )
+);
+$dark-theme: map.deep-merge(
+  $dark-theme,
+  (
+    success: $dark-success-color,
+    warning: $dark-warning-color,
+    info: $dark-info-color,
+    color: (
+      success: $dark-success-color,
+      warning: $dark-warning-color,
+      info: $dark-info-color,
+    ),
+  )
+);
+$light-theme-variants: (
+  success: $success-color,
+  info: $info-color,
+  warning: $warning-color,
+);
+@function _create-wonky-theme($primary-color, $accent-color, $warn-color) {
+  @return (
+    color: (
+      primary: $primary-color,
+      accent: $accent-color,
+      warn: $warn-color,
+      is-dark: false,
+      foreground: $light-theme-foreground,
+      background: $light-theme-background,
+    ),
+    typography: $typography-global-config,
+    density: 0
+  );
+}
+$foregroun-background-palletes: _create-wonky-theme(
+  $primary-color,
+  $accent-color,
+  $warn-color
+);
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($foregroun-background-palletes);
+@include variants.color($light-theme, $light-theme-variants);
