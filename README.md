@@ -4,7 +4,8 @@ Desing system ERP- Bitakora
 
 
 Comandos de instalaciones requeridas:
-
+- Node JS: https://nodejs.org/es ( version recomendada: 18.15.0 LTS )
+- Node modules: npm i 
 - Iconos material: npm i material-icons
 
 Angular:
