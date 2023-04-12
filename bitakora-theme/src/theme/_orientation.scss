@@ -1,0 +1,44 @@
+.mat-mdc-tab-group.vertical {
+    flex-direction: row !important;
+    max-height: 100vh;
+    height: -webkit-fill-available;
+    .mat-mdc-tab-header-pagination {
+      box-sizing: border-box;
+      display: none;
+      min-height: 4px;
+    }
+    .mat-mdc-tab-header {
+      flex-direction: column !important;
+      width: auto;
+      min-height: 48px;
+      border-right: 1px solid;
+      border-color: rgba(16, 24, 64, 0.12);
+    }
+    .mat-mdc-tab-labels {
+      flex-direction: column;
+    }
+    .mat-mdc-tab-label-container{
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .mdc-tab-indicator {
+      width: 48px;
+      height: 100%;
+      transform: rotate(-90deg);
+      left: auto;
+      right: 0;
+    }
+    .mat-mdc-tab-body-wrapper {
+      flex: 1 1 auto;
+    }
+    .mat-mdc-tab-body-content {
+      padding-inline: 10px;
+      padding-bottom: 10px;
+    }
+    &.mat-tabs-with-background > .mat-mdc-tab-header {
+      border: none;
+    }
+  }
+  

@@ -1,0 +1,136 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@include mat.core();
+$headline-5: mat.define-typography-level(
+  $font-family: Nunito,
+  $font-weight: 300,
+  $font-size: 6.85714286rem,
+  $line-height: 1.167,
+  $letter-spacing: -0.01562em,
+);
+$headline-6: mat.define-typography-level(
+  $font-family: Nunito,
+  $font-weight: 400,
+  $font-size: 4.28571429rem,
+  $line-height: 1.2,
+  $letter-spacing: -0.00833em,
+);
+$h3: mat.define-typography-level(
+  $font-family: Nunito,
+  $font-weight: 500,
+  $font-size: 3.42857143rem,
+  $line-height: 1.167,
+  $letter-spacing: 0 !important,
+);
+$h4: mat.define-typography-level(
+  $font-family: Nunito,
+  $font-weight: 500,
+  $font-size: 2.42857143rem,
+  $line-height: 1.235,
+  $letter-spacing: 0.00735em !important,
+);
+$h5: mat.define-typography-level(
+  $font-family: Nunito,
+  $font-weight: 500,
+  $font-size: 1.28571429rem,
+  $line-height: 1.334,
+  $letter-spacing: 0 !important,
+);
+$h6: mat.define-typography-level(
+  $font-family: Nunito !important,
+  $font-weight: 600,
+  $font-size: 1.14rem,
+  $line-height: 1.6,
+  $letter-spacing: 0.0075em !important,
+);
+$subtitle-1: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1.75,
+  $letter-spacing: 0.00938em,
+);
+$subtitle-2: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 500,
+  $font-size: 0.9285714285714286rem,
+  $line-height: 1.57,
+  $letter-spacing: 0.00714em,
+);
+$body-1: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1.4,
+  $letter-spacing: 0.15px,
+);
+$body-2: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 0.92857141rem,
+  $line-height: 1.43,
+  $letter-spacing: 0.01071em,
+);
+$caption: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 0.7857142857142857rem,
+  $line-height: 1.66,
+  $letter-spacing: 0.03333em,
+);
+$button: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 500,
+  $font-size: 0.92857141rem,
+  $line-height: 22,
+  $letter-spacing: 0.46,
+);
+$overline: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 0.7857142857142857rem,
+  $line-height: 2.66,
+  $letter-spacing: 0.08333em,
+);
+$bitakora-typography: map.merge(
+  mat.define-typography-config(
+    $font-family: 'Roboto',
+    $headline-5: $headline-5,
+    $headline-6: $headline-6,
+    $subtitle-1: $subtitle-1,
+    $subtitle-2: $subtitle-2,
+    $body-1: $body-1,
+    $body-2: $body-2,
+    $caption: $caption,
+    $button: $button,
+    $overline: $overline,
+  ),
+  (
+    'h3': $h3,
+    'h4': $h4,
+    'h5': $h5,
+    'h6': $h6,
+    'overline': $overline,
+  )
+);
+.mat-h3,
+h3 {
+  @include mat.typography-level($bitakora-typography, 'h3');
+}
+.mat-h4,
+h4 {
+  @include mat.typography-level($bitakora-typography, 'h4');
+}
+.mat-h5,
+h5 {
+  @include mat.typography-level($bitakora-typography, 'h5');
+}
+.mat-h6,
+h6 {
+  @include mat.typography-level($bitakora-typography, 'h6');
+}
+.mat-overline {
+  text-transform: uppercase;
+  @include mat.typography-level($bitakora-typography, 'overline');
+}
+@include mat.all-component-typographies($bitakora-typography);

@@ -1,0 +1,14 @@
+// Conversion de REM to PX
+// 2px  ----  0.1428571428571429
+// 10px ----  0.7142857142857143rem
+// 16px ----  1.142857142857143rem
+// 18px ----  1.285714285714286rem
+// 20px ----  1.428571428571429rem
+// 24px ----  1.714285714285714rem
+
+// Define valores de width,height y font-size
+@mixin icon-size($tamaño, $font-size) {
+  width: $tamaño;
+  height: $tamaño;
+  font-size: $font-size;
+} ;
