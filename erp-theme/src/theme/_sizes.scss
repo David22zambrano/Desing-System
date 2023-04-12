@@ -39,6 +39,65 @@
   }
   --mdc-menu-max-width: fit-content;
 }
+
+// ---------------------------------------
+// AVATAR COMPONENTE
+// MIXIN DEFINICION DE PROPIEDADES PARA DIFERENTES VARIANTES DEL COMPONENTE AVATAR
+@mixin avatarVariantes(
+  $width,
+  $height,
+  $borderRadius
+) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  background-color: #D8DAE5 !important;
+  box-shadow: none !important;
+  width: $width !important;
+  height: $height !important;
+  border-radius: $borderRadius !important;
+  font-size: 1.3rem;
+  font-weight: 400;
+} ;
+// SIZE SMALL ( TAMAÑO PEQUEÑO POR DEFECTO )
+.matAvatar--rounded {
+  @include avatarVariantes(3.2rem, 3.2rem, 0.4rem);
+  & img {
+    @include avatarVariantes(3.2rem, 3.2rem, 0.4rem);
+  }
+}
+.matAvatar--square {
+  @include avatarVariantes(3.2rem, 3.2rem, 0rem);
+  & img {
+    @include avatarVariantes(3.2rem, 3.2rem, 0rem);
+  }
+}
+.matAvatar--circular {
+  @include avatarVariantes(3.2rem, 3.2rem, 10rem);
+  & img {
+    @include avatarVariantes(3.2rem, 3.2rem, 10rem);
+  }
+}
+// SIZE MEDIUM
+.matAvatar--rounded.medium {
+  @include avatarVariantes(4rem, 4rem, 0.4rem);
+  & img {
+    @include avatarVariantes(4rem, 4rem, 0.4rem);
+  }
+}
+.matAvatar--square.medium {
+  @include avatarVariantes(4rem, 4rem, 0rem);
+  & img {
+    @include avatarVariantes(4rem, 4rem, 0rem);
+  }
+}
+.matAvatar--circular.medium {
+  @include avatarVariantes(4rem, 4rem, 10rem);
+  & img {
+    @include avatarVariantes(4rem, 4rem, 10rem);
+  }
+}
 //////////// SMALL CONFIGURATION
 
 :not(.medium) {

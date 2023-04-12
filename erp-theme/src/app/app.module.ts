@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { MaterialModule       } from 'src/theme/material.module';
-import { AppRoutingModule     } from './app-routing.module';
-import { AppComponent         } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule                } from '@angular/core';
+import { MaterialModule          } from 'src/theme/material.module';
+import { AppRoutingModule        } from './app-routing.module';
+import { AppComponent            } from './app.component';
+import { BrowserModule           } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -10,12 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
