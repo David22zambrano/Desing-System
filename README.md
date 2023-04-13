@@ -4,6 +4,7 @@ Desing system ERP- Bitakora
 
 Instalacion storybook:
 - npx storybook@latest init
+
 Comandos de instalaciones requeridas:
 - Node JS: https://nodejs.org/es ( version recomendada: 18.15.0 LTS )
 - Node modules: npm i 
