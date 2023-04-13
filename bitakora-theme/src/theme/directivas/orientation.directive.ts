@@ -1,7 +1,5 @@
 import { Directive, ElementRef, Input } from '@angular/core';
-
- export type Orientation = 'vertical' | 'horizontal' ;
-
+import { Orientation } from '../modal/modelo.model';
 
 @Directive({
   selector: 'mat-tab-group,mat-button-toggle-group  [orientation]'

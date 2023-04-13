@@ -1,6 +1,5 @@
 import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
-
-export type Size = 'small' | 'medium' | 'large';
+import { Size } from '../modal/modelo.model';
 
 @Directive({
   selector: `[size]`,

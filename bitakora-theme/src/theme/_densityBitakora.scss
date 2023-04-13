@@ -1,3 +1,5 @@
+// ------------------------------------- COPIA RESPALDO
+
 @use "sass:map";
 @use "@angular/material" as mat;
 @use "@material/button";
@@ -6,34 +8,7 @@
 
 @include mat.core();
 
-// CONFIG ALERT ICON
-[class*="mat-alert"] {
-  & div {
-    align-items: center;
-  }
-  & .mat-icon {
-    @include icon-size(2.2rem !important, 2.2rem !important);
-  }
-}
-// Eliminacion hint elemento de form field componente
-[class*="mat-mdc-form-field-subscript-wrapper"] {
-  &:not(:has(:only-child mat-hint)) {
-    display: none;
-  }
-}
-// Configuracion asterisco en rojo cuando el campo es requerido
-[class*="mat-mdc-form-field"] {
-  &
-    .mdc-floating-label--required:not(.mdc-floating-label--hide-required-marker)::after {
-    color: #d14343 !important;
-    margin-right: 0.2rem !important;
-  }
-  & .mdc-floating-label {
-    display: flex !important;
-    flex-direction: row-reverse !important;
-    width: max-content !important;
-  }
-}
+
 /////////////// SMALL////////////////
 .small {
   // Componentes con pseudo-clase  :not()
@@ -94,23 +69,38 @@
     }
   }
 
-  // LIST with icon
-  .mdc-list {
-    @include mat.list-density(-3);
-    &.mat-icon {
-      @include icon-size(1.142857142857143rem, 1.142857142857143rem);
-    }
-    &.mat-mdc-icon-button.mat-mdc-button-base {
-      @include icon-size(28px !important, null);
-      padding: 3px !important;
-      & > .mat-icon {
-        @include icon-size(20px !important, 18px !important);
-      }
-      .mat-mdc-button-touch-target {
+
+    // LIST with icon
+    & .mdc-list-item.mdc-list-item--with-one-line {
+      --mdc-list-list-item-one-line-container-height: 44px;
+      & > .mat-mdc-icon-button.mat-mdc-button-base {
         @include icon-size(28px !important, null);
+        padding: 4px !important;
+        & > .mat-icon {
+          @include icon-size(20px !important, 18px !important);
+        }
+        .mat-mdc-button-touch-target {
+          @include icon-size(28px !important, null);
+        }
       }
     }
-  }
+  // LIST with icon
+  // .mdc-list {
+  //   @include mat.list-density(-3);
+  //   &.mat-icon {
+  //     @include icon-size(1.142857142857143rem, 1.142857142857143rem);
+  //   }
+  //   &.mat-mdc-icon-button.mat-mdc-button-base {
+  //     @include icon-size(28px !important, null);
+  //     padding: 3px !important;
+  //     & > .mat-icon {
+  //       @include icon-size(20px !important, 18px !important);
+  //     }
+  //     .mat-mdc-button-touch-target {
+  //       @include icon-size(28px !important, null);
+  //     }
+  //   }
+  // }
 
   // BUTTON TOGGLE
   @include mat.button-toggle-density(-4.5);
