@@ -146,14 +146,20 @@
   // RADIO BUTTON
   &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
     --mdc-radio-state-layer-size: 38px !important;
-    .mdc-radio__background {
-      @include icon-size(20px, 17px);
-    }
-    .mat-mdc-radio-touch-target,
-    &.mdc-radio__native-control {
-      @include icon-size(20px, null);
-    }
+   .mdc-radio__background {
+    @include icon-size(1.142857142857143rem, 1.142857142857143rem);
   }
+  .mdc-radio__native-control:checked
+    + .mdc-radio__background
+    .mdc-radio__inner-circle {
+    transform: scale(0.4);
+  }
+  .mdc-radio__outer-circle {
+    margin: 0.1428571428571429rem;
+  }
+  }
+
+ 
 
   // FAB
   &.mdc-fab:not(.mdc-fab--extended) {
