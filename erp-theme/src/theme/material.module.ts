@@ -29,12 +29,8 @@ import { MatExpansionModule                   } from '@angular/material/expansio
 import { MatCardModule                        } from '@angular/material/card';
 import { MatDialogModule                      } from '@angular/material/dialog';
 
-import { StandardDirective                    } from './directivas/standard.directive';
-import { SizeDirective                        } from './directivas/size.directive';
-import { OrientationDirective                 } from './directivas/orientation.directive';
-import { AvatarDirective                      } from './directivas/avatar.directive';
-
-import { MatAvatarComponent } from './components/Avatar/mat-avatar.component';
+import { MatAvatarComponent                   } from './components/Avatar/mat-avatar.component';
+import { DirectivesModule                     } from './directivas/directives.module';
 
 const modulesMaterial = [
   CommonModule,
@@ -69,27 +65,21 @@ const modulesMaterial = [
   MatCardModule,
   MatDialogModule
 ];
-const directivas = [
-  AvatarDirective,
-  SizeDirective,
-  StandardDirective,
-  OrientationDirective
-];
 const componentes = [
   MatAvatarComponent
 ]
 
 @NgModule({
   declarations: [
-    directivas,
     componentes
   ],
   imports: [
+    DirectivesModule,
     modulesMaterial,
   ],
   exports: [
+    DirectivesModule,
     modulesMaterial,
-    directivas,
     componentes
     
   ],

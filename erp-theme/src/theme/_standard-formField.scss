@@ -1,0 +1,58 @@
+.mat-mdc-form-field.standard {
+  &:not(:has(.mat-mdc-select)) {
+    & .mat-mdc-text-field-wrapper {
+      padding-inline: 0px;
+    }
+    & .mat-icon {
+      padding-right: 0 !important;
+      padding-block: 0 3px !important;
+    }
+    & .mat-mdc-form-field-icon-suffix,
+    & input {
+      align-self: flex-end;
+    }
+  }
+  &:has(.mat-mdc-select) {
+    & .mat-mdc-text-field-wrapper {
+      padding-inline: 0 12px;
+    }
+    & .mat-mdc-select {
+      display: inline-flex;
+      &-arrow-wrapper {
+        height: 0;
+        transform: translateY(0%);
+      }
+      &-trigger {
+        align-self: flex-end;
+      }
+    }
+  }
+  .mdc-floating-label {
+    transform: translateY(0%);
+    &:not(.mdc-floating-label--float-above) {
+      top: auto !important;
+      bottom: 0;
+      padding-bottom: 2.5px;
+    }
+    &.mdc-floating-label--float-above {
+      bottom: 0% !important;
+      transform: translateY(-100%) scale(0.75) !important;
+    }
+  }
+  .mat-mdc-form-field-infix {
+    display: inline-flex;
+    padding-bottom: 2.5px !important;
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled),
+  .mat-mdc-form-field-focus-overlay {
+    background-color: transparent;
+  }
+  .mat-mdc-form-field-hint-wrapper,
+  .mat-mdc-form-field-error-wrapper {
+    padding: 0px;
+  }
+  & input,
+  .mat-mdc-select {
+    place-self: end;
+  }
+}
