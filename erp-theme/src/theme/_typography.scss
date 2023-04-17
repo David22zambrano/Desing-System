@@ -19,35 +19,35 @@ h5,
 .mat-h6,
 h6 {
   margin: 0 !important;
-};
+}
 
 $h3: mat.define-typography-level(
-  $font-size: 2.8rem,
-  $font-weight: 500,
-  $line-height: 1.2,
+  $font-size: 2.8rem !important,
+  $font-weight: 500 !important,
+  $line-height: 1.2 !important,
   $letter-spacing: 0em !important,
-  $font-family: Nunito !important,
+  $font-family: "Nunito, sans-serif" !important,
 );
 $h4: mat.define-typography-level(
-  $font-weight: 600,
-  $font-size: 2rem,
-  $line-height: 1,
+  $font-weight: 600 !important,
+  $font-size: 2rem !important,
+  $line-height: 1 !important,
   $letter-spacing: 0.00735em !important,
-  $font-family: Nunito !important,
+  $font-family: "Nunito, sans-serif" !important,
 );
 $h5: mat.define-typography-level(
-  $font-weight: 600,
-  $font-size: 1.8rem,
-  $line-height: 1.6,
+  $font-weight: 600 !important,
+  $font-size: 1.8rem !important,
+  $line-height: 1.6 !important,
   $letter-spacing: 0em !important,
-  $font-family: Nunito !important,
+  $font-family: "Nunito, sans-serif" !important,
 );
 $h6: mat.define-typography-level(
-  $font-weight: 600,
-  $font-size: 1.6rem,
-  $line-height: 1.4,
+  $font-weight: 600 !important,
+  $font-size: 1.6rem !important,
+  $line-height: 1.4 !important,
   $letter-spacing: 0.0075em !important,
-  $font-family: Nunito !important,
+  $font-family: "Nunito, sans-serif" !important,
 );
 $overline: mat.define-typography-level(
   $font-family: Roboto,
@@ -59,19 +59,17 @@ $overline: mat.define-typography-level(
 $typography-global-config: map.merge(
   mat.define-typography-config(
     $font-family: "Roboto",
-    // Headline-5 = h1
     $headline-5:
       mat.define-typography-level(
-        $font-family: Nunito,
+        $font-family: "Nunito, sans-serif",
         $font-weight: 300,
         $font-size: 4rem,
         $line-height: 1.4,
         $letter-spacing: -0.01562em,
       ),
     $headline-6:
-        // Headline-6 = h2
       mat.define-typography-level(
-        $font-family: Nunito,
+        $font-family: "Nunito, sans-serif",
         $font-weight: 400,
         $font-size: 3.2rem,
         $line-height: 1.2,
