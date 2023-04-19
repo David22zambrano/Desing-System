@@ -16,6 +16,19 @@
   &:not(.large, .medium) {
     &.mdc-button {
       @include button.density(-3);
+      & > .mat-icon{
+        @include icon-size(
+          1.285714285714286rem !important,
+          1.142857142857143rem !important
+        );
+      }
+    }
+    &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label{
+      display: flex;
+      align-items: center;
+      & > .mat-icon{
+        padding-inline: 4px;
+      }
     }
     &.mat-mdc-chip,
     &.mat-md-chip-option {
