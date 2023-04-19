@@ -141,20 +141,35 @@
   }
 
   // CHECKBOX
-  @include mat.checkbox-density(-3);
-  &.mat-mdc-checkbox .mdc-checkbox {
-    padding: calc(
-      (
-          var(--mdc-checkbox-state-layer-size, 2.214285714285714rem) -
-            1.285714285714286rem
-        ) / 2
-    ) !important;
+  .mdc-checkbox{
+    --mdc-checkbox-state-layer-size: 32px;
+    padding: calc((var(--mdc-checkbox-ripple-size, 32px) - 20px) / 2) !important;
+    .mat-mdc-checkbox-touch-target{
+      width: 32px;
+      height: 32px;
+    };
+    .mdc-checkbox__background{
+      width: 16px;
+      height: 16px;
+    }    
   }
-  .mdc-checkbox__background {
-    width: 1.07142857rem;
-    height: 1.07142857rem;
-    margin: -0.2142857142857143rem;
-  }
+  // .mdc-checkbox .mdc-checkbox__native-control{
+  //   --mdc-checkbox-state-layer-size: 38px
+  // }
+  // &.mat-mdc-checkbox .mdc-checkbox {
+  //   @include mat.checkbox-density(-3);
+  //   padding: calc(
+  //     (
+  //         var(--mdc-checkbox-state-layer-size, 2.214285714285714rem) -
+  //           1.285714285714286rem
+  //       ) / 2
+  //   ) !important;
+  // }
+  // .mdc-checkbox__background {
+  //   width: 1.07142857rem;
+  //   height: 1.07142857rem;
+  //   margin: -0.2142857142857143rem;
+  // }
   // RADIO BUTTON
   &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
     --mdc-radio-state-layer-size: 38px !important;
