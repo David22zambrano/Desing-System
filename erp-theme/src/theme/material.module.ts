@@ -34,7 +34,9 @@ import { SizeDirective                        } from './directivas/size.directiv
 import { OrientationDirective                 } from './directivas/orientation.directive';
 import { AvatarDirective                      } from './directivas/avatar.directive';
 
-import { MatAvatarComponent } from './components/Avatar/mat-avatar.component';
+import { MatAvatarComponent                   } from './components/Avatar/mat-avatar.component';
+import { FormFieldComponent } from './components/form-field/form-field.component';
+import { ButtonComponent } from './components/button/button.component';
 
 const modulesMaterial = [
   CommonModule,
@@ -76,21 +78,27 @@ const directivas = [
   OrientationDirective
 ];
 const componentes = [
-  MatAvatarComponent
+  FormFieldComponent,
+  MatAvatarComponent,
+  ButtonComponent
 ]
 
 @NgModule({
   declarations: [
+    MatAvatarComponent,
+    FormFieldComponent,
+    ButtonComponent,
     directivas,
-    componentes
   ],
   imports: [
-    modulesMaterial,
+    modulesMaterial
   ],
   exports: [
+    MatAvatarComponent,
+    ButtonComponent,
+    FormFieldComponent,
     modulesMaterial,
     directivas,
-    componentes
     
   ],
 })

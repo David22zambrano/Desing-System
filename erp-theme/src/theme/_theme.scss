@@ -5,15 +5,17 @@
     $minimum-height: 32px,
     $icon-color: rgba(255, 0, 0, 0.267)
   );
-@use "@material/chips";
-@use "@angular/material" as mat;
-@use "./mixins.scss" as variants;
-@import "@angular/material/theming";
-@import "./colors";
-@import "./elevations";
-@import "./typography";
-@import "./sizes";
-@import "./_orientacion.scss";
+  @use "@material/chips";
+  @use "@angular/material" as mat;
+  @use "./mixins.scss" as variants;
+  @import "@angular/material/theming";
+  @import "./colors";
+  @import "./elevations";
+  @import "./typography";
+  @import "./sizes";
+  @import "./_orientacion.scss";
+  @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+  @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone");
 @include mat.core();
 $light-theme-background: (
   status-bar: map.get($grey, 300),
