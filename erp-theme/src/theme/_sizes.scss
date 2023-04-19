@@ -4,7 +4,6 @@
 @import "./mixins";
 @include mat.core();
 
-
 //////////// SMALL CONFIGURATION
 
 :not(.medium) {
@@ -110,10 +109,10 @@
 }
 // LIST with icon
 .mdc-list:not(.medium, .large) {
-  .mdc-list-item.mdc-list-item--with-one-line{
+  .mdc-list-item.mdc-list-item--with-one-line {
     --mdc-list-list-item-one-line-container-height: 44px;
-    & > .mat-mdc-icon-button.mat-mdc-button-base{
-      padding: 4px !important
+    & > .mat-mdc-icon-button.mat-mdc-button-base {
+      padding: 4px !important;
     }
   }
   & .mat-icon {
@@ -226,7 +225,6 @@
   }
 }
 
-
 //DATAPICKER
 .mat-mdc-form-field:has(.mat-datepicker-toggle) {
   --mdc-icon-button-icon-size: 20px;
@@ -253,6 +251,15 @@
 /// MEDIUM CONFIGURATION
 
 .medium {
+  // RAIDO BUTTON
+  .mdc-radio {
+    --mdc-radio-state-layer-size: 40px;
+    padding: calc((var(--mdc-radio-state-layer-size, 40) - 20px) / 2) !important;
+    .mat-mdc-radio-touch-target {
+      @include icon-size(40px, null);
+    }
+  }
+
   //////////////// MEDIUM ////////////////
   .mat-mdc-menu-item.mdc-list-item {
     min-height: 4.4rem !important;
@@ -312,7 +319,7 @@
   /// LIST with icon
   .mdc-list:not(.small) {
     @include mat.list-density(-1);
-    .mat-icon{
+    .mat-icon {
       @include icon-size(2.4rem, 2.4rem);
     }
   }

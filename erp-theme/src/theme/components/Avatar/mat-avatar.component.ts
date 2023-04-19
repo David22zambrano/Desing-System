@@ -11,8 +11,8 @@ import { AvatasrModel } from 'src/theme/model/modelo.model';
 
 export class MatAvatarComponent implements OnInit{;
 
-  // @Input() avatarModel!: AvatasrModel;
-  // @Input() size='medium';
+  @Input() avatarModel!: AvatasrModel;
+  @Input() size='medium';
 
 
   @Input() nombre!:string;

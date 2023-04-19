@@ -14,7 +14,7 @@ const directivas = [
 
 @NgModule({
   declarations: [directivas],
-  imports: [CommonModule,directivas],
+  imports: [CommonModule],
   exports: [directivas]
 })
 export class DirectivesModule { }

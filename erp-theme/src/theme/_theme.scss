@@ -5,9 +5,9 @@
     $minimum-height: 32px,
     $icon-color: rgba(255, 0, 0, 0.267)
   );
-@use "@material/chips";
 @use "@angular/material" as mat;
 @use "./mixins.scss" as variants;
+@use "@material/chips";
 @import "@angular/material/theming";
 @import "./colors";
 @import "./elevations";
