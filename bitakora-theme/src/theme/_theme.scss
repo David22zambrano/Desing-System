@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "@angular/material" as mat;
 
+
 @include mat.core();
 @import "./colors";
 @import "./typography";
@@ -10,6 +11,7 @@
 @import "./setting-components";
 @import "./orientation";
 @import "./standard-formfield";
+
 
 // Define a light theme
 $light-primary: mat.define-palette($bitakora-primary);

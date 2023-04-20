@@ -1,37 +1,88 @@
-<div style="display: flex; flex-direction: column; align-items: center;justify-content: center; gap: 10px; ">
-    <h2>
-        Componentes Bitakora Small
-    </h2>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  "
+>
+  <h4>Componentes Bitakora Small</h4>
 
-    <button mat-raised-button size="small" color="primary">
-        Button
-        <mat-icon matSuffix >
-            add
-        </mat-icon>
-    </button>
+  <button mat-raised-button color="primary">
+    Button
+    <mat-icon matSuffix> add </mat-icon>
+  </button>
 
-    <mat-chip color="primary" size="small">
-        Chip
-        <mat-icon matSuffix >
-            add
-        </mat-icon>
-    </mat-chip>
+  <mat-chip color="primary" size="small">
+    Chip
+    <mat-icon matSuffix> add </mat-icon>
+  </mat-chip>
 
-    <mat-chip>Chip normal</mat-chip>
+  <mat-chip>Chip medium</mat-chip>
 
+  <mat-icon size="medium"> home </mat-icon>
 
-    <mat-icon>
-        home
-    </mat-icon>
+  <button mat-icon-button size="small" color="primary">
+    <mat-icon matSuffix> add </mat-icon>
+  </button>
 
-    <button mat-icon-button size="small" color="primary">
-        <mat-icon matSuffix >
-            add
-        </mat-icon>
-    </button>
+  <mat-radio-button size="small">Radio button</mat-radio-button>
 
-    <mat-radio-button size="small" >Radio button</mat-radio-button>
+  <mat-checkbox size="small" >Checkbox</mat-checkbox>
 
-    <mat-checkbox size="small" >Checkbox</mat-checkbox>
+<div>
+    
+</div>
+
+  <mat-list role="list" size="small" style="background-color: aquamarine;">
+    <mat-list-item role="listitem">
+        listas
+        <mat-icon  matListItemMeta matSuffix fontIcon="home" ></mat-icon>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+        listas
+        <mat-icon  matListItemMeta matSuffix fontIcon="delete" ></mat-icon>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+        listas
+        <mat-icon  matListItemMeta matSuffix fontIcon="home" ></mat-icon>
+    </mat-list-item>
+  </mat-list> 
+  
+  <button mat-fab extended color="primary"  >
+    <mat-icon>favorite</mat-icon>
+    Extended fab
+  </button>
+
+  <button mat-mini-fab disabled aria-label="Example mini fab with a heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
 
 </div>
+
+
+
+<mat-list role="list" size="small" >
+    <mat-list-item role="listitem">
+        <p>Hello world</p>
+         <button mat-icon-button matListItemMeta>
+            <mat-icon >note</mat-icon>
+            </button>
+   </mat-list-item>
+
+   <mat-list-item role="listitem">
+        <p>Hello world</p> 
+          <button mat-icon-button matListItemMeta> 
+             <mat-icon matListItemIcon>note</mat-icon>
+          </button> 
+   </mat-list-item>
+   
+    <mat-list-item role="listitem">
+        <p>Hello world</p>
+         <button mat-icon-button matListItemMeta>
+            <mat-icon matListItemIcon>note</mat-icon>
+            </button>
+     </mat-list-item> 
+            
+ <mat-list />
