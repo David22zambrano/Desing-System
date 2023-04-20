@@ -132,11 +132,13 @@ const directivas = [
 
   ],
   imports: [
-    modulesMaterial,
+    modulesMaterial
   ],
   exports: [
+
     modulesMaterial,
     directivas,
+
 
   ],
 })
