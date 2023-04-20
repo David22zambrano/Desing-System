@@ -5,8 +5,8 @@
     $minimum-height: 32px,
     $icon-color: rgba(255, 0, 0, 0.267)
   );
-@use "@material/chips";
-@use "@angular/material" as mat;
+  @use "@angular/material" as mat;
+  @use "@material/chips";
 @use "./mixins.scss" as variants;
 @import "@angular/material/theming";
 @import "./colors";
@@ -14,6 +14,11 @@
 @import "./typography";
 @import "./sizes";
 @import "./_orientacion.scss";
+@import "./stylesStorybook/clases";
+@import "./stylesStorybook//storybook";
+@import "./stylesStorybook/colors.component";
+// @import "./stylesStorybook/palletes";
+
 @include mat.core();
 $light-theme-background: (
   status-bar: map.get($grey, 300),
