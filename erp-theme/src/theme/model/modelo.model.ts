@@ -1,3 +1,4 @@
+
 export interface AvatarModel{
     size?: Size;
     variant?: avatarVariant;
@@ -24,6 +25,7 @@ export enum Sizes {
 
 export type Orientation = 'vertical' | 'horizontal' ;
 
+export type ColorComponent = "primary" | "accent" | "warn" | "warning" | "info" | "success" ;
 export type Size = 'small' | 'medium' | 'large'  ;
 
 export type avatarVariant = 'rounded' | 'square' | 'circular';

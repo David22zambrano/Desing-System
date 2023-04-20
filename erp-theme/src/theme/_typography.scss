@@ -59,7 +59,6 @@ $overline: mat.define-typography-level(
 $typography-global-config: map.merge(
   mat.define-typography-config(
     $font-family: "Roboto, sans-serif",
-    $font-family: "Roboto, sans-serif",
     $headline-5:
       mat.define-typography-level(
         $font-family: "Nunito, sans-serif",
@@ -79,7 +78,7 @@ $typography-global-config: map.merge(
     $subtitle-1:
       mat.define-typography-level(
         $font-family: "Roboto, sans-serif",
-        $font-family: "Roboto, sans-serif",
+
         $font-weight: 500,
         $font-size: 1.4rem,
         $line-height: 1.4,
@@ -87,7 +86,6 @@ $typography-global-config: map.merge(
       ),
     $subtitle-2:
       mat.define-typography-level(
-        $font-family: "Roboto, sans-serif",
         $font-family: "Roboto, sans-serif",
         $font-weight: 500,
         $font-size: 1.3rem,
@@ -97,7 +95,6 @@ $typography-global-config: map.merge(
     $body-1:
       mat.define-typography-level(
         $font-family: "Roboto, sans-serif",
-        $font-family: "Roboto, sans-serif",
         $font-weight: 400,
         $font-size: 1.4rem,
         $line-height: 1.4,
@@ -105,7 +102,6 @@ $typography-global-config: map.merge(
       ),
     $body-2:
       mat.define-typography-level(
-        $font-family: "Roboto, sans-serif",
         $font-family: "Roboto, sans-serif",
         $font-weight: 400,
         $font-size: 1.2rem,
@@ -115,7 +111,6 @@ $typography-global-config: map.merge(
     $button:
       mat.define-typography-level(
         $font-family: "Roboto, sans-serif",
-        $font-family: "Roboto, sans-serif",
         $font-weight: 500,
         $font-size: 1.27rem,
         $line-height: 1.49130074565,
@@ -123,7 +118,6 @@ $typography-global-config: map.merge(
       ),
     $caption:
       mat.define-typography-level(
-        $font-family: "Roboto, sans-serif",
         $font-family: "Roboto, sans-serif",
         $font-weight: 400,
         $font-size: 1.1rem,
