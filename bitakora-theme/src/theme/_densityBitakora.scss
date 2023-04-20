@@ -127,7 +127,7 @@
   .mdc-checkbox {
     --mdc-checkbox-state-layer-size: 38px;
     padding: calc(
-      (var(--mdc-checkbox-ripple-size, 38px) - 20px) / 2
+      (var(--mdc-checkbox-ripple-size, 38px) - 16px) / 2
     ) !important;
     .mdc-checkbox__background {
       @include icon-size(16px, null);
