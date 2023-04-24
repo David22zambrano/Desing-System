@@ -1,4 +1,13 @@
-
+[class*='mat-mdc-paginator'] {
+  .mat-mdc-form-field {
+    @include mat.form-field-density(-5);
+  }
+}
+[class*='mdc-menu-surface--open'] {
+  .mat-mdc-option {
+    min-height: 2.5714285714285716rem;
+  }
+}
 // CONFIG ALERT ICON
 [class*="mat-alert"] {
     & div {

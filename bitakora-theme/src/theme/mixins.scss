@@ -1,3 +1,4 @@
+@use 'sass:map';
 // Conversion de REM to PX
 // 2px  ----  0.1428571428571429
 // 10px ----  0.7142857142857143rem
@@ -11,4 +12,33 @@
   width: $tamaño;
   height: $tamaño;
   font-size: $font-size;
-} ;
+}
+
+// MIXIN ICON button
+$size: (
+  "small": 28px,
+  "medium": 44px,
+  "large": 56px,
+);
+$size-icon-button: (
+  "small": 20px,
+  "medium": 24px,
+  "large": 36px,
+);
+// ICON BUTTON SIZE
+@mixin icon-button($icono) {
+  @if $icono == small {
+    width: map.get($size, "small");
+    height: map.get($size, "small");
+    padding: calc((map.get($size, "small") - map.get($size-icon-button, "small")) / 2);
+  } @else if $icono == medium {
+    width: map.get($size, "medium");
+    height: map.get($size, "medium");
+    padding: calc((map.get($size, "medium") -  map.get($size-icon-button, "medium")) / 2);
+  } @else if $icono == large {
+    width: map.get($size, "large");
+    height: map.get($size, "large");
+    padding: calc((map.get($size, "large") -  map.get($size-icon-button, "large")) / 2);
+  }
+}
+
