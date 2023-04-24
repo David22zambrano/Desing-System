@@ -32,6 +32,7 @@ import { MatDialogModule                      } from '@angular/material/dialog';
 import { DirectivesModule                     } from './directivas/directives.module';
 
 import { MatAvatarComponent                   } from './components/mat-avatar/mat-avatar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const modulosMaterial = [
   CommonModule,
@@ -64,7 +65,9 @@ const modulosMaterial = [
   MatNativeDateModule,
   MatExpansionModule,
   MatCardModule,
-  MatDialogModule
+  MatDialogModule,
+  FormsModule, 
+  ReactiveFormsModule 
 ];
 const componentes = [
   MatAvatarComponent

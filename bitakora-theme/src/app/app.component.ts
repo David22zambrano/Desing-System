@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -28,5 +30,14 @@ export class AppComponent {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+
+  constructor(private _formBuilder: FormBuilder) {}
   
 }
