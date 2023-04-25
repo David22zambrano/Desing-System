@@ -34,7 +34,7 @@ import { SizeDirective } from './directivas/size.directive';
 import { OrientationDirective } from './directivas/orientation.directive';
 import { AvatarDirective } from './directivas/avatar.directive';
 
-import { MatAvatarComponent } from './components/Avatar/mat-avatar.component';
+// import { MatAvatarComponent } from './components/Avatar/mat-avatar.component';
 import { ClasesGlobalesComponent } from './components/Clases/clases-globales/clases-globales.component';
 import { LayoutComponent } from './components/Clases/layoutt/layout.component';
 import { IconComponent } from './components/Clases/icons/icon.component';
@@ -114,7 +114,7 @@ const directivas = [
     SliderComponent,
     ColorsComponent,
     ClasesGlobalesComponent,
-    MatAvatarComponent,
+    // MatAvatarComponent,
     LayoutComponent,
     IconComponent,
     SpacingComponent,

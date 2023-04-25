@@ -73,30 +73,26 @@ $_ripple-opacity: 0.1;
       $variants
     );
   }
-};
+}
 
 // Define valores de width,height y font-size
 @mixin icon-size($tamaño, $font-size) {
   width: $tamaño;
   height: $tamaño;
   font-size: $font-size;
-};
+}
 
 // MIXIN DEFINICION DE PROPIEDADES PARA DIFERENTES VARIANTES DEL COMPONENTE AVATAR
-@mixin avatarVariantes(
-  $width,
-  $height,
-  $borderRadius
-) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white ;
-  background-color: #D8DAE5 ;
-  box-shadow: none ;
-  width: $width ;
-  height: $height ;
-  border-radius: $borderRadius ;
-  font-size: 1.3rem;
-  font-weight: 400;
-} ;
+@mixin avatarVariantes($width, $height, $borderRadius) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  background-color: #d8dae5 !important;
+  box-shadow: none !important;
+  width: $width !important;
+  height: $height !important;
+  border-radius: $borderRadius !important;
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
+}
