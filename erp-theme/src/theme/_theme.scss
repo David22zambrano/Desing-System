@@ -8,6 +8,7 @@
 @use "@angular/material" as mat;
 @use "@material/chips";
 @use "./mixins.scss" as variants;
+@import "./Setting-components";
 @import "@angular/material/theming";
 @import "./colors";
 @import "./elevations";

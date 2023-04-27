@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { ColorComponent, Size } from "src/theme/model/modelo.model";
+import { ColorComponent, Sizes } from "src/theme/model/modelo.model";
 
 @Component({
   selector: 'Mat-fab',
@@ -7,9 +7,9 @@ import { ColorComponent, Size } from "src/theme/model/modelo.model";
   <button [ngClass]="sizes" extended mat-fab>Custom<mat-icon>favorite</mat-icon></button>`
 })
 export class FabComponent {
-  @Input() size:Size = "small";
+  @Input() size:Sizes = "small";
   @Input() label!: string;
-  @Input() color:ColorComponent= "primary";
+  @Input() color=  "primary";
 
   public get sizes(): string[] {
     return [`${this.size}`, `button-${this.color}`];

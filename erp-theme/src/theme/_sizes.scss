@@ -2,12 +2,9 @@
 @use "@angular/material" as mat;
 @use "@material/button";
 @import "./mixins";
-@import "./Setting-components";
 @include mat.core();
 
 //////////// SMALL CONFIGURATION
-
-
   :not(.medium) {
     &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
       .mdc-evolution-chip__text-label {

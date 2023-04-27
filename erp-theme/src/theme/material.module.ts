@@ -34,8 +34,6 @@ import { StandardDirective } from './directivas/standard.directive';
 import { SizeDirective } from './directivas/size.directive';
 import { OrientationDirective } from './directivas/orientation.directive';
 import { AvatarDirective } from './directivas/avatar.directive';
-
-import { MatAvatarComponent } from './components/Avatar/mat-avatar.component';
 import { ClasesGlobalesComponent } from './components/Clases/clases-globales/clases-globales.component';
 import { LayoutComponent } from './components/Clases/layoutt/layout.component';
 import { IconComponent } from './components/Clases/icons/icon.component';
@@ -103,34 +101,36 @@ const directivas = [
   StandardDirective,
   OrientationDirective
 ];
-const componentes = [StarRatingComponent,  MatAvatarComponent]
+const componentes = [
+  StarRatingComponent,
+  MatMenuComponent,
+  TipografiaComponent,
+  TableComponent,
+  ProgressSpinnerComponent,
+  RadioButtonComponent,
+  ToolbarComponent,
+  StepperComponent,
+  MatTabsComponent,
+  TogglebuttonComponent,
+  SliderComponent,
+  ColorsComponent,
+  ClasesGlobalesComponent,
+  LayoutComponent,
+  IconComponent,
+  SpacingComponent,
+  ResponsiveComponent,
+  CheckboxComponent,
+  ButtonComponent,
+  FabComponent,
+  IconButtonComponent,
+  MatChipComponent,
+  IconComponents,
+  MatListComponent,
+  SlideToggleComponent,]
 
 @NgModule({
   declarations: [
-    MatMenuComponent,
-    TipografiaComponent,
-    TableComponent,
-    ProgressSpinnerComponent,
-    RadioButtonComponent,
-    ToolbarComponent,
-    StepperComponent,
-    MatTabsComponent,
-    TogglebuttonComponent,
-    SliderComponent,
-    ColorsComponent,
-    ClasesGlobalesComponent,
-    LayoutComponent,
-    IconComponent,
-    SpacingComponent,
-    ResponsiveComponent,
-    CheckboxComponent,
-    ButtonComponent,
-    FabComponent,
-    IconButtonComponent,
-    MatChipComponent,
-    IconComponents,
-    MatListComponent,
-    SlideToggleComponent,
+
     directivas,
     componentes
   ],

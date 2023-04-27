@@ -1,6 +1,5 @@
-import { Component, Input       } from '@angular/core';
-import { ModelElement, Size                   } from 'src/theme/model/modelo.model';
-import { ArrayFormField         } from '../../model/modelo.model';
+import { Component, Input } from '@angular/core';
+import { Sizes } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'app-form-field',
@@ -8,14 +7,13 @@ import { ArrayFormField         } from '../../model/modelo.model';
   styleUrls: ['./../../_theme.scss']
 })
 export class FormFieldComponent {
-  @Input() ArrayFormFields!: ModelElement;
-  @Input() size!: Size;
-  @Input() appearance!: 'fill' | 'outline'; 
-  
-  public get Appearance(): string[] { 
-    return [`${this.appearance}` ];
-   } 
+  @Input() size: Sizes = "small";
+  @Input() appearance!: 'fill' | 'outline';
+
+  public get Appearance(): string[] {
+    return [`${this.appearance}`];
+  }
   public get sizes(): string[] {
-     return [`${this.size}`]; 
+    return [`${this.size}`];
   }
 }
