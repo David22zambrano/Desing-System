@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Sizes } from 'src/theme/model/modelo.model';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -18,8 +19,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  @Input()
-  size!: string;
+
+  @Input() size: Sizes = "small";
+
   public get sizes(): string[] {
     return [`${this.size}`];
   }

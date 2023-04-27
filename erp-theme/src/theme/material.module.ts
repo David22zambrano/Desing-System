@@ -37,13 +37,9 @@ import { AvatarDirective } from './directivas/avatar.directive';
 // import { MatAvatarComponent } from './components/Avatar/mat-avatar.component';
 import { ClasesGlobalesComponent } from './components/Clases/clases-globales/clases-globales.component';
 import { LayoutComponent } from './components/Clases/layoutt/layout.component';
-import { IconComponent } from './components/Clases/icons/icon.component';
-import { SpacingComponent } from './components/Clases/spacing/spacing.component';
-import { ResponsiveComponent } from './components/Clases/responsive/responsive.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
-import { ColorsComponent } from './components/colors/colors.component';
 import { ButtonComponent } from './components/mat-button/button.component';
-import { FabComponent } from './components/mat-fab/fab.component';
+import { FabComponent } from './components/mat-chip/mat-fab/fab.component';
 import { IconButtonComponent } from './components/iconButon/iconButton.component';
 import { MatChipComponent } from './components/mat-chip/mat-chip.component';
 import { IconComponents } from './components/mat-icon/icon.component';
@@ -57,7 +53,6 @@ import { ToolbarComponent } from './components/mat-toolbar/toolbar.component';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 import { TableComponent } from './components/table/table.component';
-import { TipografiaComponent } from './components/tipografia/tipografia.component';
 import { MatMenuComponent } from './components/menu/menu.component';
 
 const modulesMaterial = [
@@ -103,7 +98,6 @@ const directivas = [
 @NgModule({
   declarations: [
     MatMenuComponent,
-    TipografiaComponent,
     TableComponent,
     ProgressSpinnerComponent,
     RadioButtonComponent,
@@ -112,13 +106,9 @@ const directivas = [
     MatTabsComponent,
     TogglebuttonComponent,
     SliderComponent,
-    ColorsComponent,
     ClasesGlobalesComponent,
     // MatAvatarComponent,
     LayoutComponent,
-    IconComponent,
-    SpacingComponent,
-    ResponsiveComponent,
     CheckboxComponent,
     ButtonComponent,
     FabComponent,

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ColorComponent, Sizes } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-slider',
@@ -7,8 +8,8 @@ import { Component, Input } from '@angular/core';
   /></mat-slider>`,
 })
 export class SliderComponent {
-  @Input() size!: string;
-  @Input() color!: string;
+  @Input() size: Sizes = "small";
+  @Input() color: string = ColorComponent.primary;
   public get sizes(): string[] {
     return [`${this.size}`, `slider--${this.color}`];
   }

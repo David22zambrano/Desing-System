@@ -4,13 +4,15 @@ import { Sizes, Variants } from '../../model/modelo.model';
 
 @Component({
   selector: 'mat-avatar',
-  templateUrl: "./avatar.component.html",
+  template: `<div [ngClass]="sizes">
+  <span> {{ resultado }}</span>
+</div>`,
 })
 
 export class AvatarComponent implements OnInit {
 
-  @Input() size?: Sizes
-  @Input() variant?: string
+  @Input() size: Sizes = "small"
+  @Input() variant: Variants = "circular"
   @Input() nombre!: string;
   resultado: string = " ";
 

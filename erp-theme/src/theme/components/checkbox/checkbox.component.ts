@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { Sizes } from 'src/theme/model/modelo.model';
+import { ColorComponent, Sizes } from 'src/theme/model/modelo.model';
 @Component({
   selector: 'Mat-checkbox',
   template: `<mat-checkbox [ngClass]="custom"></mat-checkbox>`,
 })
 export class CheckboxComponent {
   @Input() size: Sizes = "small";
-  @Input() color!: "accent";
+  @Input() color:string = ColorComponent.primary ;
 
   public get custom(): string[] {
     return [`${this.size}`, `color-${this.color}`];

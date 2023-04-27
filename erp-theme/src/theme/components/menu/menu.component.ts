@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Sizes } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'menu',
@@ -10,7 +11,7 @@ import { Component, Input } from '@angular/core';
   `,
 })
 export class MatMenuComponent {
-  @Input() size!: string;
+  @Input() size: Sizes = "small";
 
   public get sizes(): string[] {
     return [`${this.size}`];

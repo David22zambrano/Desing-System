@@ -4,39 +4,8 @@ import { LayoutComponent } from './layout.component';
 export default {
   title: 'Clases/Layout',
   component: LayoutComponent,
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'Las clases de diseño son usadas para lograr distintos tipos de diseño, de esta manera dividiendo la pagina en secciones definiendo su tamaño, posición y las capas que tendra .',
-      },
-    },
-  },
   argTypes: {
-    column: {
-      table: {
-        category: 'Column',
-        defaultValue: { summary: 'col-1' },
-      },
-      options: [
-        'col-1',
-        'col-2',
-        'col-3',
-        'col-4',
-        'col-4',
-        'col-5',
-        'col-6',
-        'col-7',
-        'col-8',
-        'col-9',
-        'col-10',
-        'col-11',
-        'col-12',
-      ],
-      control: { type: 'radio' },
-      description:
-        'Las clases de diseño son usadas para lograr distintos tipos de diseño, de esta manera dividiendo la pagina en secciones definiendo su tamaño, posición y las capas que tendra.`',
-    },
+
     flex: {
       table: {
         category: 'Flexbox',
@@ -104,8 +73,5 @@ export default {
 
 type Story = StoryObj<LayoutComponent>
 export const layoutClass: Story = {
-  name: 'I am the primary',
-  render: () => ({
-    props: {},
-  }),
+  name: 'layout',
 };

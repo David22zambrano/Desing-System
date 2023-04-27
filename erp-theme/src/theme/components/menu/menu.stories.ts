@@ -12,14 +12,6 @@ export default {
       imports: [MatMenuModule, MatButtonModule, BrowserAnimationsModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          '`<mat-menu>` es un panel flotante que contiene una lista de opciones',
-      },
-    },
-  },
   argTypes: {
     size: {
       options: ['small', 'medium'],
@@ -28,8 +20,6 @@ export default {
         category: 'Size',
         defaultValue: { summary: 'medium' },
       },
-      description:
-        'Los tamaños del menu los define su clase, la cual puede ser: `"small"` `"medium"`<br> La clase se puede aplicar directamente al contenedor padre `<mat-menu>` o directamente aplicar la propiedad `size` a cada uno de los items de la lista.',
     },
   },
 } as Meta;

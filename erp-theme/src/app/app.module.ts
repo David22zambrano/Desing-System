@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvatarComponent } from 'src/theme/components/mat-avatar/avatar.component';
+import { FormFieldComponent } from 'src/theme/components/form-field/form-field.component';
 @NgModule({
   declarations: [
     AppComponent,
     AvatarComponent,
+    FormFieldComponent
   ],
   imports: [
     MaterialModule,

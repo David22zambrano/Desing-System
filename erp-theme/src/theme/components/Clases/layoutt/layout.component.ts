@@ -14,11 +14,11 @@ export class LayoutComponent {
 
   public get custom(): string[] {
     return [
-      `custom-${this.items}`,
-      `custom-${this.grid}`,
-      `custom-${this.flex}`,
-      `custom-${this.column}`,
-      `custom-${this.justify}`,
+      `${this.items}`,
+      `${this.grid}`,
+      `${this.flex}`,
+      `${this.column}`,
+      `${this.justify}`,
     ];
   }
 }

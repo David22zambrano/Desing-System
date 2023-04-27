@@ -1,0 +1,62 @@
+import { Meta, Story, Canvas } from "@storybook/blocks";
+import * as IconStories from "./icon.stories.ts";
+
+<Meta title="Clases/icon/Icons" />
+<style>
+  {`
+  .outlined{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .img-desing{
+    width:40%;
+  }
+  .small{
+    font-size:16px;
+    height:16px;
+    width:16px;
+  }
+  .medium{
+    font-size:20px;
+    height:20px;
+    width:20px;
+  }
+  .large{
+    font-size:33px;
+    height:33px;
+    width:33px;
+  }
+  #icon-outlined{
+    margin-block:8px !important;
+  }
+  .icons{
+    display:flex;
+    align-items:center;
+  }
+`}
+</style>
+
+# ICONS ANGULAR MATERIAL
+
+Los iconos de Angular Material son visualmente simples y limpios, y utilizan una paleta de colores monocromáticos.
+Algunos de los iconos más comunes incluyen:
+
+<ul>
+  <li>Flechas de dirección para indicar la navegación</li>
+  <li>
+    Iconos de menú y hamburguesas para indicar la existencia de un menú
+    desplegable
+  </li>
+  <li>Iconos de búsqueda para indicar la presencia de una barra de búsqueda</li>
+  <li>Iconos de lápiz para indicar la capacidad de editar un elemento</li>
+  <li>
+    Iconos de papelera para indicar la capacidad de eliminar un elemento Iconos
+    de
+  </li>
+  <li>cerrar para indicar la capacidad de cerrar una ventana o modal.</li>
+</ul>
+En general, los iconos de Angular Material son diseñados para ser claros y concisos,
+y para mejorar la usabilidad de las aplicaciones web y móviles construidas con Angular.
+
+<Canvas of={IconStories.iconsClass} />

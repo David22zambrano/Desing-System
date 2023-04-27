@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
 import { RadioButtonComponent } from './radio-button.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 // import { Colors, descripcionComponent, Sizes } from '../../assets/model/modelo.model';
 // import { MaterialModule } from '../../../app/material.module';
 export default {
@@ -12,23 +13,13 @@ export default {
       imports: [MatRadioModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          '`<mat-radio-button>` proporciona la misma funcionalidad que un nativo <input type="radio"> mejorado con estilo y animaciones de Material Design',
-      },
-    },
-  },
   argTypes: {
     color: {
       table: {
         category: 'color',
         defaultValue: { summary: 'Primary' },
       },
-      description:
-        'Los colores deL toolbar los define su variante, la cual puede ser: `primary` `secondary` `warn` `warning` `caution` `info`',
-      options: ['primary', 'accent', 'warn', 'success', 'caution', 'info'],
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
       control: { type: 'radio' },
     },
     size: {
@@ -36,8 +27,6 @@ export default {
         category: 'Sizes',
         defaultValue: { summary: 'small' },
       },
-      description:
-        'Los colores de los Iconos los define su variante, la cual puede ser: `primary` `secondary` `warn` `warning` `caution` `info`',
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
@@ -47,8 +36,10 @@ export default {
 type Story = StoryObj<RadioButtonComponent>
 
 export const RadioButton: Story = {
+  name:"radio-button",
   args: {
     size: 'small',
+    color: ColorComponent.primary
   }
 }
 

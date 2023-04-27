@@ -14,10 +14,9 @@ export class ClasesGlobalesComponent {
   @Input() shadow!: string;
 
   public get sizes(): string[] {
-    return [
-      `sizes--${this.text}`, `sizes--${this.cursor}`,
-      `sizes--${this.opacity}`, `sizes--${this.display}`,
-      `sizes--${this.position}` ,`sizes--${this.shadow}`
-    ];
+    return [ `${this.text}`, `${this.cursor}`,
+             `${this.opacity}`, `${this.display}`,
+             `${this.position}`, `${this.shadow}`
+            ];
   }
 }

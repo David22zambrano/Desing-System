@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Sizes } from 'src/theme/model/modelo.model';
 @Component({
   selector: 'Mat-list',
   template: `<mat-list role="list" [ngClass]="sizes">
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
   </mat-list>`,
 })
 export class MatListComponent {
-  @Input() size!: string;
+  @Input() size: Sizes = "small";
 
   public get sizes(): string[] {
     return [`${this.size}`];
