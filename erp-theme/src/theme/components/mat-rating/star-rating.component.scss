@@ -1,0 +1,27 @@
+.rating {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label::before {
+  content: "\2605";
+  transition: 0.3s;
+}
+
+.rating label {
+  color: #1B344C3B;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.rating input:hover ~ label::before,
+.rating label:hover::before,
+.rating input:checked ~ label::before
+{
+   color: #FFB400;
+}

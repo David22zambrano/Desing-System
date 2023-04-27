@@ -2,366 +2,267 @@
 @use "@angular/material" as mat;
 @use "@material/button";
 @import "./mixins";
+@import "./Setting-components";
 @include mat.core();
 
-//CONFIG ALERT
-[class*="mat-alert"] {
-  & div {
-    align-items: center;
-  }
-  & .mat-icon.icon-variant {
-    @include icon-size(2.2rem !important, 2.2rem !important);
-  }
-}
-// COLORES FORM FIELD ESTADO ERROR
-[class*="mat-form-field-appearance-outline"] {
-  &.mat-form-field-invalid.mat-focused {
-    & .mdc-notched-outline {
-      &__leading,
-      &__trailing,
-      &__notch {
-        --mdc-theme-error: #d14343 !important;
-      }
-    }
-  }
-}
-// Eliminacion hint elemento de form field componente
-[class*="mat-mdc-form-field-subscript-wrapper"] {
-  &:not(:has(:only-child mat-hint)) {
-    display: none;
-  }
-}
-// CONFIGURACION
-[class*="mdc-menu-surface--open"] {
-  max-width: fit-content !important;
-  &.mat-mdc-option {
-    min-height: 2.6rem !important;
-  }
-  --mdc-menu-max-width: fit-content;
-}
-.mat-mdc-menu-item.mdc-list-item {
-  min-height: 2.6rem !important;
-}
-// ---------------------------------------
-// AVATAR COMPONENTE
-// MIXIN DEFINICION DE PROPIEDADES PARA DIFERENTES VARIANTES DEL COMPONENTE AVATAR
-@mixin avatarVariantes($width, $height, $borderRadius) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white !important;
-  background-color: #d8dae5 !important;
-  box-shadow: none !important;
-  width: $width !important;
-  height: $height !important;
-  border-radius: $borderRadius !important;
-  font-size: 1.3rem;
-  font-weight: 400;
-}
-// SIZE SMALL ( TAMAÑO PEQUEÑO POR DEFECTO )
-.matAvatar--rounded {
-  @include avatarVariantes(3.2rem, 3.2rem, 0.4rem);
-  & img {
-    @include avatarVariantes(3.2rem, 3.2rem, 0.4rem);
-  }
-}
-.matAvatar--square {
-  @include avatarVariantes(3.2rem, 3.2rem, 0rem);
-  & img {
-    @include avatarVariantes(3.2rem, 3.2rem, 0rem);
-  }
-}
-.matAvatar--circular {
-  @include avatarVariantes(3.2rem, 3.2rem, 10rem);
-  & img {
-    @include avatarVariantes(3.2rem, 3.2rem, 10rem);
-  }
-}
-// SIZE MEDIUM
-.matAvatar--rounded.medium {
-  @include avatarVariantes(4rem, 4rem, 0.4rem);
-  & img {
-    @include avatarVariantes(4rem, 4rem, 0.4rem);
-  }
-}
-.matAvatar--square.medium {
-  @include avatarVariantes(4rem, 4rem, 0rem);
-  & img {
-    @include avatarVariantes(4rem, 4rem, 0rem);
-  }
-}
-.matAvatar--circular.medium {
-  @include avatarVariantes(4rem, 4rem, 10rem);
-  & img {
-    @include avatarVariantes(4rem, 4rem, 10rem);
-  }
-}
 //////////// SMALL CONFIGURATION
 
-:not(.medium) {
-  &.mat-mdc-chip,
-  &.mat-md-chip-option {
-    border-radius: 4px !important;
-    height: 22px !important;
-    &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
-      @include icon-size(1.4rem, null);
+
+  :not(.medium) {
+    &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+      .mdc-evolution-chip__text-label {
+      & > .mat-icon {
+        @include icon-size(16px, 14px !important);
+        @include padding(22px, 14px);
+        width: auto;
+      }
     }
-    .mat-mdc-chip-remove .mat-icon {
-      @include icon-size(1.4rem !important, 1.4rem !important);
+    &.mat-mdc-chip,
+    &.mat-md-chip-option {
+      border-radius: 4px !important;
+      height: 22px !important;
+      &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
+        @include width-heigth(1.4rem);
+      }
+      .mat-mdc-chip-remove .mat-icon {
+        @include icon-size(1.4rem !important, 1.4rem !important);
+      }
+    }
+    .mat-mdc-form-field {
+      &:not(.mat-form-field-appearance-fill) {
+        @include mat.form-field-density(-6);
+        &.mat-mdc-form-field-infix {
+          display: flex;
+        }
+        & label:not(.mdc-floating-label--float-above) {
+          top: 50% !important;
+        }
+      }
+      &:not(.mat-form-field-appearance-outline) {
+        @include mat.form-field-density(-4.5);
+        & .mat-mdc-form-field-infix {
+          padding-bottom: 0px !important;
+        }
+      }
+      &.standard:not(.mat-form-field-appearance-outline) {
+        @include mat.form-field-density(-5.25);
+        .mat-mdc-form-field-infix {
+          padding-bottom: 0px !important;
+        }
+      }
+      & .mat-icon {
+        @include icon-size(16px!important, 16px!important);
+        padding: 0px 12px !important;
+        color: rgba(16, 24, 64, 0.54);
+      }
+      & .mat-mdc-select-arrow {
+        color: rgba(16, 24, 64, 0.54);
+      }
+      & input,
+      .mat-mdc-select {
+        place-self: center;
+      }
+      @include mat.icon-button-density(-4);
     }
   }
-  .mat-mdc-form-field {
-    &:not(.mat-form-field-appearance-fill) {
-      @include mat.form-field-density(-6);
-      & .mat-mdc-form-field-infix {
-        display: flex;
+  // SLIDE-TOGGLE
+  .mat-mdc-slide-toggle .mdc-switch {
+    --mdc-switch-track-width: 26px;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
+    --mdc-switch-track-height: 10px;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle {
+    --mdc-switch-handle-height: 1.6rem;
+    --mdc-switch-handle-width: 1.6rem;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle-track {
+    width: calc(100% - var(--mdc-switch-handle-width, 16px)) !important;
+  }
+  .mdc-switch__icons {
+    display: none !important;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__ripple {
+    @include width-heigth(28px !important);
+  }
+  // ICONS
+  .mat-icon:not(.medium,.large) {
+    @include icon-size(1.6rem !important, 1.6rem!important);
+  }
+  // BUTTON
+  .mdc-button {
+    &:not(.large, .medium) {
+      &.mdc-button {
+        @include button.density(-2.5);
       }
-      & label:not(.mdc-floating-label--float-above) {
-        top: 50% !important;
+      & .mat-icon {
+        @include icon-size(18px !important, 18px!important);
+      }
+      .mat-mdc-button-touch-target {
+        @include width-heigth(26px);
+      }
+    }
+  }
+  //TOOLBAR
+  .mat-toolbar-single-row {
+    height: 60px !important;
+  }
+  //PROGRES SPINER
+  .mat-mdc-progress-spinner {
+    @include width-heigth(4rem !important);
+  }
+  //BUTTON TOGGLE
+  .mat-button-toggle-group {
+    @include mat.button-toggle-density(-3);
+    &.mat-icon {
+      @include icon-size(2rem !important, 2rem);
+    }
+  }
+  // EXPANSION PANEL
+  .mat-expansion-panel {
+    .mat-expansion-panel-header.mat-expanded {
+      height: 6rem;
+    }
+    & .mat-expansion-panel-header {
+      height: 4.4rem;
+    }
+    & .material-icons {
+      @include width-heigth(1.6rem);
+    }
+  }
+  // LIST with icon
+  :not(.medium).mdc-list-item.mdc-list-item--with-one-line {
+    --mdc-list-list-item-one-line-container-height: 33px;
+    & > .mat-mdc-icon-button.mat-mdc-button-base {
+      @include density(24px, 16px);
+    }
+  }
+  // ICON BUTTON
+  .mat-mdc-icon-button.mat-mdc-button-base:not(.medium, .large) {
+    @include density(24px, 20px);
+    & > .mat-icon {
+      @include icon-size(20px !important, 16px !important);
+    }
+  }
+  // SUFFIX
+  .mat-mdc-form-field-icon-suffix > .mat-icon {
+    @include density(18px, 16px);
+  }
+  // TAB
+  .mat-mdc-tab-header {
+    & .mat-mdc-tab.mdc-tab {
+      height: 4rem;
+    }
+  }
+  // SLIDER
+  .mdc-slider {
+    --mdc-slider-inactive-track-height: 0.2rem;
+    --mdc-slider-handle-width: 1.2rem;
+    --mdc-slider-handle-height: 1.2rem;
+    &.mat-mdc-slider .mdc-slider__track--active {
+      --mdc-slider-active-track-height: 0.4rem;
+    }
+    .mat-mdc-slider-visual-thumb .mat-ripple {
+      @include width-heigth(32px !important);
+      border-radius: 50%;
+      transform: translate(8px, 8.5px) !important;
+    }
+  }
+  // FAB
+  .mat-mdc-fab {
+    &:not(.mdc-fab--extended) {
+      @include width-heigth(3.6rem);
+    }
+    &.mat-mdc-extended-fab {
+      height: 3.2rem;
+    }
+    .material-icons,
+    .mat-icon {
+      @include icon-size(22px, 19px);
+    }
+  }
+  // EXTEND FAB
+  .mat-mdc-extended-fab > .mat-icon,
+  .mat-mdc-extended-fab > .material-icons {
+    @include icon-size(18px !important, 18px !important);
+  }
+  // MAT CALENDAR
+  .mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
+    @include width-heigth(4rem !important);
+  }
+  // CHECKBOX
+  .mdc-checkbox {
+    --mdc-checkbox-state-layer-size: 32px;
+    @include mat.checkbox-density(-3);
+    @include padding(32px, 20px);
+    .mdc-checkbox__background {
+      @include width-heigth(15px);
+    }
+    .mat-mdc-checkbox-touch-target {
+      height: 32px !important;
+    }
+  }
+  // DATA TABLE
+  .mat-mdc-table {
+    &.mat-mdc-table .mdc-data-table__header-row {
+      height: 36px;
+    }
+    &.mat-mdc-table .mdc-data-table__row {
+      height: 32px;
+    }
+  }
+  // RADIO BUTTON 
+:not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
+      --mdc-radio-state-layer-size: 24px !important;
+      .mdc-radio__background {
+        @include icon-size(14px, 12px);
+        .mdc-radio__outer-circle {
+          margin: 3px;
+        }
+      }
+      .mdc-radio__native-control:checked
+        + .mdc-radio__background
+        .mdc-radio__inner-circle {
+        transform: scale(0.3);
+      }
+      .mat-mdc-radio-touch-target {
+        @include width-heigth(24px);
+      }
+    }
+  
+  //DATAPICKER
+  .mat-mdc-form-field:has(.mat-datepicker-toggle) {
+    --mdc-icon-button-icon-size: 20px;
+    &:not(.mat-form-field-appearance-fill) {
+      & .mat-datepicker-toggle > .mdc-icon-button {
+        vertical-align: middle;
       }
     }
     &:not(.mat-form-field-appearance-outline) {
-      @include mat.form-field-density(-4.5);
-      & .mat-mdc-form-field-infix {
-        padding-bottom: 0px !important;
+      & .mat-datepicker-toggle > .mdc-icon-button {
+        vertical-align: baseline;
       }
     }
     &.standard:not(.mat-form-field-appearance-outline) {
-      @include mat.form-field-density(-5.25);
-      .mat-mdc-form-field-infix {
-        padding-bottom: 0px !important;
+      & .mat-datepicker-toggle > .mdc-icon-button {
+        vertical-align: sub;
       }
     }
-    & .mat-icon {
-      @include icon-size(16px!important, 16px!important);
-      padding: 0px 12px !important;
-      color: rgba(16, 24, 64, 0.54);
-    }
-    & .mat-mdc-select-arrow {
-      color: rgba(16, 24, 64, 0.54);
-    }
-    & input,
-    .mat-mdc-select {
-      place-self: center;
-    }
-    @include mat.icon-button-density(-4);
-  }
-}
-// SLIDE-TOGGLE
-.mat-mdc-slide-toggle .mdc-switch {
-  --mdc-switch-track-width: 26px;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
-  --mdc-switch-track-height: 10px;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle {
-  --mdc-switch-handle-height: 1.6rem;
-  --mdc-switch-handle-width: 1.6rem;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle-track {
-  width: calc(100% - var(--mdc-switch-handle-width, 16px)) !important;
-}
-.mdc-switch__icons {
-  display: none !important;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__ripple {
-  height: 28px !important;
-  width: 28px !important;
-}
-// ICONS
-.mat-icon {
-  @include icon-size(1.6rem !important, 1.6rem!important);
-}
-// BUTTON
-.mdc-button {
-  &:not(.large, .medium) {
-    &.mdc-button {
-      @include button.density(-2.5);
-    }
-    & .mat-icon {
-      @include icon-size(14px !important, 16px!important);
-    }
-    .mat-mdc-button-touch-target {
-      width: 26px;
-      height: 26px;
+    & .mat-datepicker-toggle[matTextPrefix] {
+      padding-right: 5px;
     }
   }
-}
-//TOOLBAR
-.mat-toolbar-single-row {
-  height: 60px !important;
-}
-//PROGRES SPINER
-.mat-mdc-progress-spinner {
-  width: 4rem !important;
-  height: 4rem !important;
-}
-
-//BUTTON TOGGLE
-.mat-button-toggle-group {
-  @include mat.button-toggle-density(-3);
-  &.mat-icon {
-    @include icon-size(2rem !important, 2rem);
-  }
-}
-
-// EXPANSION PANEL
-.mat-expansion-panel {
-  .mat-expansion-panel-header.mat-expanded {
-    height: 6rem;
-  }
-  & .mat-expansion-panel-header {
-    height: 4.4rem;
-  }
-  & .material-icons {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
-// LIST with icon
-.mdc-list:not(.medium, .large) {
-  .mdc-list-item.mdc-list-item--with-one-line {
-    --mdc-list-list-item-one-line-container-height: 44px;
-    & > .mat-mdc-icon-button.mat-mdc-button-base {
-      padding: 4px !important;
-    }
-  }
-  & .mat-icon {
-    @include icon-size(1.8rem, 1.8rem);
-  }
-  & .mat-mdc-icon-button .mat-mdc-button-touch-target {
-    @include icon-size(3.6rem, null);
-  }
-}
-// ICON BUTTON
-.mat-mdc-icon-button.mat-mdc-button-base:not(.mdc-list, .mdc-list-item) {
-  @include icon-size(2.4rem !important, null);
-  padding: 0 !important;
-  & > .mat-icon {
-    @include icon-size(1.6rem !important, 1.4rem !important);
-    margin-bottom: 1px !important;
-  }
-  & .mat-mdc-button-touch-target {
-    @include icon-size(24px !important, null);
-  }
-}
-// SUFFIX
-.mat-mdc-form-field-icon-suffix > .mat-icon {
-  width: 18px;
-  height: 18px;
-  font-size: 16px;
-  padding: 0.5714285714285714rem;
-}
-// TAB
-.mat-mdc-tab-header {
-  & .mat-mdc-tab.mdc-tab {
-    height: 4rem;
-  }
-}
-// SLIDER
-.mdc-slider {
-  --mdc-slider-inactive-track-height: 0.2rem;
-  --mdc-slider-handle-width: 1.2rem;
-  --mdc-slider-handle-height: 1.2rem;
-  &.mat-mdc-slider .mdc-slider__track--active {
-    --mdc-slider-active-track-height: 0.4rem;
-  }
-  .mat-mdc-slider-visual-thumb .mat-ripple {
-    height: 32px !important;
-    width: 32px !important;
-    border-radius: 50%;
-    transform: translate(8px, 8.5px) !important;
-  }
-}
-// FAB
-.mat-mdc-fab {
-  &:not(.mdc-fab--extended) {
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-  &.mat-mdc-extended-fab {
-    height: 3.2rem;
-  }
-  .material-icons,
-  .mat-icon {
-    @include icon-size(22px, 19px);
-  }
-}
-// EXTEND FAB
-.mat-mdc-extended-fab > .mat-icon,
-.mat-mdc-extended-fab > .material-icons {
-  @include icon-size(18px !important, 18px !important);
-}
-
-// MAT CALENDAR
-.mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
-  @include icon-size(4rem !important, null);
-}
-// CHECKBOX
-.mdc-checkbox {
-  @include mat.checkbox-density(-3);
-  --mdc-checkbox-state-layer-size: 32px;
-  padding: 5.5px !important;
-  .mdc-checkbox__background {
-    @include icon-size(15px, null);
-  }
-}
-// DATA TABLE
-.mat-mdc-table {
-  &.mat-mdc-table .mdc-data-table__header-row {
-    height: 36px;
-  }
-  &.mat-mdc-table .mdc-data-table__row {
-    height: 32px;
-  }
-}
-// RADIO BUTTON
-.mdc-radio {
-  --mdc-radio-state-layer-size: 24px;
-  padding: 0px !important;
-  .mdc-radio__background {
-    @include icon-size(16px !important, null);
-    .mdc-radio__outer-circle {
-      margin: 0.2rem;
-    }
-  }
-  .mdc-radio__native-control:checked
-    + .mdc-radio__background
-    .mdc-radio__inner-circle {
-    transform: scale(0.45);
-  }
-  .mat-mdc-radio-touch-target {
-    @include icon-size(24px, null);
-  }
-}
-
-//DATAPICKER
-.mat-mdc-form-field:has(.mat-datepicker-toggle) {
-  --mdc-icon-button-icon-size: 20px;
-  &:not(.mat-form-field-appearance-fill) {
-    & .mat-datepicker-toggle > .mdc-icon-button {
-      vertical-align: middle;
-    }
-  }
-  &:not(.mat-form-field-appearance-outline) {
-    & .mat-datepicker-toggle > .mdc-icon-button {
-      vertical-align: baseline;
-    }
-  }
-  &.standard:not(.mat-form-field-appearance-outline) {
-    & .mat-datepicker-toggle > .mdc-icon-button {
-      vertical-align: sub;
-    }
-  }
-  & .mat-datepicker-toggle[matTextPrefix] {
-    padding-right: 5px;
-  }
-}
 
 /// MEDIUM CONFIGURATION
-
 .medium {
-  //////////////// MEDIUM ////////////////
+  // RADIO BUTTON
+    &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
+      --mdc-radio-state-layer-size: 42px !important;
+      @include padding(42px, 20px);
+      .mat-mdc-radio-touch-target {
+        @include width-heigth(42px);
+      }
+    }
   // SWICH
   &.mat-mdc-slide-toggle .mdc-switch {
     --mdc-switch-track-width: 34px !important;
@@ -379,8 +280,7 @@
   // FAB
   &.mat-mdc-fab {
     &:not(.mdc-fab--extended) {
-      width: 4.8rem !important;
-      height: 4.8rem !important;
+      @include width-heigth(4.8rem !important);
     }
     &.mat-mdc-extended-fab {
       height: 3.8rem !important;
@@ -393,18 +293,16 @@
   &.mat-mdc-menu-item.mdc-list-item {
     min-height: 4.4rem !important;
   }
-  // CHECKBOX
-  &.mat-mdc-checkbox .mdc-checkbox {
-    padding: calc(
-      (var(--mdc-checkbox-state-layer-size, 4.2rem) - 0.8rem) / 2
-    ) !important;
-  }
-  .mdc-checkbox__background {
-    padding: 7px !important;
-    margin: 5px !important;
-  }
-  .mdc-checkbox__native-control {
-    @include icon-size(42px !important, null);
+// CHECKBOX
+  .mdc-checkbox {
+    --mdc-checkbox-state-layer-size: 42px;
+    @include padding(42px, 18px);
+    .mdc-checkbox__background {
+      @include width-heigth(18px);
+    }
+    .mat-mdc-checkbox-touch-target {
+      @include width-heigth(42px !important);
+    }
   }
   // Componentes con pseudo-clase  :not()
   // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
@@ -445,15 +343,19 @@
       &.mdc-button {
         @include button.density(-1);
       }
-      & .mat-icon {
-        @include icon-size(2rem, 1.8rem);
+      .mat-icon {
+        @include icon-size(2rem !important, 2rem !important);
       }
+    }
+    .mat-mdc-button-touch-target {
+      height: 32px;
     }
   }
 
   /// LIST with icon
-  .mdc-list:not(.small) {
+  .mdc-list-item.mdc-list-item--with-one-line {
     @include mat.list-density(-1);
+    --mdc-list-list-item-one-line-container-height: 44px !important;
     .mat-icon {
       @include icon-size(2.4rem, 2.4rem);
     }
@@ -467,13 +369,8 @@
     @include mat.button-toggle-density(0);
   }
   // ICON BUTTON
-  @include mat.icon-button-density(-1);
-  &.mat-mdc-icon-button.mat-mdc-button-base {
-    @include icon-size(4.4rem !important, null);
-    padding: 1.1rem !important;
-    & > .mat-icon {
-      @include icon-size(2rem !important, 1.8rem !important);
-    }
+  &.mat-mdc-icon-button.mat-mdc-button-base:not(.small, .large) {
+    @include density(40px, 24px);
   }
   // TAB
   .mat-mdc-tab.mdc-tab {
@@ -488,8 +385,7 @@
       --mdc-slider-active-track-height: 0.6rem !important;
     }
     .mat-mdc-slider-visual-thumb .mat-ripple {
-      height: 42px !important;
-      width: 42px !important;
+      @include width-heigth(42px !important);
       border-radius: 50% !important;
       transform: translate(3px, 3px) !important;
     }
@@ -499,14 +395,12 @@
 .large {
   // Componentes con pseudo-clase  :not()
   // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, TEXTFIELD )
-  &:not(.small) {
+  &:not(.medium,.small) {
     &.mdc-button {
       @include button.density(0);
     }
   }
-  .mat-button-toggle > .mat-icon {
-    @include icon-size(1.285714285714286rem, 1.285714285714286rem);
-  }
+
   &.mat-mdc-chip .mat-icon {
     @include icon-size(1.714285714285714rem, 1.714285714285714rem);
   }
@@ -521,21 +415,16 @@
   // FAB
   &.mat-mdc-fab {
     &:not(.mdc-fab--extended) {
-      width: 5.6rem !important;
-      height: 5.6rem !important;
+      @include width-heigth(5.6rem !important);
     }
     &.mat-mdc-extended-fab {
       height: 4.8rem !important;
     }
   }
-  &.mat-mdc-icon-button.mat-mdc-button-base {
-    @include icon-size(5.8rem !important, null);
-    padding: 1.2rem 0 2px !important;
-    & > .mat-icon {
-      @include icon-size(3.5rem !important, 3.3rem !important);
-    }
+  // ICON BUTTON
+  &.mat-mdc-icon-button.mat-mdc-button-base:not(.medium) {
+    @include density(44px, 36px);
   }
-
   &.mat-button-toggle-group {
     & .mat-button-toggle {
       &-label-content {
@@ -545,5 +434,8 @@
         @include icon-size(2.4rem !important, 2.2rem !important);
       }
     }
+  }
+  .mat-button-toggle > .mat-icon {
+    @include icon-size(1.285714285714286rem, 1.285714285714286rem);
   }
 }

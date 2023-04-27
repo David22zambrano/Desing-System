@@ -74,29 +74,28 @@ $_ripple-opacity: 0.1;
     );
   }
 };
-
-// Define valores de width,height y font-size
 @mixin icon-size($tamaño, $font-size) {
   width: $tamaño;
   height: $tamaño;
   font-size: $font-size;
 };
-
-// MIXIN DEFINICION DE PROPIEDADES PARA DIFERENTES VARIANTES DEL COMPONENTE AVATAR
-@mixin avatarVariantes(
-  $width,
-  $height,
-  $borderRadius
-) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white ;
-  background-color: #D8DAE5 ;
-  box-shadow: none ;
-  width: $width ;
-  height: $height ;
-  border-radius: $borderRadius ;
-  font-size: 1.3rem;
-  font-weight: 400;
-} ;
+@mixin width-heigth($size) {
+  width: $size;
+  height: $size;
+}
+@mixin padding($container, $size-icon) {
+  padding: calc(($container - $size-icon) / 2) !important;
+}
+@mixin density($size-container, $size-icon) {
+  width: $size-container;
+  height: $size-container;
+  padding: calc(($size-container - $size-icon) / 2);
+  [class*="mat-icon"] {
+    width: $size-icon !important;
+    height: $size-icon !important;
+    font-size: $size-icon !important;
+  }
+  [class*="mat-mdc-button-touch-target"] {
+    height: $size-container !important;
+  }
+}

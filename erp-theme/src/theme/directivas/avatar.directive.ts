@@ -11,7 +11,7 @@ export class AvatarDirective implements OnInit{
   avatar: avatarVariant = 'circular';
 
   @Input()
-  size: Size = 'small';
+  size: Size = 'medium';
 
   ngOnInit(): void {
     this.el.nativeElement.classList.add(

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -59,6 +60,7 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
 import { TableComponent } from './components/table/table.component';
 import { TipografiaComponent } from './components/tipografia/tipografia.component';
 import { MatMenuComponent } from './components/menu/menu.component';
+import { StarRatingComponent } from './components/mat-rating/star-rating.component';
 
 const modulesMaterial = [
   CommonModule,
@@ -91,7 +93,9 @@ const modulesMaterial = [
   MatNativeDateModule,
   MatExpansionModule,
   MatCardModule,
-  MatDialogModule
+  MatDialogModule,
+  FormsModule, 
+  ReactiveFormsModule 
 ];
 const directivas = [
   AvatarDirective,
@@ -99,6 +103,7 @@ const directivas = [
   StandardDirective,
   OrientationDirective
 ];
+const componentes = [StarRatingComponent,  MatAvatarComponent]
 
 @NgModule({
   declarations: [
@@ -114,7 +119,6 @@ const directivas = [
     SliderComponent,
     ColorsComponent,
     ClasesGlobalesComponent,
-    MatAvatarComponent,
     LayoutComponent,
     IconComponent,
     SpacingComponent,
@@ -127,19 +131,16 @@ const directivas = [
     IconComponents,
     MatListComponent,
     SlideToggleComponent,
-
     directivas,
-
+    componentes
   ],
   imports: [
     modulesMaterial
   ],
   exports: [
-
     modulesMaterial,
     directivas,
-
-
+    componentes
   ],
 })
 export class MaterialModule { }

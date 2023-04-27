@@ -102,11 +102,11 @@
 }
 .custom-align-items_start {
   display: flex !important;
-  align-items: start !important;
+  align-items: flex-start !important;
 }
 .custom-align-items_end {
   display: flex !important;
-  align-items: end !important;
+  align-items: flex-end !important;
 }
 .custom-align_items_baseline {
   display: flex !important;
