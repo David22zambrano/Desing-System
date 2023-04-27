@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-tabs',
@@ -9,7 +10,8 @@ import { Component, Input } from '@angular/core';
   </mat-tab-group> `,
 })
 export class MatTabsComponent {
-  @Input() color!: string;
+  
+  @Input() color: string = ColorComponent.primary;
 
   public get colors(): string[] {
     return [`tabs-${this.color}`];

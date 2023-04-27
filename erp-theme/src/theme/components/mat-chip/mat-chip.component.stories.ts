@@ -10,22 +10,12 @@ export default {
       imports: [MatChipsModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'Los `mat-chip` permiten a los usuarios ver información, hacer selecciones, filtrar contenido e ingresar datos, manejando vairantes `size` como para manipular el tamaño y una varainte `color` que nos permitira tener diversos estilos de un chip  .',
-      },
-    },
-  },
   argTypes: {
     size: {
       table: {
         category: 'Size',
         defaultValue: { summary: 'small' },
       },
-      description:
-        'Los atamaños de los chips los define su variante, la cual puede ser: `small` `medium` ',
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
@@ -34,8 +24,6 @@ export default {
         category: 'Label',
         defaultValue: { summary: 'mat-chip' },
       },
-      description:
-        'Los atamaños de los chips los define su variante, la cual puede ser: `small` `medium` ',
     },
   },
 } as Meta;

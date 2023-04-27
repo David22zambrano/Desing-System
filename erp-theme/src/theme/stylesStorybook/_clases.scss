@@ -1,7 +1,6 @@
 .p {
   padding: 1.5rem;
 }
-
 .icon-container {
   margin-top: 0.5rem;
   padding: 1rem;
@@ -18,121 +17,127 @@
   gap: 8px !important;
   width: 50%;
 }
-.sizes--d-flex {
+.d-flex {
   display: flex !important;
 }
-.sizes--d-grid {
+.d-grid {
   display: grid !important;
 }
-.sizes--d-block {
+.d-block {
   display: block !important;
 }
-.sizes--d-none {
+.d-none {
   display: none !important;
 }
-.sizes--d-inline {
+.d-inline {
   display: inline !important;
 }
-.sizes--help {
+.help {
   cursor: help !important;
 }
-.sizes--progress {
+.progress {
   cursor: progress !important;
 }
-.sizes--wait {
+.wait {
   cursor: wait !important;
 }
-.sizes--text {
+.text {
   cursor: text !important;
 }
-.sizes--not_allowed {
+.not_allowed {
   cursor: not-allowed !important;
 }
-.sizes--pointer {
+.pointer {
   cursor: pointer !important;
 }
-.sizes--opacity-0 {
+.opacity-0 {
   opacity: 0 !important;
 }
-.sizes--opacity-25 {
+.opacity-25 {
   opacity: 0.25 !important;
 }
-.sizes--opacity-50 {
+.opacity-50 {
   opacity: 0.5 !important;
 }
-.sizes--opacity-75 {
+.opacity-75 {
   opacity: 0.75 !important;
 }
-.sizes--opacity-100 {
+.opacity-100 {
   opacity: 1 !important;
 }
-.sizes--absolute {
+.absolute {
   position: absolute !important;
 }
-.sizes--relative {
+.relative {
   position: relative !important;
 }
-.sizes--sticky {
+.sticky {
   position: sticky !important;
 }
-.sizes--static {
+.static {
   position: static !important;
 }
-.sizes--fixed {
+.fixed {
   position: fixed !important;
 }
-.sizes--s-none {
+.s-none {
   box-shadow: none !important;
 }
-.sizes--text-align-left {
+.text-align-left {
   text-align: left !important;
 }
-.sizes--text-align-center {
+.text-align-center {
   text-align: center !important;
 }
-.sizes--text-align-right {
+.text-align-right {
   text-align: right !important;
 }
-.sizes--none {
+.none {
   cursor: none !important;
 }
-.custom-align-items_center {
+.align-items_center {
   display: flex !important;
   align-items: center !important;
 }
-.custom-align-items_start {
+.align-items_start {
   display: flex !important;
   align-items: flex-start !important;
 }
-.custom-align-items_end {
+.align-items_end {
   display: flex !important;
   align-items: flex-end !important;
 }
-.custom-align_items_baseline {
+.align_items_baseline {
   display: flex !important;
   align-items: baseline !important;
 }
-.custom-align_items_stretch {
+.align_items_stretch {
   display: flex !important;
   align-items: stretch !important;
 }
-.custom-wrap {
+.wrap {
   display: flex !important;
   flex-wrap: wrap !important;
 }
-.custom-nowrap {
+.nowrap {
   display: flex !important;
   flex-wrap: nowrap !important;
 }
-.custom-column {
+.column {
   display: flex !important;
   flex-direction: column !important;
 }
-.custom-row_reverse {
+.row_reverse {
   display: flex !important;
   flex-direction: row-reverse !important;
 }
-.custom-column_reverse {
+.column_reverse {
   display: flex !important;
   flex-direction: column-reverse !important;
+}
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }

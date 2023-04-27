@@ -1,6 +1,7 @@
 import { MatTabsModule } from '@angular/material/tabs';
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { MatTabsComponent } from './mat-tabs.component';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 export default {
   title: 'Angular Material/tabs',
   component: MatTabsComponent,
@@ -9,33 +10,23 @@ export default {
       imports: [MatTabsModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'Las `<mat-tab>` de material angular organizan el contenido en vistas separadas donde solo se puede ver una vista a la vez.',
-      },
-    },
-  },
-  argTypes:{
+  argTypes: {
     color: {
       table: {
         defaultValue: { summary: 'defaul' },
         category: 'Color',
       },
-      description:
-        'Los colores de los tabs los define su variante, la cual puede ser: `primary` `secondary` `warn` `warning` `caution` `info`',
-      options: ['primary', 'accent', 'warn', 'success', 'caution', 'info'],
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
       control: { type: 'radio' },
     },
   }
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: args,
-});
-export const configuracion = Template.bind({});
-configuracion.args = {
-  color: 'primary',
-};
-configuracion.storyName = 'mat-tabs';
+
+type Story = StoryObj<MatTabsComponent>
+export const configuracion: Story = {
+  name: "mat-tabs",
+  args: {
+    color: ColorComponent.primary,
+  }
+}

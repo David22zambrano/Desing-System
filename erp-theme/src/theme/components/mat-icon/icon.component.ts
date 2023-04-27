@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ColorComponent, Sizes } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-icon',
@@ -7,8 +8,8 @@ import { Component, Input } from '@angular/core';
   <mat-icon  class="material-icons-two-tone" [ngClass]="sizes">home</mat-icon> `,
 })
 export class IconComponents {
-  @Input() size!: string;
-  @Input() color!: string;
+  @Input() size!: Sizes;
+  @Input() color: string = ColorComponent.primary;
 
   public get sizes(): string[] {
     return [`${this.size}`, `mat-icon--${this.color}`];

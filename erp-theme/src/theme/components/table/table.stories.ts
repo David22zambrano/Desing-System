@@ -10,14 +10,6 @@ export default {
       imports: [MatTableModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          '`<mat-table>` proporciona una tabla de datos con estilo Material Design que se puede utilizar para mostrar filas de datos.',
-      },
-    },
-  },
   argTypes: {
     size: {
       table: {
@@ -26,8 +18,6 @@ export default {
       },
       options: ['small', 'medium'],
       control: { type: 'radio' },
-      description:
-        'La altura de un table puede ser modificada usando la propiedad "size". Por defecto, table usa la altura "small", este puede cambiarse a "medium"',
     },
     displayedColumns: {
       table: {
@@ -43,8 +33,6 @@ export default {
 } as Meta;
 
 type Story = StoryObj<TableComponent>
-
-
 export const table: Story = {
   name: "mat-table",
   args: { size: 'small' }

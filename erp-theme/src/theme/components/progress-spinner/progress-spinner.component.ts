@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-progress-spinner',
@@ -6,7 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressSpinnerComponent {
   @Input()
-  color!: string;
+  color: string = ColorComponent.primary
+    ;
 
   public get colors(): string[] {
     return [`spinner-${this.color}`];

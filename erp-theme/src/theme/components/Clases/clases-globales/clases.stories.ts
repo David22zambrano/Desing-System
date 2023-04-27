@@ -85,8 +85,6 @@ export default {
 
 type Story = StoryObj<ClasesGlobalesComponent>
 export const globalClass: Story = {
-  name: 'I am the primary',
-  render: () => ({
-    props: {},
-  }),
+  name: 'clases globales',
+
 };

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-toolbar',
@@ -29,7 +30,7 @@ import { Component, Input } from '@angular/core';
   </mat-toolbar>`,
 })
 export class ToolbarComponent {
-  @Input() color!: string;
+  @Input() color: string = ColorComponent.primary;
 
   public get sizes(): string[] {
     return [`toolbar-${this.color}`];

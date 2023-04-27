@@ -1,43 +1,40 @@
 import { Meta, StoryObj, moduleMetadata, } from '@storybook/angular';
-
 import { MaterialModule } from '../../material.module';
 import { FormFieldComponent } from './form-field.component';
 
 export default {
-  title: 'FormField/FormFieldComponent',
+  title: 'Angular material/Form-field',
   component: FormFieldComponent,
   decorators: [
     moduleMetadata({
       imports: [MaterialModule]
     }),
-
   ],
-  args: {
-    ArrayFormFields: [
-      {
-        size: 'small',
-        appareance: 'outline'
+  argTypes: {
+    size: {
+      table: {
+        category: 'Size',
       },
-    ]
-  },
-
-} as Meta<FormFieldComponent>;
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
+    },
+    appearance: {
+      table: {
+        category: 'Apparance',
+      },
+      options: ['outline', 'fill'],
+      control: { type: 'radio' },
+    }
+  }
+} as Meta<FormFieldComponent>
 
 type Story = StoryObj<FormFieldComponent>;
 
-export const FormField: Story = {
-  argTypes: {
-    appearance: {
-      options: ['fill', 'outline'],
-      control: { type: 'radio' },
-      table: {
-        defaultValue: { summary: 'outline', },
-      },
-    },
-    size: {
-      options: ["small", "medium"],
-      control: { type: 'radio' },
-    },
+export const formField: Story = {
+  name: "form-field",
+  args: {
+    size: "small",
+    appearance: "outline",
   }
 }
 

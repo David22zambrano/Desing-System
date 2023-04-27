@@ -2,6 +2,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FabComponent } from './fab.component';
 import { moduleMetadata, StoryObj, Meta } from '@storybook/angular';
 import { MatIconModule } from '@angular/material/icon';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 export default {
   title: 'Angular Material/Fab- Button',
@@ -11,22 +12,12 @@ export default {
       imports: [MatButtonModule, MatIconModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'Los `<mat-button>` se utilizan principalmente en elementos de acción. Algunos ejemplos incluyen Agregar, Guardar, Eliminar y Registrarse. Cada página puede tener uno o dos botones principales. Cualquier llamada a la acción restante debe representarse como botones secundarios',
-      },
-    },
-  },
   argTypes: {
     size: {
       table: {
         category: 'Size',
         defaultValue: { summary: 'small' },
       },
-      description:
-        'Los atamaños de los botones los define su variante, la cual puede ser: `small` `medium` `large`',
       options: ['small', 'medium', 'large'],
       control: { type: 'radio' },
     },
@@ -34,16 +25,14 @@ export default {
       table: {
         category: 'label',
       },
-      description: 'Button',
     },
     color: {
       table: {
         defaultValue: { summary: 'primary' },
         category: 'Color',
       },
-      description:
-        'Los colores de los botones los define su variante, la cual puede ser: `primary` `secondary` `warn` `warning` `caution` `info`',
-      options: ['primary', 'accent', 'warn', 'success', 'caution', 'info'],
+
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
       control: { type: 'radio' },
     },
   },
@@ -54,7 +43,7 @@ export const configuracion: Story = {
   name: 'mat-fab',
   args: {
     size: 'small',
-    color: 'primary',
-    label: 'Button',
+    color: ColorComponent.primary,
+    icon: 'add',
   }
 };

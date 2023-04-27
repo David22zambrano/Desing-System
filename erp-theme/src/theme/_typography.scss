@@ -41,7 +41,7 @@ $typography-global-config: map.merge(
     $headline-5:
       mat.define-typography-level(
         $font-weight: 300,
-        $font-size: 4rem,
+        $font-size: 4rem ,
         $line-height: 1.4,
         $letter-spacing: -0.01562em,
         $font-family: "Nunito, sans-serif ",
@@ -57,7 +57,7 @@ $typography-global-config: map.merge(
     $subtitle-1:
       mat.define-typography-level(
         $font-weight: 500,
-        $font-size: 1.4rem,
+        $font-size: 1.4rem  ,
         $line-height: 1.4,
         $letter-spacing: 0.00938em,
         $font-family: "Roboto, sans-serif ",
@@ -65,7 +65,7 @@ $typography-global-config: map.merge(
     $subtitle-2:
       mat.define-typography-level(
         $font-weight: 500,
-        $font-size: 1.3rem,
+        $font-size: 1.3rem ,
         $line-height: 1.4,
         $letter-spacing: 0.00714em,
         $font-family: "Roboto, sans-serif ",
@@ -82,6 +82,7 @@ $typography-global-config: map.merge(
       mat.define-typography-level(
         $font-weight: 400,
         $font-size: 1.3rem,
+        $font-size: 1.3rem,
         $line-height: 1.2,
         $letter-spacing: 0.01071em,
         $font-family: "Roboto, sans-serif ",
@@ -89,7 +90,7 @@ $typography-global-config: map.merge(
     $button:
       mat.define-typography-level(
         $font-weight: 500,
-        $font-size: 1.27rem,
+        $font-size: 1.3rem,
         $line-height: 1.49130074565,
         $letter-spacing: 0.02857em,
         $font-family: "Roboto, sans-serif ",

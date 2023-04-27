@@ -3,6 +3,7 @@ import { StepperOrientation } from '@angular/cdk/stepper';
 import { Component, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { map, Observable } from 'rxjs';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-stepper',
@@ -84,7 +85,7 @@ export class StepperComponent {
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
   }
 
-  @Input() color!: string;
+  @Input() color: string = ColorComponent.primary;
   public get sizes(): string[] {
     return [`stepper--${this.color}`];
   }

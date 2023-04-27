@@ -1,6 +1,7 @@
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { SlideToggleComponent } from './slide-toggle.component';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 export default {
   title: 'Angular Material/slide-toggle',
@@ -10,22 +11,12 @@ export default {
       imports: [MatSlideToggleModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          '`<mat-slide-toggle>`es un control de encendido/apagado que se puede alternar haciendo clic.',
-      },
-    },
-  },
   argTypes: {
     size: {
       table: {
         category: 'Size',
         defaultValue: { summary: 'small' },
       },
-      description:
-        'Los atamaños de los slide-toggle los define su variante, la cual puede ser: `small` `medium` ',
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
@@ -41,9 +32,7 @@ export default {
         defaultValue: { summary: 'defaul' },
         category: 'Color',
       },
-      description:
-        'Los colores de los slide-toggle los define su variante, la cual puede ser: `primary` `secondary` `warn` `warning` `caution` `info`',
-      options: ['primary', 'accent', 'warn', 'success', 'caution', 'info'],
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
       control: { type: 'radio' },
     },
   },
@@ -55,6 +44,6 @@ export const configuracion: Story = {
   args: {
     size: 'small',
     label: 'slide-toggle',
-    color: 'primary',
+    color: ColorComponent.primary,
   }
 }

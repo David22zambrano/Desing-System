@@ -10,6 +10,7 @@ import { Sizes } from 'src/theme/model/modelo.model';
 export class MatChipComponent {
   @Input() size: Sizes = "small";
   @Input() label!: string;
+  
   public get sizes(): string[] {
     return [`${this.size}`];
   }

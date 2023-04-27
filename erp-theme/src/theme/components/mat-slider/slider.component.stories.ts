@@ -1,6 +1,7 @@
 import { MatSliderModule } from '@angular/material/slider';
 import { SliderComponent } from './slider.component';
 import { moduleMetadata, StoryObj, Meta } from '@storybook/angular';
+import { ColorComponent } from 'src/theme/model/modelo.model';
 
 export default {
   title: 'Angular Material/slider',
@@ -10,18 +11,8 @@ export default {
       imports: [MatSliderModule],
     }),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          '`<mat-slider>` permite la selección de un valor de un rango a través del mouse, el tacto o el teclado, similar a un rango',
-      },
-    },
-  },
   argTypes: {
     size: {
-      description:
-        'Los atamaños de los Slider los define su variante, la cual puede ser: `small` `medium` ',
       options: ['small', 'medium'],
       control: { type: 'radio' },
       table: {
@@ -33,9 +24,7 @@ export default {
         defaultValue: { summary: 'primary' },
         category: 'Color',
       },
-      description:
-        'Los colores de los Slider los define su variante, la cual puede ser: `primary` `secondary` `warn` `warning` `caution` `info`',
-      options: ['primary', 'accent', 'warn', 'success', 'caution', 'info'],
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
       control: { type: 'radio' },
     },
   },
@@ -48,6 +37,6 @@ export const configuracion: Story = {
   name: 'mat-slider',
   args: {
     size: 'small',
-    color: 'primary',
+    color: ColorComponent.primary,
   }
 };

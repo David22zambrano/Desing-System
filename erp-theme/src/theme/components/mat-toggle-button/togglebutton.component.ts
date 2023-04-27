@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Sizes } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'button-toggle-group',
@@ -9,7 +10,7 @@ import { Component, Input } from '@angular/core';
   </mat-button-toggle-group>`,
 })
 export class TogglebuttonComponent {
-  @Input() size!: string;
+  @Input() size: Sizes = "small";
 
   public get sizes(): string[] {
     return [`${this.size}`];

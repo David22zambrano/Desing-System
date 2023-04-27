@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ColorComponent, Sizes } from 'src/theme/model/modelo.model';
 
 @Component({
   selector: 'Mat-slide-toggle',
@@ -7,9 +8,9 @@ import { Component, Input } from '@angular/core';
   }}</mat-slide-toggle> `,
 })
 export class SlideToggleComponent {
-  @Input() size!: string;
+  @Input() size: Sizes = "small";
   @Input() label!: string;
-  @Input() color!: string;
+  @Input() color: string = ColorComponent.primary;
 
   public get sizes(): string[] {
     return [`${this.size}`, `slide-${this.color}`];
