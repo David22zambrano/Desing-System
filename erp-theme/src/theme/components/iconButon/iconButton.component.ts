@@ -11,7 +11,7 @@ export class IconButtonComponent {
   @Input() color: string = ColorComponent.primary;
 
   public get sizes(): string[] {
-    return [`${this.size}`, `button-${this.color}`];
+    return [`${this.size}`, `mat-${this.color}`];
   }
 }
 

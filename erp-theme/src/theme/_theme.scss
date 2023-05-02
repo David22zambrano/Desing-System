@@ -8,6 +8,8 @@
 @use "@angular/material" as mat;
 @use "@material/chips";
 @use "./mixins.scss" as variants;
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone");
 @import "./Setting-components";
 @import "@angular/material/theming";
 @import "./colors";
@@ -17,9 +19,7 @@
 @import "./standard-formfield";
 @import "./_orientacion.scss";
 @import "./stylesStorybook/clases";
-@import "./stylesStorybook//storybook";
 @import "./stylesStorybook/colors.component";
-// @import "./stylesStorybook/palletes";
 
 @include mat.core();
 $light-theme-background: (

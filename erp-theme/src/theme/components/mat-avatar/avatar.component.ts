@@ -1,26 +1,29 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { Utilidades } from '../../utilidades/utilidades';
 import { Sizes, Variants } from '../../model/modelo.model';
+import { Utilidades } from '../../utilidades/utilidades';
 
 @Component({
   selector: 'mat-avatar',
-  template: `<div [ngClass]="sizes">
-  <span> {{ resultado }}</span>
-</div>`,
+  templateUrl: "./avatar.component.html",
+
 })
 
 export class AvatarComponent implements OnInit {
+  constructor(private el: ElementRef<HTMLElement>) { }
 
-  @Input() size: Sizes = "small"
-  @Input() variant: Variants = "circular"
+  @Input() size!: Sizes
+  @Input() variant!: Variants
   @Input() nombre!: string;
-  resultado: string = " ";
+  @Input() resultado: string = " ";
+
 
   ngOnInit(): void {
+    this.el.nativeElement.classList.add(`${this.size}` || `${this.variant}`);
     this.resultado = Utilidades.partirIniciales(this.nombre, 2).toUpperCase();
   }
-
   public get sizes(): string[] {
-    return [`${this.size} `, ` ${this.variant}`]
+    return [`${this.size}`, `${this.variant}`]
   }
+
+
 }

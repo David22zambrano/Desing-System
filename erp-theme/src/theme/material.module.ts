@@ -33,12 +33,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { StandardDirective } from './directivas/standard.directive';
 import { SizeDirective } from './directivas/size.directive';
 import { OrientationDirective } from './directivas/orientation.directive';
-import { AvatarDirective } from './directivas/avatar.directive';
 import { ClasesGlobalesComponent } from './components/Clases/clases-globales/clases-globales.component';
 import { LayoutComponent } from './components/Clases/layoutt/layout.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ButtonComponent } from './components/mat-button/button.component';
-import { FabComponent } from './components/mat-chip/mat-fab/fab.component';
+import { FabComponent } from './components/mat-fab/fab.component';
 import { IconButtonComponent } from './components/iconButon/iconButton.component';
 import { MatChipComponent } from './components/mat-chip/mat-chip.component';
 import { IconComponents } from './components/mat-icon/icon.component';
@@ -87,11 +86,10 @@ const modulesMaterial = [
   MatExpansionModule,
   MatCardModule,
   MatDialogModule,
-  FormsModule, 
-  ReactiveFormsModule 
+  FormsModule,
+  ReactiveFormsModule
 ];
 const directivas = [
-  AvatarDirective,
   SizeDirective,
   StandardDirective,
   OrientationDirective
@@ -99,7 +97,6 @@ const directivas = [
 const componentes = [
   StarRatingComponent,
   MatMenuComponent,
-  TipografiaComponent,
   TableComponent,
   ProgressSpinnerComponent,
   RadioButtonComponent,
@@ -108,12 +105,8 @@ const componentes = [
   MatTabsComponent,
   TogglebuttonComponent,
   SliderComponent,
-  ColorsComponent,
   ClasesGlobalesComponent,
   LayoutComponent,
-  IconComponent,
-  SpacingComponent,
-  ResponsiveComponent,
   CheckboxComponent,
   ButtonComponent,
   FabComponent,

@@ -6,9 +6,9 @@ import { ColorComponent, Sizes } from 'src/theme/model/modelo.model';
 })
 export class CheckboxComponent {
   @Input() size: Sizes = "small";
-  @Input() color:string = ColorComponent.primary ;
+  @Input() color: string = ColorComponent.primary;
 
   public get custom(): string[] {
-    return [`${this.size}`, `color-${this.color}`];
+    return [`${this.size}`, `mat-${this.color}`];
   }
 }

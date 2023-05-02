@@ -13,6 +13,6 @@ export class SlideToggleComponent {
   @Input() color: string = ColorComponent.primary;
 
   public get sizes(): string[] {
-    return [`${this.size}`, `slide-${this.color}`];
+    return [`${this.size}`, `${this.color}`];
   }
 }

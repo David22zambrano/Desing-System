@@ -19,7 +19,7 @@ export default {
         category: 'color',
         defaultValue: { summary: 'Primary' },
       },
-      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn],
       control: { type: 'radio' },
     },
     size: {
@@ -36,7 +36,7 @@ export default {
 type Story = StoryObj<RadioButtonComponent>
 
 export const RadioButton: Story = {
-  name:"radio-button",
+  name: "radio-button",
   args: {
     size: 'small',
     color: ColorComponent.primary

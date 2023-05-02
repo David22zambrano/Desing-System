@@ -33,6 +33,6 @@ export class ToolbarComponent {
   @Input() color: string = ColorComponent.primary;
 
   public get sizes(): string[] {
-    return [`toolbar-${this.color}`];
+    return [`mat-${this.color}`];
   }
 }

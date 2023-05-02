@@ -10,10 +10,10 @@ import { ColorComponent } from 'src/theme/model/modelo.model';
   </mat-tab-group> `,
 })
 export class MatTabsComponent {
-  
+
   @Input() color: string = ColorComponent.primary;
 
   public get colors(): string[] {
-    return [`tabs-${this.color}`];
+    return [`mat-${this.color}`];
   }
 }

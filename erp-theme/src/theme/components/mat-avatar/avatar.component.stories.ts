@@ -36,14 +36,20 @@ export default {
 
 type Story = StoryObj<AvatarComponent>;
 
-export const Avatar: Story = {
+export const circular: Story = {
   name: "mat-avatar",
   args: {
     size: "small",
+    variant: "circular",
     nombre: "sinco theme",
-    variant: "circular"
   },
-
-
+}
+export const square: Story = {
+  name: "mat-avatar",
+  args: {
+    size: "small",
+    variant: "square",
+    nombre: "sinco theme",
+  },
 }
 

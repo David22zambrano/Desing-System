@@ -11,6 +11,6 @@ export class SliderComponent {
   @Input() size: Sizes = "small";
   @Input() color: string = ColorComponent.primary;
   public get sizes(): string[] {
-    return [`${this.size}`, `slider--${this.color}`];
+    return [`${this.size}`, `mat-${this.color}`];
   }
 }

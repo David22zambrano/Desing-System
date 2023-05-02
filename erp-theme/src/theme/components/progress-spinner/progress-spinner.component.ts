@@ -11,6 +11,6 @@ export class ProgressSpinnerComponent {
     ;
 
   public get colors(): string[] {
-    return [`spinner-${this.color}`];
+    return [`mat-${this.color}`];
   }
 }

@@ -18,7 +18,7 @@ export default {
         category: 'Color',
         defaultValue: { summary: 'primary' },
       },
-      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
+      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn],
       control: { type: 'radio' },
     },
   },

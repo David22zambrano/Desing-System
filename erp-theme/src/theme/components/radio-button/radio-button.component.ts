@@ -9,6 +9,6 @@ export class RadioButtonComponent {
   @Input() color: string = ColorComponent.primary
 
   public get sizes(): string[] {
-    return [`${this.size}`,`radio-${this.color}`];
+    return [`${this.size}`,`mat-${this.color}`];
   }
 }

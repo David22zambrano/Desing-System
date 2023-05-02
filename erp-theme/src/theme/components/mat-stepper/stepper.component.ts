@@ -87,6 +87,6 @@ export class StepperComponent {
 
   @Input() color: string = ColorComponent.primary;
   public get sizes(): string[] {
-    return [`stepper--${this.color}`];
+    return [`${this.color}`];
   }
 }
