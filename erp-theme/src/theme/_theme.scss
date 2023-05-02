@@ -53,13 +53,12 @@ $success-color: mat.define-palette($success);
 $warning-color: mat.define-palette($warning);
 $info-color: mat.define-palette($info);
 //DARK MODE COLOR
-
 $dark-primary-color: mat.define-palette($dark-primary);
 $dark-accent-color: mat.define-palette($dark-accent);
 $dark-warn-color: mat.define-palette($dark-warn);
 $dark-success-color: mat.define-palette($dark-success);
 $dark-info-color: mat.define-palette($dark-info);
-$dark-warning-color: mat.define-palette($dark-warning); // DEFINITION THEME
+$dark-warning-color: mat.define-palette($dark-warning); 
 $light-background-default: #fbfbfb;
 $dark-background-default: #1a1a1b;
 // LIGHT THEME

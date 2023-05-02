@@ -1,32 +1,35 @@
 @use "@angular/material" as mat;
 @use "sass:map";
+html {
+  font-size: 0.625rem; // Conversion de REM to PX, 1rem = 10px
+}
 $h3: mat.define-typography-level(
   $font-size: 2.8rem,
   $font-weight: 500,
   $line-height: 1.2,
   $letter-spacing: 0em,
-  $font-family: "Nunito, sans-serif ",
+  $font-family:"Nunito, sans-serif ",
 );
 $h4: mat.define-typography-level(
   $font-weight: 600,
   $font-size: 2rem,
   $line-height: 1,
   $letter-spacing: 0.00735em,
-  $font-family: "Nunito, sans-serif ",
+  $font-family:"Nunito, sans-serif ",
 );
 $h5: mat.define-typography-level(
   $font-weight: 600,
   $font-size: 1.8rem,
   $line-height: 1.6,
   $letter-spacing: 0em,
-  $font-family: "Nunito, sans-serif ",
+  $font-family:"Nunito, sans-serif ",
 );
 $h6: mat.define-typography-level(
   $font-weight: 600,
   $font-size: 1.6rem,
   $line-height: 1.4,
   $letter-spacing: 0.0075em,
-  $font-family: "Nunito, sans-serif ",
+  $font-family:"Nunito, sans-serif ",
 );
 $overline: mat.define-typography-level(
   $font-weight: 400,
@@ -44,7 +47,7 @@ $typography-global-config: map.merge(
         $font-size: 4rem,
         $line-height: 1.4,
         $letter-spacing: -0.01562em,
-        $font-family: "Nunito, sans-serif ",
+        $font-family:"Nunito, sans-serif ",
       ),
     $headline-6:
       mat.define-typography-level(
@@ -52,7 +55,7 @@ $typography-global-config: map.merge(
         $font-size: 3.2rem,
         $line-height: 1.2,
         $letter-spacing: -0.00833em,
-        $font-family: "Nunito, sans-serif ",
+        $font-family:"Nunito, sans-serif ",
       ),
     $subtitle-1:
       mat.define-typography-level(
@@ -61,7 +64,7 @@ $typography-global-config: map.merge(
         $line-height: 1.4,
         $letter-spacing: 0.00938em,
         $font-family: "Roboto, sans-serif ",
-      ),
+        ),
     $subtitle-2:
       mat.define-typography-level(
         $font-weight: 500,
@@ -89,11 +92,11 @@ $typography-global-config: map.merge(
     $button:
       mat.define-typography-level(
         $font-weight: 500,
-        $font-size: 1.3rem,
+        $font-size: 1.27rem,
         $line-height: 1.49130074565,
         $letter-spacing: 0.02857em,
         $font-family: "Roboto, sans-serif ",
-      ),
+        ),
     $caption:
       mat.define-typography-level(
         $font-weight: 400,
@@ -131,27 +134,29 @@ h6 {
   margin: 0 !important;
 }
 @include mat.all-component-typographies($typography-global-config);
-.mat-typography .mat-h3,
-.mat-typography h3,
-.mat-typography .mat-toolbar h3 {
-  @include mat.typography-level($typography-global-config, "h3");
+
+.mat-typography .mat-h3, .mat-typography h3 , .mat-typography .mat-toolbar h3{
+  @include mat.typography-level($typography-global-config, 'h3');
 }
-.mat-typography .mat-h4,
-.mat-typography h4,
-.mat-typography .mat-toolbar h4 {
-  @include mat.typography-level($typography-global-config, "h4");
+.mat-typography .mat-h4, .mat-typography h4 , .mat-typography .mat-toolbar h4{
+  @include mat.typography-level($typography-global-config, 'h4');
 }
-.mat-typography .mat-h5,
-.mat-typography h5,
-.mat-typography .mat-toolbar h5 {
-  @include mat.typography-level($typography-global-config, "h5");
+.mat-typography .mat-h5, .mat-typography h5 , .mat-typography .mat-toolbar h5{
+  @include mat.typography-level($typography-global-config, 'h5');
 }
-.mat-typography .mat-h6,
-.mat-typography h6,
-.mat-typography .mat-toolbar h6 {
-  @include mat.typography-level($typography-global-config, "h6");
+.mat-typography .mat-h6, .mat-typography h6 , .mat-typography .mat-toolbar h6{
+  @include mat.typography-level($typography-global-config, 'h6');
 }
 .mat-overline {
   text-transform: uppercase;
-  @include mat.typography-level($typography-global-config, "overline");
+  @include mat.typography-level($typography-global-config, 'overline');
+}
+.mat-typography .mat-mdc-checkbox label, .mat-typography .mat-mdc-radio-button label ,.mat-typography .mat-mdc-slide-toggle  label {
+  @include mat.typography-level($typography-global-config, 'body-1');   
+}
+.mat-typography .mat-mdc-dialog-container .mdc-dialog__title{
+  @include mat.typography-level($typography-global-config, 'h6');   
+}
+.mat-typography .mat-stepper-horizontal .mat-step-label-selected,.mat-typography .mat-stepper-vertical .mat-step-label-selected {
+  @include mat.typography-level($typography-global-config, 'subtitle-2');   
 }

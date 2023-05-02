@@ -5,266 +5,257 @@
 @include mat.core();
 
 //////////// SMALL CONFIGURATION
-
-:not(.medium) {
-  &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
-    .mdc-evolution-chip__text-label {
-    & > .mat-icon {
-      @include icon-size(16px, 14px !important);
-
-      @include padding(22px, 14px);
-
-      width: auto;
-    }
-  }
-  &.mat-mdc-chip,
-  &.mat-md-chip-option {
-    border-radius: 4px !important;
-    height: 22px !important;
-    &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
-      @include width-heigth(1.4rem);
-    }
-    .mat-mdc-chip-remove .mat-icon {
-      @include icon-size(1.4rem !important, 1.4rem !important);
-    }
-  }
-  .mat-mdc-form-field {
-    &:not(.mat-form-field-appearance-fill) {
-      @include mat.form-field-density(-6);
-      &.mat-mdc-form-field-infix {
-        display: flex;
+  :not(.medium) {
+    &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+      .mdc-evolution-chip__text-label {
+      & > .mat-icon {
+        @include icon-size(16px, 14px !important);
+        @include padding(22px, 14px);
+        width: auto;
       }
-      & label:not(.mdc-floating-label--float-above) {
-        top: 50% !important;
+    }
+    &.mat-mdc-chip,
+    &.mat-md-chip-option {
+      border-radius: 4px !important;
+      height: 22px !important;
+      &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
+        @include width-heigth(1.4rem);
+      }
+      .mat-mdc-chip-remove .mat-icon {
+        @include icon-size(1.4rem !important, 1.4rem !important);
+      }
+    }
+    .mat-mdc-form-field {
+      &:not(.mat-form-field-appearance-fill) {
+        @include mat.form-field-density(-6);
+        &.mat-mdc-form-field-infix {
+          display: flex;
+        }
+        & label:not(.mdc-floating-label--float-above) {
+          top: 50% !important;
+        }
+      }
+      &:not(.mat-form-field-appearance-outline) {
+        @include mat.form-field-density(-4.5);
+        & .mat-mdc-form-field-infix {
+          padding-bottom: 0px !important;
+        }
+      }
+      &.standard:not(.mat-form-field-appearance-outline) {
+        @include mat.form-field-density(-5.25);
+        .mat-mdc-form-field-infix {
+          padding-bottom: 0px !important;
+        }
+      }
+      & .mat-icon {
+        @include icon-size(16px!important, 16px!important);
+        padding: 0px 12px !important;
+        color: rgba(16, 24, 64, 0.54);
+      }
+      & .mat-mdc-select-arrow {
+        color: rgba(16, 24, 64, 0.54);
+      }
+      & input,
+      .mat-mdc-select {
+        place-self: center;
+      }
+      @include mat.icon-button-density(-4);
+    }
+  }
+  // SLIDE-TOGGLE
+  .mat-mdc-slide-toggle .mdc-switch {
+    --mdc-switch-track-width: 26px;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
+    --mdc-switch-track-height: 10px;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle {
+    --mdc-switch-handle-height: 1.6rem;
+    --mdc-switch-handle-width: 1.6rem;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle-track {
+    width: calc(100% - var(--mdc-switch-handle-width, 16px)) !important;
+  }
+  .mdc-switch__icons {
+    display: none !important;
+  }
+  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__ripple {
+    @include width-heigth(28px !important);
+  }
+  // ICONS
+  .mat-icon:not(.medium,.large) {
+    @include icon-size(1.6rem !important, 1.6rem!important);
+  }
+  // BUTTON
+  .mdc-button {
+    &:not(.large, .medium) {
+      &.mdc-button {
+        @include button.density(-2.5);
+      }
+      & .mat-icon {
+        @include icon-size(18px !important, 18px!important);
+      }
+      .mat-mdc-button-touch-target {
+        @include width-heigth(26px);
+      }
+    }
+  }
+  //TOOLBAR
+  .mat-toolbar-single-row {
+    height: 60px !important;
+  }
+  //PROGRES SPINER
+  .mat-mdc-progress-spinner {
+    @include width-heigth(4rem !important);
+  }
+  //BUTTON TOGGLE
+  .mat-button-toggle-group {
+    @include mat.button-toggle-density(-3);
+    &.mat-icon {
+      @include icon-size(2rem !important, 2rem);
+    }
+  }
+  // EXPANSION PANEL
+  .mat-expansion-panel {
+    .mat-expansion-panel-header.mat-expanded {
+      height: 6rem;
+    }
+    & .mat-expansion-panel-header {
+      height: 4.4rem;
+    }
+    & .material-icons {
+      @include width-heigth(1.6rem);
+    }
+  }
+  // LIST with icon
+  :not(.medium).mdc-list-item.mdc-list-item--with-one-line {
+    --mdc-list-list-item-one-line-container-height: 33px;
+    & > .mat-mdc-icon-button.mat-mdc-button-base {
+      @include density(24px, 16px);
+    }
+  }
+  // ICON BUTTON
+  .mat-mdc-icon-button.mat-mdc-button-base:not(.medium, .large) {
+    @include density(24px, 20px);
+    & > .mat-icon {
+      @include icon-size(20px !important, 16px !important);
+    }
+  }
+  // SUFFIX
+  .mat-mdc-form-field-icon-suffix > .mat-icon {
+    @include density(18px, 16px);
+  }
+  // TAB
+  .mat-mdc-tab-header {
+    & .mat-mdc-tab.mdc-tab {
+      height: 4rem;
+    }
+  }
+  // SLIDER
+  .mdc-slider {
+    --mdc-slider-inactive-track-height: 0.2rem;
+    --mdc-slider-handle-width: 1.2rem;
+    --mdc-slider-handle-height: 1.2rem;
+    &.mat-mdc-slider .mdc-slider__track--active {
+      --mdc-slider-active-track-height: 0.4rem;
+    }
+    .mat-mdc-slider-visual-thumb .mat-ripple {
+      @include width-heigth(32px !important);
+      border-radius: 50%;
+      transform: translate(8px, 8.5px) !important;
+    }
+  }
+  // FAB
+  .mat-mdc-fab {
+    &:not(.mdc-fab--extended) {
+      @include width-heigth(3.6rem);
+    }
+    &.mat-mdc-extended-fab {
+      height: 3.2rem;
+    }
+    .material-icons,
+    .mat-icon {
+      @include icon-size(22px, 19px);
+    }
+  }
+  // EXTEND FAB
+  .mat-mdc-extended-fab > .mat-icon,
+  .mat-mdc-extended-fab > .material-icons {
+    @include icon-size(18px !important, 18px !important);
+  }
+  // MAT CALENDAR
+  .mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
+    @include width-heigth(4rem !important);
+  }
+  // CHECKBOX
+  .mdc-checkbox {
+    --mdc-checkbox-state-layer-size: 32px;
+    @include mat.checkbox-density(-3);
+    @include padding(32px, 20px);
+    .mdc-checkbox__background {
+      @include width-heigth(15px);
+    }
+    .mat-mdc-checkbox-touch-target {
+      height: 32px !important;
+    }
+  }
+  // DATA TABLE
+  .mat-mdc-table {
+    &.mat-mdc-table .mdc-data-table__header-row {
+      height: 36px;
+    }
+    &.mat-mdc-table .mdc-data-table__row {
+      height: 32px;
+    }
+  }
+  // RADIO BUTTON
+:not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
+      --mdc-radio-state-layer-size: 24px !important;
+      .mdc-radio__background {
+        @include icon-size(14px, 12px);
+        .mdc-radio__outer-circle {
+          margin: 3px;
+        }
+      }
+      .mdc-radio__native-control:checked
+        + .mdc-radio__background
+        .mdc-radio__inner-circle {
+        transform: scale(0.3);
+      }
+      .mat-mdc-radio-touch-target {
+        @include width-heigth(24px);
+      }
+    }
+
+  //DATAPICKER
+  .mat-mdc-form-field:has(.mat-datepicker-toggle) {
+    --mdc-icon-button-icon-size: 20px;
+    &:not(.mat-form-field-appearance-fill) {
+      & .mat-datepicker-toggle > .mdc-icon-button {
+        vertical-align: middle;
       }
     }
     &:not(.mat-form-field-appearance-outline) {
-      @include mat.form-field-density(-4.5);
-
-      & .mat-mdc-form-field-infix {
-        padding-bottom: 0px !important;
+      & .mat-datepicker-toggle > .mdc-icon-button {
+        vertical-align: baseline;
       }
     }
     &.standard:not(.mat-form-field-appearance-outline) {
-      @include mat.form-field-density(-5.25);
-
-      .mat-mdc-form-field-infix {
-        padding-bottom: 0px !important;
+      & .mat-datepicker-toggle > .mdc-icon-button {
+        vertical-align: sub;
       }
     }
-    & .mat-icon {
-      @include icon-size(16px!important, 16px!important);
-      padding: 0px 12px !important;
-      color: rgba(16, 24, 64, 0.54);
+    & .mat-datepicker-toggle[matTextPrefix] {
+      padding-right: 5px;
     }
-    & .mat-mdc-select-arrow {
-      color: rgba(16, 24, 64, 0.54);
-    }
-    & input,
-    .mat-mdc-select {
-      place-self: center;
-    }
-    @include mat.icon-button-density(-4);
   }
-}
 
-// SLIDE-TOGGLE
-.mat-mdc-slide-toggle .mdc-switch {
-  --mdc-switch-track-width: 26px;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
-  --mdc-switch-track-height: 10px;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle {
-  --mdc-switch-handle-height: 1.6rem;
-  --mdc-switch-handle-width: 1.6rem;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle-track {
-  width: calc(100% - var(--mdc-switch-handle-width, 16px)) !important;
-}
-.mdc-switch__icons {
-  display: none !important;
-}
-.mat-mdc-slide-toggle .mdc-switch .mdc-switch__ripple {
-  @include width-heigth(28px !important);
-}
-// ICONS
-.mat-icon:not(.medium, .large) {
-  @include icon-size(1.6rem !important, 1.6rem!important);
-}
-// BUTTON
-.mdc-button {
-  &:not(.large, .medium) {
-    &.mdc-button {
-      @include button.density(-2.5);
-    }
-    & .mat-icon {
-      @include icon-size(18px !important, 18px!important);
-    }
-    .mat-mdc-button-touch-target {
-      @include width-heigth(26px);
-    }
-  }
-}
-//TOOLBAR
-.mat-toolbar-single-row {
-  height: 60px !important;
-}
-//PROGRES SPINER
-.mat-mdc-progress-spinner {
-  @include width-heigth(4rem !important);
-}
-//BUTTON TOGGLE
-.mat-button-toggle-group {
-  @include mat.button-toggle-density(-3);
-  &.mat-icon {
-    @include icon-size(2rem !important, 2rem);
-  }
-}
-// EXPANSION PANEL
-.mat-expansion-panel {
-  .mat-expansion-panel-header.mat-expanded {
-    height: 6rem;
-  }
-  & .mat-expansion-panel-header {
-    height: 4.4rem;
-  }
-  & .material-icons {
-    @include width-heigth(1.6rem);
-  }
-}
-// LIST with icon
-:not(.medium).mdc-list-item.mdc-list-item--with-one-line {
-  --mdc-list-list-item-one-line-container-height: 33px;
-  & > .mat-mdc-icon-button.mat-mdc-button-base {
-    @include density(24px, 16px);
-  }
-}
-// ICON BUTTON
-.mat-mdc-icon-button.mat-mdc-button-base:not(.medium, .large) {
-  @include density(24px, 20px);
-  & > .mat-icon {
-    @include icon-size(20px !important, 16px !important);
-  }
-}
-// SUFFIX
-.mat-mdc-form-field-icon-suffix > .mat-icon {
-  @include density(18px, 16px);
-}
-// TAB
-.mat-mdc-tab-header {
-  & .mat-mdc-tab.mdc-tab {
-    height: 4rem;
-  }
-}
-// SLIDER
-.mdc-slider {
-  --mdc-slider-inactive-track-height: 0.2rem;
-  --mdc-slider-handle-width: 1.2rem;
-  --mdc-slider-handle-height: 1.2rem;
-  &.mat-mdc-slider .mdc-slider__track--active {
-    --mdc-slider-active-track-height: 0.4rem;
-  }
-  .mat-mdc-slider-visual-thumb .mat-ripple {
-    @include width-heigth(32px !important);
-    border-radius: 50%;
-    transform: translate(8px, 8.5px) !important;
-  }
-}
-// FAB
-.mat-mdc-fab {
-  &:not(.mdc-fab--extended) {
-    @include width-heigth(3.6rem);
-  }
-  &.mat-mdc-extended-fab {
-    height: 3.2rem;
-  }
-  .material-icons,
-  .mat-icon {
-    @include icon-size(20px !important, 20px !important);
-  }
-}
-// EXTEND FAB
-.mat-mdc-extended-fab > .mat-icon,
-.mat-mdc-extended-fab > .material-icons {
-  @include icon-size(20px !important, 20px !important);
-}
-// MAT CALENDAR
-.mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
-  @include width-heigth(4rem !important);
-}
-// CHECKBOX
-.mdc-checkbox {
-  --mdc-checkbox-state-layer-size: 32px;
-  @include mat.checkbox-density(-3);
-  @include padding(32px, 21px);
-  .mdc-checkbox__background {
-    @include width-heigth(15px);
-  }
-  .mat-mdc-checkbox-touch-target {
-    @include width-heigth(32px !important);
-  }
-}
-// DATA TABLE
-.mat-mdc-table {
-  &.mat-mdc-table .mdc-data-table__header-row {
-    height: 36px;
-  }
-  &.mat-mdc-table .mdc-data-table__row {
-    height: 32px;
-  }
-}
-// RADIO BUTTON
-:not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
-  --mdc-radio-state-layer-size: 24px !important;
-  .mdc-radio__background {
-    @include icon-size(14px, 12px);
-    .mdc-radio__outer-circle {
-      margin: 3px;
-    }
-  }
-  .mdc-radio__native-control:checked
-    + .mdc-radio__background
-    .mdc-radio__inner-circle {
-    transform: scale(0.3);
-  }
-  .mat-mdc-radio-touch-target {
-    @include width-heigth(24px);
-  }
-}
-//DATAPICKER
-.mat-mdc-form-field:has(.mat-datepicker-toggle) {
-  --mdc-icon-button-icon-size: 20px;
-  &:not(.mat-form-field-appearance-fill) {
-    & .mat-datepicker-toggle > .mdc-icon-button {
-      vertical-align: middle;
-    }
-  }
-  &:not(.mat-form-field-appearance-outline) {
-    & .mat-datepicker-toggle > .mdc-icon-button {
-      vertical-align: baseline;
-    }
-  }
-  &.standard:not(.mat-form-field-appearance-outline) {
-    & .mat-datepicker-toggle > .mdc-icon-button {
-      vertical-align: sub;
-    }
-  }
-  & .mat-datepicker-toggle[matTextPrefix] {
-    padding-right: 5px;
-  }
-}
-//STEPPER
-.mat-step-header {
-  &.mat-horizontal-stepper-header {
-    height: 26px;
-  }
-}
-.mat-step-icon .mat-icon {
-  @include icon-size(16px !important, 16px !important);
-}
 /// MEDIUM CONFIGURATION
 .medium {
+  // TOOLBAR
+  .mat-toolbar-single-row {
+    height: 48px !important;
+  }
   // RADIO BUTTON
   &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
     --mdc-radio-state-layer-size: 42px !important;
@@ -445,7 +436,7 @@
     }
     .material-icons,
     .mat-icon {
-      @include icon-size(24px !important, 24px !important);
+      @include icon-size(24px !important, 22px !important);
     }
   }
   // ICON BUTTON

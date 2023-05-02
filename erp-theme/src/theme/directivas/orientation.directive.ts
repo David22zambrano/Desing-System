@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input } from '@angular/core';
-import { Variants } from '../model/modelo.model';
+import { orientation } from '../model/modelo.model';
 
 @Directive({
   selector: 'mat-tab-group,mat-button-toggle-group  [orientation]'
 })
 export class OrientationDirective {
 
-  @Input() orientation!: Variants;
+  @Input() orientation!: orientation;
   constructor(private el: ElementRef<HTMLElement> ) { }
 
   ngAfterViewInit(): void {
