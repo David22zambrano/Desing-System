@@ -1,13 +1,25 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
     <mat-icon>menu</mat-icon>
   </button>
   <h6>My App</h6>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
     <mat-icon>favorite</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
@@ -22,6 +34,10 @@
   "
 >
   <p class="mat-subtitle-1">Componentes ERP Small</p>
+  
+  <h4>Avatar</h4>
+  <mat-avatar avatar="circular" nombre="David Zambrano"></mat-avatar>
+
 
   <h4>Rating</h4>
   <mat-card
@@ -46,12 +62,12 @@
   </mat-card>
 
   <h4>Form field</h4>
-  <mat-form-field appearance="fill" size="medium" >
+  <mat-form-field appearance="fill" size="medium">
     <mat-label>Fill form field</mat-label>
-    <input matInput placeholder="Placeholder" required/>
+    <input matInput placeholder="Placeholder" required />
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
-  <mat-form-field appearance="fill" >
+  <mat-form-field appearance="fill">
     <mat-label>Last name</mat-label>
     <input matInput />
   </mat-form-field>
@@ -65,11 +81,10 @@
   </mat-form-field>
 
   <h4>BUTTONS</h4>
-  <button mat-raised-button color="primary">
+  <button mat-raised-button color="accent">
     small
     <mat-icon matSuffix> add </mat-icon>
   </button>
-
 
   <button mat-raised-button size="medium" color="primary">
     Medium
@@ -78,14 +93,15 @@
 
   <h4>CHIPS</h4>
   <mat-chip color="primary" size="small">
-    Chip
-    <mat-icon matSuffix> add </mat-icon>
+    Chip small
   </mat-chip>
   <mat-chip size="medium">Chip medium</mat-chip>
+  <mat-chip size="medium">
+    Chip medium
+  </mat-chip>
 
-  
   <h4>icons</h4>
-  <mat-icon > home </mat-icon>
+  <mat-icon> home </mat-icon>
   <mat-icon size="medium"> home </mat-icon>
   <mat-icon size="large"> home </mat-icon>
 
@@ -124,7 +140,7 @@
   </mat-list>
 
   <h4>FAB, EXTEND FAB, MINI FDAB</h4>
-  <button mat-fab extended color="primary" size="small">
+  <button mat-fab extended color="primary" size="large">
     <mat-icon>delete</mat-icon>
     Extended fab
   </button>
@@ -133,13 +149,14 @@
     mat-mini-fab
     aria-label="Example mini fab with a heart icon"
     size="small"
+    color="primary"
   >
     <mat-icon>delete</mat-icon>
   </button>
 </div>
 
 <h4>LISTAS CON ICONOS</h4>
-<mat-list role="list" >
+<mat-list role="list">
   <mat-list-item role="listitem">
     <p>Hello world</p>
     <button mat-icon-button matListItemMeta>
@@ -163,7 +180,12 @@
   <mat-list />
 
   <h4>TABLAS</h4>
-  <table mat-table [dataSource]="dataSource"    class="mat-elevation-z8 medium">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    size="medium"
+    class="mat-elevation-z8 medium"
+  >
     <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
@@ -200,10 +222,10 @@
   <mat-stepper headerPosition="bottom" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
+        <ng-template matStepLabel><p>Fill out your name</p></ng-template>
         <mat-form-field>
           <input
-          required
+            required
             matInput
             placeholder="Last name, First name"
             formControlName="firstCtrl"
@@ -241,4 +263,4 @@
       </div>
     </mat-step>
   </mat-stepper>
-
+</mat-list>

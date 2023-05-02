@@ -429,7 +429,8 @@ $dark-background-default: #1a1a1b;
     color: #ffffff;
   }
 }
-.mat-accent {
+.mat-accent:not(.mat-icon, .mat-mdc-icon-button) {
+  color: #ffffff !important;
   .mat-button-toggle-appearance-standard {
     background-color: #0cbbe2;
     color: #ffffff;

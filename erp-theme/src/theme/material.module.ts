@@ -99,7 +99,6 @@ const directivas = [
 const componentes = [
   StarRatingComponent,
   MatMenuComponent,
-  TipografiaComponent,
   TableComponent,
   ProgressSpinnerComponent,
   RadioButtonComponent,
@@ -108,12 +107,9 @@ const componentes = [
   MatTabsComponent,
   TogglebuttonComponent,
   SliderComponent,
-  ColorsComponent,
   ClasesGlobalesComponent,
   LayoutComponent,
-  IconComponent,
-  SpacingComponent,
-  ResponsiveComponent,
+
   CheckboxComponent,
   ButtonComponent,
   FabComponent,
