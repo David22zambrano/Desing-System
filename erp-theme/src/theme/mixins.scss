@@ -34,7 +34,6 @@ $_ripple-opacity: 0.1;
   $foreground: map.get($theme, foreground);
   @each $variant, $variant-palette in $variants {
     &.mat-#{$variant}:not(:disabled) {
-    &.mat-#{$variant}:not(:disabled) {
       #{$property}: mat.get-color-from-palette($variant-palette, $hue);
       &.stroked {
         border: 1px solid mat.get-color-from-palette($variant-palette, $hue);

@@ -1,19 +1,19 @@
 import { moduleMetadata, StoryObj, Meta } from '@storybook/angular';
 import { MatButtonModule } from '@angular/material/button';
-import { ButtonComponent } from './button.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SizeDirective } from 'src/theme/directivas/size.directive';
 
 export default {
   title: 'Angular Material/Button',
-  component: ButtonComponent,
   decorators: [
     moduleMetadata({
       declarations: [SizeDirective],
       imports: [MatButtonModule, MatIconModule],
     }),
-  ],
-} as Meta<ButtonComponent>;
+  ], parameters: {
+    layout: "centered"
+  }
+} as Meta;
 
 type Story = StoryObj
 export const small: Story = {

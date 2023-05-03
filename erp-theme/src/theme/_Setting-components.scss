@@ -23,7 +23,7 @@
 }
 // Eliminacion hint elemento de form field componente
 [class*="mat-mdc-form-field-subscript-wrapper"] {
-  &:not(:has(:only-child mat-hint)) {
+  &:not(:has(:only-child mat-hint, mat-error)) {
     display: none !important;
   }
 }

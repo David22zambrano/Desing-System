@@ -1,38 +1,33 @@
 import { MatChipsModule } from '@angular/material/chips';
-import { MatChipComponent } from './mat-chip.component';
+import { MatIconModule } from '@angular/material/icon';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 
 export default {
   title: 'Angular Material/Chip',
-  component: MatChipComponent,
   decorators: [
     moduleMetadata({
-      imports: [MatChipsModule],
+      imports: [MatChipsModule, MatIconModule],
     }),
   ],
-  argTypes: {
-    size: {
-      table: {
-        category: 'Size',
-        defaultValue: { summary: 'small' },
-      },
-      options: ['small', 'medium'],
-      control: { type: 'radio' },
-    },
-    label: {
-      table: {
-        category: 'Label',
-        defaultValue: { summary: 'mat-chip' },
-      },
-    },
-  },
+  parameters: {
+    layout: "centered"
+  }
 } as Meta;
 
-type Story = StoryObj<MatChipComponent>
+type Story = StoryObj
 
-export const configuracion: Story = {
-  args: {
-    size: 'small',
-    label: 'mat-Chip',
-  }
+export const small: Story = {
+  name: "small",
+  render: () => ({
+    template: `
+    <mat-chip>Theme</mat-chip>
+    <mat-chip>
+    <button matChipRemove>
+    <mat-icon>cancel</mat-icon>
+  </button>
+    Theme
+    </mat-chip>
+    `
+  })
+
 }

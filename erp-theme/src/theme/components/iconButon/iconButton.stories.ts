@@ -1,44 +1,39 @@
 import { MatButtonModule } from '@angular/material/button';
-import { IconButtonComponent } from './iconButton.component';
 import { moduleMetadata, StoryObj, Meta } from '@storybook/angular';
 import { MatIconModule } from '@angular/material/icon';
-import { ColorComponent } from 'src/theme/model/modelo.model';
+import { SizeDirective } from 'src/theme/directivas/size.directive';
 
 export default {
   title: 'Angular Material/Icon button',
-  component: IconButtonComponent,
   decorators: [
     moduleMetadata({
+      declarations: [SizeDirective],
       imports: [MatButtonModule, MatIconModule],
     }),
   ],
-  argTypes: {
-    size: {
-      table: {
-        category: 'Size',
-        defaultValue: { summary: 'small' },
-      },
-
-      options: ['small', 'medium', 'large'],
-      control: { type: 'radio' },
-    },
-    color: {
-      table: {
-        defaultValue: { summary: 'primary' },
-        category: 'Color',
-      },
-      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
-      control: { type: 'radio' },
-    },
-  },
-} as Meta<IconButtonComponent>;
-
-type Story = StoryObj<IconButtonComponent>
-export const configuracion: Story = {
-  name: 'mat-icon-button',
-  args: {
-    size: 'small',
-    color: ColorComponent.primary,
-    icon: 'home',
+  parameters: {
+    layout: "centered"
   }
+} as Meta
+
+type Story = StoryObj
+export const small: Story = {
+  name: 'small',
+  render: () => ({
+    template: `<button mat-icon-button color="success" size="small"><mat-icon>favorite</mat-icon></button>`
+  })
+};
+
+export const medium: Story = {
+  name: 'medium',
+  render: () => ({
+    template: `<button mat-icon-button color="info" size="medium"><mat-icon>favorite</mat-icon></button>`
+  })
+};
+
+export const large: Story = {
+  name: 'large',
+  render: () => ({
+    template: `<button mat-icon-button color="warning" size="large"><mat-icon>favorite</mat-icon></button>`
+  })
 };

@@ -31,8 +31,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/theme/_theme.scss"
-            ],
+              "node_modules/@sinco/angular/src/lib/styles/_main.scss",
+              "node_modules/@sinco/angular-bitakora/src/lib/styles/_main.scss"            ],
             "scripts": []
           },
           "configurations": {

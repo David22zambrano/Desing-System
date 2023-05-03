@@ -35,11 +35,7 @@ import { SizeDirective } from './directivas/size.directive';
 import { OrientationDirective } from './directivas/orientation.directive';
 import { ClasesGlobalesComponent } from './components/Clases/clases-globales/clases-globales.component';
 import { LayoutComponent } from './components/Clases/layoutt/layout.component';
-import { CheckboxComponent } from './components/checkbox/checkbox.component';
-import { ButtonComponent } from './components/mat-button/button.component';
 import { FabComponent } from './components/mat-fab/fab.component';
-import { IconButtonComponent } from './components/iconButon/iconButton.component';
-import { MatChipComponent } from './components/mat-chip/mat-chip.component';
 import { IconComponents } from './components/mat-icon/icon.component';
 import { MatListComponent } from './components/mat-list/mat-list.component';
 import { SlideToggleComponent } from './components/mat-slide-toggle/slide-toggle.component'
@@ -107,11 +103,7 @@ const componentes = [
   SliderComponent,
   ClasesGlobalesComponent,
   LayoutComponent,
-  CheckboxComponent,
-  ButtonComponent,
   FabComponent,
-  IconButtonComponent,
-  MatChipComponent,
   IconComponents,
   MatListComponent,
   SlideToggleComponent,]
