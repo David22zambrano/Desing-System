@@ -8,13 +8,11 @@
 @use "@angular/material" as mat;
 @use "@material/chips";
 @use "./mixins.scss" as variants;
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone");
+@import "./typography";
 @import "./Setting-components";
 @import "@angular/material/theming";
 @import "./colors";
 @import "./elevations";
-@import "./typography";
 @import "./sizes";
 @import "./standard-formfield";
 @import "./_orientacion.scss";
@@ -58,7 +56,7 @@ $dark-accent-color: mat.define-palette($dark-accent);
 $dark-warn-color: mat.define-palette($dark-warn);
 $dark-success-color: mat.define-palette($dark-success);
 $dark-info-color: mat.define-palette($dark-info);
-$dark-warning-color: mat.define-palette($dark-warning); 
+$dark-warning-color: mat.define-palette($dark-warning);
 $light-background-default: #fbfbfb;
 $dark-background-default: #1a1a1b;
 // LIGHT THEME
@@ -136,3 +134,12 @@ $foregroun-background-palletes: _create-wonky-theme(
 @include mat.core-theme($light-theme);
 @include mat.all-component-themes($foregroun-background-palletes);
 @include variants.color($light-theme, $light-theme-variants);
+
+story--angular-material-avatar--square-inner,
+story--angular-material-avatar--circular-inner,
+story--angular-material-avatar--rounded-inner,
+storybook-root {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

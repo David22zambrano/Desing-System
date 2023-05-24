@@ -1,7 +1,22 @@
-.colores{
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  gap:8px;
-  margin-top:8px;
+.colores {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.flex {
+  width: 100%;
+}
+
+.justify {
+  width: 32.9%;
+  border: solid;
+}
+.between {
+  width: 100%;
+  border: solid;
 }

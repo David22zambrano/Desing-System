@@ -1,0 +1,6 @@
+<div class="rating">
+  <ng-container *ngFor="let item of Render.slice().reverse()" >
+      <input #rating_input type="radio" id="{{name}}-{{item+1}}" name="{{name}}" value="{{item+1}}" />
+      <label for="{{name}}-{{item+1}}"></label>
+  </ng-container>
+</div>

@@ -1,51 +1,51 @@
 //TAB VERTICAL
 .mat-mdc-tab-group.vertical {
-    flex-direction: row !important;
-    height: 100%;
-    max-height: 100vh;
-    .mat-mdc-tab-header-pagination {
-      box-sizing: border-box;
-      display: none;
-      min-height: 4rem;
-    }
-    .mat-mdc-tab-header {
-      flex-direction: column !important;
-      width: auto;
-      border-right: 1px solid;
-      border-color: rgba(16, 24, 64, 0.12);
-    }
-    .mat-mdc-tab-labels {
-      flex-direction: column;
-    }
-    .mat-mdc-tab-label-container {
-      overflow-y: auto;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-    .mdc-tab-indicator {
-      width: 4rem;
-      height: 100%;
-      transform: rotate(-90deg);
-      left: auto;
-      right: 0;
-    }
-    .mat-mdc-tab-body-wrapper {
-      flex: 1 1 auto;
-    }
-    .mat-mdc-tab-body-content {
-      padding-inline: 1rem;
-      padding-bottom: 1rem;
-    }
-    &.mat-tabs-with-background > .mat-mdc-tab-header {
-      border: none;
-    }
-    &.medium {
-      .mdc-tab-indicator {
-        width: 4.8rem !important;
-      }
-    }
+  flex-direction: row !important;
+  height: 100%;
+  max-height: 100vh;
+  .mat-mdc-tab-header-pagination {
+    box-sizing: border-box;
+    display: none;
+    min-height: 4rem;
   }
-  .mat-button-toggle-group.vertical {
+  .mat-mdc-tab-header {
+    flex-direction: column !important;
+    width: auto;
+    border-right: 1px solid;
+    border-color: rgba(16, 24, 64, 0.12);
+  }
+  .mat-mdc-tab-labels {
     flex-direction: column;
   }
+  .mat-mdc-tab-label-container {
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .mdc-tab-indicator {
+    width: 4rem;
+    height: 100%;
+    transform: rotate(-90deg);
+    left: auto;
+    right: 0;
+  }
+  .mat-mdc-tab-body-wrapper {
+    flex: 1 1 auto;
+  }
+  .mat-mdc-tab-body-content {
+    padding-inline: 1rem;
+    padding-bottom: 1rem;
+  }
+  &.mat-tabs-with-background > .mat-mdc-tab-header {
+    border: none;
+  }
+  &.medium {
+    .mdc-tab-indicator {
+      width: 4.8rem !important;
+    }
+  }
+}
+.mat-button-toggle-group.vertical {
+  flex-direction: column;
+}

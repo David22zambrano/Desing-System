@@ -1,5 +1,4 @@
 import { Meta, StoryObj, moduleMetadata, } from '@storybook/angular';
-import { MaterialModule } from '../../material.module';
 import { SizeDirective } from 'src/theme/directivas/size.directive';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';

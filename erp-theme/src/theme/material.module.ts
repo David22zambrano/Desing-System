@@ -33,22 +33,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { StandardDirective } from './directivas/standard.directive';
 import { SizeDirective } from './directivas/size.directive';
 import { OrientationDirective } from './directivas/orientation.directive';
-import { ClasesGlobalesComponent } from './components/Clases/clases-globales/clases-globales.component';
-import { LayoutComponent } from './components/Clases/layoutt/layout.component';
-import { FabComponent } from './components/mat-fab/fab.component';
-import { IconComponents } from './components/mat-icon/icon.component';
-import { MatListComponent } from './components/mat-list/mat-list.component';
-import { SlideToggleComponent } from './components/mat-slide-toggle/slide-toggle.component'
-import { SliderComponent } from './components/mat-slider/slider.component';
-import { StepperComponent } from './components/mat-stepper/stepper.component';
-import { MatTabsComponent } from './components/mat-tabs/mat-tabs.component';
-import { TogglebuttonComponent } from './components/mat-toggle-button/togglebutton.component';
-import { ToolbarComponent } from './components/mat-toolbar/toolbar.component';
-import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
-import { RadioButtonComponent } from './components/radio-button/radio-button.component';
-import { TableComponent } from './components/table/table.component';
-import { MatMenuComponent } from './components/menu/menu.component';
-import { StarRatingComponent } from './components/mat-rating/star-rating.component';
+
+import { StarRatingComponent } from './components/mat-rating/rating.component';
 
 const modulesMaterial = [
   CommonModule,
@@ -81,7 +67,7 @@ const modulesMaterial = [
   MatNativeDateModule,
   MatExpansionModule,
   MatCardModule,
-  MatDialogModule,
+  // MatDialogModule,
   FormsModule,
   ReactiveFormsModule
 ];
@@ -92,25 +78,9 @@ const directivas = [
 ];
 const componentes = [
   StarRatingComponent,
-  MatMenuComponent,
-  TableComponent,
-  ProgressSpinnerComponent,
-  RadioButtonComponent,
-  ToolbarComponent,
-  StepperComponent,
-  MatTabsComponent,
-  TogglebuttonComponent,
-  SliderComponent,
-  ClasesGlobalesComponent,
-  LayoutComponent,
-  FabComponent,
-  IconComponents,
-  MatListComponent,
-  SlideToggleComponent,]
-
+]
 @NgModule({
   declarations: [
-
     directivas,
     componentes
   ],

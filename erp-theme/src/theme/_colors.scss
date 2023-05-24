@@ -429,7 +429,12 @@ $dark-background-default: #1a1a1b;
     color: #ffffff;
   }
 }
-.mat-accent:not(.mat-icon, .mat-mdc-icon-button) {
+.mat-accent:not(
+    .mat-icon,
+    .mat-mdc-icon-button,
+    .mdc-button--outlined,
+    .mat-mdc-button-base
+  ) {
   color: #ffffff !important;
   .mat-button-toggle-appearance-standard {
     background-color: #0cbbe2;

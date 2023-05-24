@@ -1,7 +1,7 @@
 .mat-mdc-form-field.standard {
     &:not(:has(.mat-mdc-select)) {
       & .mat-mdc-text-field-wrapper {
-        padding-inline: 0px;
+        padding-inline: 0px !important;
       }
       & .mat-icon {
         padding-right: 0 !important;
@@ -9,18 +9,18 @@
       }
       & .mat-mdc-form-field-icon-suffix,
       & input {
-        align-self: flex-end;
+        align-self: flex-end !important;
       }
     }
     &:has(.mat-mdc-select) {
       & .mat-mdc-text-field-wrapper {
-        padding-inline: 0 12px;
+        padding-inline: 0 12px !important;
       }
       & .mat-mdc-select {
         display: inline-flex;
         &-arrow-wrapper {
-          height: 0;
-          transform: translateY(0%);
+          height: 0 !important;
+          transform: translateY(0%) !important;
         }
         &-trigger {
           align-self: flex-end;
@@ -28,11 +28,11 @@
       }
     }
     .mdc-floating-label {
-      transform: translateY(0%);
+      transform: translateY(0%) !important;
       &:not(.mdc-floating-label--float-above) {
         top: auto !important;
-        bottom: 0;
-        padding-bottom: 2.5px;
+        bottom: 0 !important;
+        padding-bottom: 2.5px !important;
       }
       &.mdc-floating-label--float-above {
         bottom: 0% !important;
@@ -49,11 +49,10 @@
     }
     .mat-mdc-form-field-hint-wrapper,
     .mat-mdc-form-field-error-wrapper {
-      padding: 0px;
+      padding: 0px !important;
     }
     & input,
     .mat-mdc-select {
       place-self: end;
     }
   }
-  

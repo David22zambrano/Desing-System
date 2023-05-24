@@ -1,33 +1,44 @@
-import { MatMenuComponent } from './menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { SizeDirective } from '@sinco/angular';
 
 export default {
   title: 'Angular Material/Menu',
-  component: MatMenuComponent,
   decorators: [
     moduleMetadata({
-      imports: [MatMenuModule, MatButtonModule, BrowserAnimationsModule],
+      declarations: [SizeDirective],
+      imports: [MatMenuModule, MatButtonModule, BrowserAnimationsModule, MatIconModule],
     }),
   ],
-  argTypes: {
-    size: {
-      options: ['small', 'medium'],
-      control: { type: 'radio' },
-      table: {
-        category: 'Size',
-        defaultValue: { summary: 'medium' },
-      },
-    },
-  },
+  parameters: {
+    layout: "centered"
+  }
 } as Meta;
 
-type Story = StoryObj<MatMenuComponent>
-export const menu: Story = {
-  name: "mat-menu",
-  args: {
-    size: 'medium',
-  }
+type Story = StoryObj
+export const small: Story = {
+  name: "small",
+  render: () => ({
+    template: `<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>`
+  })
+}
+export const medium: Story = {
+  name: "medium",
+  render: () => ({
+    template: `
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>home</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>`
+  })
 }

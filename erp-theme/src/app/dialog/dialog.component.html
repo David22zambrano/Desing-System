@@ -1,0 +1,59 @@
+<table
+  mat-table
+  size="small"
+  [dataSource]="dataSource"
+  class="mat-elevation-z8"
+>
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>
+      <mat-checkbox
+        (change)="$event ? toggleAllRows() : null"
+        [checked]="selection.hasValue() && isAllSelected()"
+        [indeterminate]="selection.hasValue() && !isAllSelected()"
+        [aria-label]="checkboxLabel()"
+      >
+      </mat-checkbox>
+    </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let row">
+      <mat-checkbox
+        (click)="$event.stopPropagation()"
+        (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection.isSelected(row)"
+        [aria-label]="checkboxLabel(row)"
+      >
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>No.</mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element">{{ element.position }}</mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>Weight</mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element">{{ element.weight }}</mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>Symbol</mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element">{{ element.symbol }}</mat-cell>
+  </ng-container>
+
+  <mat-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-row>
+  <mat-row
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="selection.toggle(row)"
+  ></mat-row>
+</table>

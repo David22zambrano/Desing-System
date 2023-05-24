@@ -1,11 +1,13 @@
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
+import { SizeDirective } from 'src/theme/directivas/size.directive';
 
 export default {
   title: 'Angular Material/Chip',
   decorators: [
     moduleMetadata({
+      declarations: [SizeDirective],
       imports: [MatChipsModule, MatIconModule],
     }),
   ],
@@ -22,12 +24,25 @@ export const small: Story = {
     template: `
     <mat-chip>Theme</mat-chip>
     <mat-chip>
-    <button matChipRemove>
-    <mat-icon>cancel</mat-icon>
-  </button>
-    Theme
+     <button matChipRemove>
+      <mat-icon>cancel</mat-icon>
+      </button>
+       Theme
     </mat-chip>
     `
   })
-
+}
+export const medium: Story = {
+  name: "medium",
+  render: () => ({
+    template: `
+    <mat-chip size="medium">Theme</mat-chip>
+    <mat-chip size="medium">
+     <button matChipRemove>
+      <mat-icon>cancel</mat-icon>
+      </button>
+       Theme
+    </mat-chip>
+    `
+  })
 }

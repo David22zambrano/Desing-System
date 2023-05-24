@@ -1,30 +1,35 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 import { SizeDirective } from 'src/theme/directivas/size.directive';
 
 export default {
-  title: 'Angular Material/Checkbox',
+  title: 'Angular Material/Radio-Button',
   decorators: [
     moduleMetadata({
       declarations: [SizeDirective],
-      imports: [MatCheckboxModule],
+      imports: [MatRadioModule],
     }),
   ],
   parameters: {
     layout: "centered"
   }
 } as Meta;
+
 type Story = StoryObj
+
 export const small: Story = {
   name: "small",
   render: () => ({
-    template: `<mat-checkbox size="small" color="primary">small</mat-checkbox>`
+    template: `<mat-radio-button>Theme</mat-radio-button>
+    `
   })
 }
+
 export const medium: Story = {
   name: "medium",
   render: () => ({
-    template: `<mat-checkbox size="medium" color="warn">medium</mat-checkbox>`
+    template: `<mat-radio-button size="medium">Theme</mat-radio-button>
+    `
   })
 }

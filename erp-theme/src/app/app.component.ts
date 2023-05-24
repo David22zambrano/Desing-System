@@ -1,5 +1,14 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { MatAccordion } from '@angular/material/expansion';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import {FormControl} from '@angular/forms';
+
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -19,33 +28,28 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  @ViewChild(MatAccordion) accordion: MatAccordion | undefined;
+
   title = 'erp-theme';
-
-
+  constructor(public dialog: MatDialog) { }
+  openDialog(): void {
+    this.dialog.open(DialogComponent, {
+      width: '800px',
+      height: "400px"
+    });
+  }
+  myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
+  panelOpenState = false;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-
-  constructor(private _formBuilder: FormBuilder) { }
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  
 }
+

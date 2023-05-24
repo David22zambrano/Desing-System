@@ -9,20 +9,8 @@
 @include mat.core();
 
 //////////// SMALL CONFIGURATION
+c 
 :not(.medium, .large) {
-  &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
-    .mdc-evolution-chip__text-label {
-    height: 24px;
-
-    & > .mat-icon {
-      @include icon-size(16px, 14px !important);
-
-      @include padding(24px, 16px);
-
-      width: auto;
-    }
-  }
-
   &.mat-mdc-chip,
   &.mat-md-chip-option {
     border-radius: 4px !important;
@@ -37,10 +25,12 @@
       @include icon-size(1.4rem !important, 1.4rem !important);
     }
   }
+
   .mat-mdc-form-field {
     &:not(.mat-form-field-appearance-fill) {
       @include mat.form-field-density(-6);
-      &.mat-mdc-form-field-infix {
+
+      .mat-mdc-form-field-infix {
         display: flex;
       }
 
@@ -65,10 +55,8 @@
       }
     }
 
-    & .mat-icon {
-      @include icon-size(16px!important, 16px!important);
-
-      padding: 0px 12px !important;
+    .mat-mdc-icon-button.mat-mdc-button-base:not(.medium, .large) > .mat-icon {
+      @include icon-size(20px!important, 20px!important);
 
       color: rgba(16, 24, 64, 0.54);
     }
@@ -87,6 +75,7 @@
 }
 
 // SLIDE-TOGGLE
+
 .mat-mdc-slide-toggle .mdc-switch {
   --mdc-switch-track-width: 26px;
 }
@@ -114,11 +103,13 @@
 }
 
 // ICONS
+
 .mat-icon:not(.medium, .large) {
   @include icon-size(1.6rem !important, 1.6rem!important);
 }
 
 // BUTTON
+
 .mdc-button {
   &:not(.large, .medium) {
     &.mdc-button {
@@ -136,16 +127,19 @@
 }
 
 //TOOLBAR
+
 .mat-toolbar-single-row {
   height: 48px !important;
 }
 
 //PROGRES SPINER
+
 .mat-mdc-progress-spinner {
   @include width-heigth(4rem !important);
 }
 
 //BUTTON TOGGLE
+
 .mat-button-toggle-group {
   @include mat.button-toggle-density(-3);
 
@@ -155,6 +149,7 @@
 }
 
 // EXPANSION PANEL
+
 .mat-expansion-panel {
   .mat-expansion-panel-header.mat-expanded {
     height: 6rem;
@@ -170,6 +165,7 @@
 }
 
 // LIST with icon
+
 :not(.medium).mdc-list-item.mdc-list-item--with-one-line {
   --mdc-list-list-item-one-line-container-height: 33px;
 
@@ -179,6 +175,7 @@
 }
 
 // ICON BUTTON
+
 .mat-mdc-icon-button.mat-mdc-button-base:not(.medium, .large) {
   @include density(24px, 20px);
 
@@ -188,11 +185,13 @@
 }
 
 // SUFFIX
+
 .mat-mdc-form-field-icon-suffix > .mat-icon {
-  @include density(18px, 16px);
+  @include padding(32px, 16px);
 }
 
 // TAB
+
 .mat-mdc-tab-header {
   & .mat-mdc-tab.mdc-tab {
     height: 4rem;
@@ -200,6 +199,7 @@
 }
 
 // SLIDER
+
 .mdc-slider {
   --mdc-slider-inactive-track-height: 0.2rem;
 
@@ -221,6 +221,7 @@
 }
 
 // FAB
+
 .mat-mdc-fab {
   &:not(.mdc-fab--extended) {
     @include width-heigth(3.6rem);
@@ -245,17 +246,14 @@
 }
 
 // EXTEND FAB
+
 .mat-mdc-extended-fab > .mat-icon,
 .mat-mdc-extended-fab > .material-icons {
   @include icon-size(18px !important, 18px !important);
 }
 
-// MAT CALENDAR
-.mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
-  @include width-heigth(4rem !important);
-}
-
 // CHECKBOX
+
 .mdc-checkbox {
   --mdc-checkbox-state-layer-size: 32px;
 
@@ -273,6 +271,7 @@
 }
 
 // DATA TABLE
+
 .mat-mdc-table {
   &.mat-mdc-table .mdc-data-table__header-row {
     height: 36px;
@@ -284,41 +283,47 @@
 }
 
 // // RADIO BUTTON
-// :not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
 
-//   --mdc-radio-state-layer-size: 24px !important;
+:not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
+  --mdc-radio-state-layer-size: 24px !important;
 
-//   .mdc-radio__background {
+  .mdc-radio__background {
+    @include icon-size(14px, 12px);
 
-//     @include icon-size(14px, 12px);
+    .mdc-radio__outer-circle {
+      margin: 3px;
+    }
+  }
 
-//     .mdc-radio__outer-circle {
+  .mdc-radio__native-control:checked
+    + .mdc-radio__background
+    .mdc-radio__inner-circle {
+    transform: scale(0.3);
+  }
 
-//       margin: 3px;
-
-//     }
-
-//   }
-
-//   .mdc-radio__native-control:checked
-//     + .mdc-radio__background
-//     .mdc-radio__inner-circle {
-
-//     transform: scale(0.3);
-
-//   }
-
-//   .mat-mdc-radio-touch-target {
-
-//     @include width-heigth(24px);
-
-//   }
-
-// }
+  .mat-mdc-radio-touch-target {
+    @include width-heigth(24px);
+  }
+}
 
 //DATAPICKER
+
 .mat-mdc-form-field:has(.mat-datepicker-toggle) {
-  --mdc-icon-button-icon-size: 20px;
+  &.mat-calendar {
+    & > .mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
+      @include density(24px, 20px);
+
+      .mat-icon {
+        @include icon-size(20px !important, 16px !important);
+      }
+    }
+  }
+
+  &.mat-datepicker-toggle > .mat-mdc-icon-button.mat-mdc-button-base > svg {
+    @include width-heigth(20px);
+  }
+
+  --mdc-icon-button-icon-size: 16px;
 
   &:not(.mat-form-field-appearance-fill) {
     & .mat-datepicker-toggle > .mdc-icon-button {
@@ -344,6 +349,7 @@
 }
 
 //STEPPER
+
 .mat-step-header {
   &.mat-horizontal-stepper-header {
     height: 42px;
@@ -354,29 +360,29 @@
   @include icon-size(16px !important, 16px !important);
 }
 
-/// MEDIUM CONFIGURATION
+///////////////////////////////////// MEDIUM CONFIGURATION //////////////////////////////////////////////
+
 .medium {
   // TOOLBAR
+
   .mat-toolbar-single-row {
     height: 48px !important;
   }
 
   // RADIO BUTTON
-  // &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
 
-  //   --mdc-radio-state-layer-size: 42px !important;
+  &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
+    --mdc-radio-state-layer-size: 42px !important;
 
-  //   @include padding(42px, 20px);
+    @include padding(42px, 20px);
 
-  //   .mat-mdc-radio-touch-target {
-
-  //     @include width-heigth(42px);
-
-  //   }
-
-  // }
+    .mat-mdc-radio-touch-target {
+      @include width-heigth(42px);
+    }
+  }
 
   // SWICH
+
   &.mat-mdc-slide-toggle .mdc-switch {
     --mdc-switch-track-width: 34px !important;
   }
@@ -396,6 +402,7 @@
   }
 
   // FAB
+
   &.mat-mdc-fab {
     &:not(.mdc-fab--extended) {
       @include width-heigth(4.8rem !important);
@@ -416,6 +423,7 @@
   }
 
   // CHECKBOX
+
   .mdc-checkbox {
     --mdc-checkbox-state-layer-size: 42px;
 
@@ -433,17 +441,6 @@
   // Componentes con pseudo-clase  :not()
 
   // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
-
-  &.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
-    .mdc-evolution-chip__text-label {
-    & > .mat-icon {
-      @include icon-size(20px, 18px !important);
-
-      @include padding(20px, 16px);
-
-      width: auto !important;
-    }
-  }
 
   &.mat-mdc-chip,
   &.mat-md-chip-option {
@@ -465,6 +462,7 @@
   }
 
   // //FORM FIELD
+
   &.mat-mdc-form-field {
     &:not(.mat-form-field-appearance-fill) {
       @include mat.form-field-density(-1);
@@ -484,6 +482,7 @@
   }
 
   // BUTTON
+
   &.mdc-button {
     &:not(.large) {
       &.mdc-button {
@@ -501,6 +500,7 @@
   }
 
   /// LIST with icon
+
   .mdc-list-item.mdc-list-item--with-one-line {
     @include mat.list-density(-1);
 
@@ -512,26 +512,31 @@
   }
 
   // ICON
+
   &.mat-icon {
     @include icon-size(2.4rem !important, 2.2rem !important);
   }
 
   //BUTTON TOGGLE
+
   &.mat-button-toggle-group {
     @include mat.button-toggle-density(0);
   }
 
   // ICON BUTTON
+
   &.mat-mdc-icon-button.mat-mdc-button-base:not(.small, .large) {
     @include density(40px, 24px);
   }
 
   // TAB
+
   .mat-mdc-tab.mdc-tab {
     height: 2.857142857142857rem;
   }
 
   // SLIDER
+
   &.mdc-slider {
     --mdc-slider-inactive-track-height: 0.4rem !important;
 
@@ -553,6 +558,7 @@
   }
 
   // DATA TABLE
+
   &.mat-mdc-table {
     &.mat-mdc-table .mdc-data-table__header-row {
       height: 56px;
@@ -560,6 +566,15 @@
 
     &.mat-mdc-table .mdc-data-table__row {
       height: 48px;
+    }
+  }
+
+  &.mat-mdc-form-field:has(.mat-datepicker-toggle) {
+    &
+      .mat-datepicker-toggle
+      > .mat-mdc-icon-button.mat-mdc-button-base
+      > .mat-icon {
+      @include icon-size(24px !important, 24px!important);
     }
   }
 }
@@ -582,16 +597,19 @@
   }
 
   // BUTTON TOGGLE
+
   &.mat-mdc-button-base > .mat-icon {
     @include icon-size(1.285714285714286rem, 1.285714285714286rem);
   }
 
   // ICON
+
   &.mat-icon {
     @include icon-size(3.5rem !important, 3.3rem!important);
   }
 
   // FAB
+
   &.mat-mdc-fab {
     &:not(.mdc-fab--extended) {
       @include width-heigth(5.6rem !important);
@@ -608,6 +626,7 @@
   }
 
   // ICON BUTTON
+
   &.mat-mdc-icon-button.mat-mdc-button-base:not(.medium) {
     @include density(58px, 36px);
   }
@@ -627,11 +646,4 @@
   .mat-button-toggle > .mat-icon {
     @include icon-size(1.285714285714286rem, 1.285714285714286rem);
   }
-}
-story--angular-material-avatar--circular-inner,
-story--angular-material-avatar--square-inner,
-story--angular-material-avatar--rounded-inner {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
 }

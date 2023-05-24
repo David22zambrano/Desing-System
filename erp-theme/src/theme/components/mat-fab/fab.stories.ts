@@ -1,44 +1,39 @@
 import { MatButtonModule } from '@angular/material/button';
-import { FabComponent } from './fab.component';
 import { moduleMetadata, StoryObj, Meta } from '@storybook/angular';
 import { MatIconModule } from '@angular/material/icon';
-import { ColorComponent } from 'src/theme/model/modelo.model';
+import { SizeDirective } from '@sinco/angular';
 
 export default {
   title: 'Angular Material/Fab- Button',
-  component: FabComponent,
   decorators: [
     moduleMetadata({
+      declarations: [SizeDirective],
       imports: [MatButtonModule, MatIconModule],
     }),
   ],
-  argTypes: {
-    size: {
-      table: {
-        category: 'Size',
-        defaultValue: { summary: 'small' },
-      },
-      options: ['small', 'medium', 'large'],
-      control: { type: 'radio' },
-    },
-
-    color: {
-      table: {
-        defaultValue: { summary: 'primary' },
-        category: 'Color',
-      },
-
-      options: [ColorComponent.primary, ColorComponent.accent, ColorComponent.warn, ColorComponent.info, ColorComponent.warning, ColorComponent.success],
-      control: { type: 'radio' },
-    },
-  },
-} as Meta<FabComponent>;
-
-type Story = StoryObj<FabComponent>
-export const configuracion: Story = {
-  name: 'mat-fab',
-  args: {
-    size: 'small',
-    color: ColorComponent.primary,
+  parameters: {
+    layout: "centered"
   }
+} as Meta;
+
+type Story = StoryObj
+export const fab: Story = {
+  name: 'fab-button',
+  render: () => ({
+    template: `
+    <button mat-fab><mat-icon>home</mat-icon></button>
+    <button mat-fab size="medium"><mat-icon>home</mat-icon></button>
+    <button mat-fab size="large"><mat-icon>home</mat-icon></button>
+    `
+  })
+};
+export const fabExtended: Story = {
+  name: 'fab-extended-button',
+  render: () => ({
+    template: `
+    <button mat-fab extended>Theme<mat-icon>home</mat-icon></button>
+    <button mat-fab size="medium" extended>Theme<mat-icon>home</mat-icon></button>
+    <button mat-fab size="large" extended>Theme<mat-icon>home</mat-icon></button>
+    `
+  })
 };
