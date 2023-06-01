@@ -1,0 +1,87 @@
+@use "@material/textfield" with ($minimum-height-for-filled-label: 32px, $minimum-height: 32px);
+@use '../theme/variant-colors.scss' as button-variants;
+@use '../theme/spacing.scss' with($spacing-unit:0.286rem);
+@use '@angular/material' as mat;
+@use 'sass:map';
+@include mat.core();
+@import '../theme/mixins.scss' ;
+@import './colors';
+@import './typography';
+@import './size.scss';
+// Define a light theme
+$light-primary: mat.define-palette($bitakora-primary);
+$light-accent: mat.define-palette($bitakora-accent);
+$light-warn: mat.define-palette($bitakora-warn);
+$light-success: mat.define-palette($bitakora-success);
+$light-caution: mat.define-palette($bitakora-caution);
+
+$dark-primary: mat.define-palette($bitakora-dark-primary);
+$dark-accent: mat.define-palette($bitakora-dark-accent);
+$dark-warn: mat.define-palette($bitakora-warn);
+$dark-success: mat.define-palette($bitakora-success);
+$dark-caution: mat.define-palette($bitakora-caution);
+
+$bitakora-light-theme: mat.define-light-theme(
+  (
+    density: 0,
+    typography: $bitakora-typography,
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+      warn: $light-warn,
+      success: $light-success,
+      warning: $light-caution,
+      caution: $light-caution,
+    ),
+  )
+);
+$bitakora-light-theme-variants: (
+  success: $light-success,
+  caution: $light-caution,
+  warning: $light-caution,
+);
+$bitakora-dark-theme: mat.define-dark-theme(
+  (
+    density: 0,
+    typography: $bitakora-typography,
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+      success: $dark-success,
+      warning: $dark-caution,
+      caution: $dark-caution,
+    ),
+  )
+);
+$bitakora-dark-theme-variants: (
+  success: $dark-success,
+  caution: $dark-caution,
+  warning: $dark-caution,
+);
+
+
+@include button-variants.color(
+  $bitakora-light-theme,
+  $bitakora-light-theme-variants
+);
+$propiedades-alerta: (
+  'info' $light-accent'info',
+  'error' $light-warn 'error',
+  'success' $light-success 'check_circle',
+  'warning' $light-caution 'warning',
+);
+
+@include alert($propiedades-alerta,$text-primary);
+@include class-color($color-class);
+@include mat.core-theme($bitakora-light-theme);
+@include mat.all-component-themes($bitakora-light-theme);
+
+.darkMode{
+  @include mat.all-component-colors($bitakora-dark-theme);
+  @include mat.core-color($bitakora-dark-theme);
+  @include button-variants.color(
+  $bitakora-dark-theme,
+  $bitakora-dark-theme-variants
+);
+}

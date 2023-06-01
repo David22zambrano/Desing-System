@@ -1,0 +1,327 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@include mat.core();
+
+$bitakora-primary: (
+  50: #e3e4e5,
+  100: #b9bbbf,
+  200: #8a8e94,
+  300: #5b6169,
+  400: #373f49,
+  500: #141d29,
+  600: #121a24,
+  700: #0e151f,
+  800: #0b1119,
+  900: #060a0f,
+  A100: #5394ff,
+  A200: #2074ff,
+  A400: #0059ec,
+  A700: #004fd2,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$bitakora-accent: (
+  50: #e1f0f7,
+  100: #b5daea,
+  200: #83c2dd,
+  300: #51a9cf,
+  400: #2c96c4,
+  500: #0784ba,
+  600: #067cb3,
+  700: #0571ab,
+  800: #0467a3,
+  900: #025494,
+  A100: #bfdfff,
+  A200: #8cc6ff,
+  A400: #59adff,
+  A700: #40a0ff,
+
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$bitakora-warn: (
+  50: #fde8ea,
+  100: #f9c5cb,
+  200: #f59fa9,
+  300: #f17887,
+  400: #ee5b6d,
+  500: #eb3e53,
+  600: #e9384c,
+  700: #e53042,
+  800: #e22839,
+  900: #dd1b29,
+  A100: #ffffff,
+  A200: #ffdee0,
+  A400: #ffabb0,
+  A700: #ff9198,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$bitakora-success: (
+  50: #f1fae8,
+  100: #ddf2c7,
+  200: #c7e9a1,
+  300: #b0e07b,
+  400: #9fd95f,
+  500: #8ed243,
+  600: #86cd3d,
+  700: #7bc734,
+  800: #71c12c,
+  900: #5fb61e,
+  A100: #f4ffed,
+  A200: #d6ffba,
+  A400: #b7ff87,
+  A700: #a8ff6e,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+$bitakora-caution: (
+  50: #fff0e0,
+  100: #fedab3,
+  200: #fdc280,
+  300: #fcaa4d,
+  400: #fc9726,
+  500: #fb8500,
+  600: #fa7d00,
+  700: #fa7200,
+  800: #f96800,
+  900: #f85500,
+  A100: #ffffff,
+  A200: #fff1eb,
+  A400: #ffccb8,
+  A700: #ffba9f,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+$bitakora-dark-primary: (
+  50: #f7f8f9,
+  100: #ebedef,
+  200: #dde1e4,
+  300: #cfd4d9,
+  400: #c5cbd1,
+  500: #bbc2c9,
+  600: #b5bcc3,
+  700: #acb4bc,
+  800: #a4acb5,
+  900: #969fa9,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #e1efff,
+  A700: #c8e2ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$bitakora-dark-accent: (
+  50: #eaf5f9,
+  100: #cae6f0,
+  200: #a6d6e7,
+  300: #82c6dd,
+  400: #68b9d5,
+  500: #4dadce,
+  600: #46a6c9,
+  700: #3d9cc2,
+  800: #3493bc,
+  900: #2583b0,
+  A100: #edf9ff,
+  A200: #bae7ff,
+  A400: #87d6ff,
+  A700: #6ecdff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+$text-primary: rgba(8, 21, 36, 0.87);
+$text-secondary: rgba(8, 21, 36, 0.6);
+$text-disabled: rgba(8, 21, 36, 0.38);
+$action-active: rgba(8, 21, 36, 0.54);
+$disabled-text-color: rgb(8, 21, 36, 26%);
+$dark-text-primary: #ffffff;
+$dark-text-secondary: rgba(255, 255, 255, 0.7);
+$dark-text-disabled: rgba(255, 255, 255, 0.5);
+$dark-action-active: rgba(255, 255, 255, 0.56);
+$light-background-default: #f1f0ee;
+$dark-background-default: #121212;
+$light: #ffffff;
+$dark: #000000;
+$color-class: (
+  'light-default' $light-background-default,
+  'dark-default' $dark-background-default,
+  'white' $light,
+  'black' $dark,
+  'text-primary' $text-primary,
+  'text-secondary' $text-secondary,
+  'text-disabled' $text-disabled,
+  'action-active' $action-active,
+  'dark-text-primary' $dark-text-primary,
+  'dark-text-secondary' $dark-text-secondary,
+  'dark-text-disabled' $dark-text-disabled,
+  'primary' map-get($bitakora-primary, 500),
+  'accent' map-get($bitakora-accent, 500),
+  'warn' map-get($bitakora-warn, 500),
+  'warning' map-get($bitakora-caution, 500),
+  'caution' map-get($bitakora-caution, 500),
+  'success' map-get($bitakora-success, 500),
+  'dark-primary' map-get($bitakora-dark-primary, 500),
+  'dark-accent' map-get($bitakora-dark-accent, 500)
+);
+
+$main-colors: (
+  'primary': map-get($bitakora-primary, 500),
+  'accent': map-get($bitakora-accent, 500),
+  'warn': map-get($bitakora-warn, 500),
+  'success': map-get($bitakora-success, 500),
+  'caution': map-get($bitakora-caution, 500),
+);
+
+.bitakora-background {
+  background-color: $light-background-default;
+}
+
+body {
+  background-color: $light-background-default;
+  color: $text-primary;
+}
+
+a {
+  color: map-get($bitakora-accent, 500);
+}
+
+.mat-accent,
+.mat-caution {
+  &:not(
+      .mat-mdc-button-base.mat-mdc-icon-button,
+      .mat-icon,
+      .mat-mdc-button,
+      .mat-mdc-outlined-button:not(:disabled)
+    ) {
+    color: #ffffff !important;
+    &:disabled {
+      color: $disabled-text-color !important;
+    }
+  }
+}
+
+.mat-mdc-form-field {
+  .mat-icon,
+  svg {
+    color: $action-active;
+  }
+}
+
+.darkMode .mdc-text-field:not(.mdc-text-field--disabled) {
+  .mat-icon,
+  svg {
+    color: $dark-action-active;
+  }
+}
+
+@each $bgColor, $color in $main-colors {
+  .mat-#{$bgColor} {
+    .mat-button-toggle-appearance-standard {
+      background-color: $color;
+      border: 1px solid $color !important;
+      color: #ffffff !important;
+    }
+  }
+}
