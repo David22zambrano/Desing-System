@@ -1,0 +1,65 @@
+@import './tokens.scss';
+$spacing-unit: 0.4rem !default;
+$space-value: (
+  'p' padding,
+  'pt' padding-top,
+  'pb' padding-bottom,
+  'px' padding-inline,
+  'py' padding-block,
+  'pl' padding-left,
+  'pr' padding-right,
+  'm' margin,
+  'mt' margin-top,
+  'mb' margin-bottom,
+  'mx' margin-inline,
+  'my' margin-block,
+  'ml' margin-left,
+  'mr' margin-right,
+  'gap' gap,
+  'gap-column' grid-column-gap,
+  'gap-row' grid-row-gap
+);
+
+@each $name, $propiedad in $space-value {
+  .#{$name}-auto {
+    #{$propiedad}: auto;
+  }
+  @for $i from 0 through 20 {
+    [class^='mat-'],
+    [class*=' mat-'] {
+      .#{$name}-#{$i} {
+        #{$propiedad}: $spacing-unit * $i;
+      }
+    }
+    @media only screen and (min-width: $breakpoint-desktop) {
+      .#{$name}-xxl-#{$i} {
+        #{$propiedad}: $spacing-unit * $i !important;
+      }
+    }
+    @media only screen and (min-width: $breakpoint-laptop-frame) and (max-width: $breakpoint-desktop) {
+      .#{$name}-xl-#{$i} {
+        #{$propiedad}: $spacing-unit * $i !important;
+      }
+    }
+    @media only screen and (min-width: $breakpoint-laptop) and (max-width: $breakpoint-laptop-frame) {
+      .#{$name}-l-#{$i} {
+        #{$propiedad}: $spacing-unit * $i !important;
+      }
+    }
+    @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
+      .#{$name}-m-#{$i} {
+        #{$propiedad}: $spacing-unit * $i !important;
+      }
+    }
+    @media only screen and (max-width: $breakpoint-tablet) {
+      .#{$name}-s-#{$i} {
+        #{$propiedad}: $spacing-unit * $i !important;
+      }
+    }
+    @media only screen and (max-width: $breakpoint-mobile) {
+      .#{$name}-xs-#{$i} {
+        #{$propiedad}: $spacing-unit * $i !important;
+      }
+    }
+  }
+}

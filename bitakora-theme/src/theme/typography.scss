@@ -1,0 +1,169 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+
+html {
+  font-size: 0.625rem;
+}
+
+$h3: mat.define-typography-level(
+  $font-size: 2.8rem,
+  $font-weight: 500,
+  $line-height: 1.2,
+  $letter-spacing: 0em,
+  $font-family: 'Nunito',
+);
+
+$h4: mat.define-typography-level(
+  $font-weight: 600,
+  $font-size: 2rem,
+  $line-height: 1,
+  $letter-spacing: 0.00735em,
+  $font-family: 'Nunito',
+);
+
+$h5: mat.define-typography-level(
+  $font-weight: 600,
+  $font-size: 1.8rem,
+  $line-height: 1.6,
+  $letter-spacing: 0em,
+  $font-family: 'Nunito',
+);
+
+$h6: mat.define-typography-level(
+  $font-weight: 600,
+  $font-size: 1.6rem,
+  $line-height: 1.4,
+  $letter-spacing: 0.0075em,
+  $font-family: 'Nunito',
+);
+
+$overline: mat.define-typography-level(
+  $font-weight: 400,
+  $font-size: 1.1rem,
+  $line-height: 2.66,
+  $letter-spacing: 0.071em,
+  $font-family: 'Roboto, sans-serif ',
+);
+
+$typography-global-config: map.merge(
+  mat.define-typography-config(
+    $font-family: 'Roboto',
+    $headline-5:
+      mat.define-typography-level(
+        $font-weight: 300,
+        $font-size: 4rem,
+        $line-height: 1.4,
+        $letter-spacing: -0.01562em,
+        $font-family: 'Nunito',
+      ),
+    $headline-6:
+      mat.define-typography-level(
+        $font-weight: 400,
+        $font-size: 3.2rem,
+        $line-height: 1.2,
+        $letter-spacing: -0.00833em,
+        $font-family: 'Nunito',
+      ),
+    $subtitle-1:
+      mat.define-typography-level(
+        $font-weight: 500,
+        $font-size: 1.4rem,
+        $line-height: 1.4,
+        $letter-spacing: 0.00938em,
+        $font-family: 'Roboto, sans-serif ',
+      ),
+    $subtitle-2:
+      mat.define-typography-level(
+        $font-weight: 500,
+        $font-size: 1.3rem,
+        $line-height: 1.4,
+        $letter-spacing: 0.00714em,
+        $font-family: 'Roboto, sans-serif ',
+      ),
+    $body-1:
+      mat.define-typography-level(
+        $font-weight: 400,
+        $font-size: 1.4rem,
+        $line-height: 1.4,
+        $letter-spacing: 0.00938em,
+        $font-family: 'Roboto, sans-serif ',
+      ),
+    $body-2:
+      mat.define-typography-level(
+        $font-weight: 400,
+        $font-size: 1.3rem,
+        $line-height: 1.2,
+        $letter-spacing: 0.01071em,
+        $font-family: 'Roboto, sans-serif ',
+      ),
+    $button:
+      mat.define-typography-level(
+        $font-weight: 500,
+        $font-size: 1.27rem,
+        $line-height: 1.49130074565,
+        $letter-spacing: 0.02857em,
+        $font-family: 'Roboto, sans-serif ',
+      ),
+    $caption:
+      mat.define-typography-level(
+        $font-weight: 400,
+        $font-size: 1.1rem,
+        $line-height: 1.5,
+        $letter-spacing: 0.029em,
+        $font-family: 'Roboto, sans-serif ',
+      ),
+  ),
+  (
+    'h3': $h3,
+    'h4': $h4,
+    'h5': $h5,
+    'h6': $h6,
+    'overline': $overline,
+  )
+);
+
+@include mat.all-component-typographies($typography-global-config);
+
+.mat-typography .mat-h3,
+.mat-typography h3,
+.mat-typography .mat-toolbar h3 {
+  @include mat.typography-level($typography-global-config, 'h3');
+}
+
+.mat-typography .mat-h4,
+.mat-typography h4,
+.mat-typography .mat-toolbar h4 {
+  @include mat.typography-level($typography-global-config, 'h4');
+}
+
+.mat-typography .mat-h5,
+.mat-typography h5,
+.mat-typography .mat-toolbar h5 {
+  @include mat.typography-level($typography-global-config, 'h5');
+}
+
+.mat-typography .mat-h6,
+.mat-typography h6,
+.mat-typography .mat-toolbar h6 {
+  @include mat.typography-level($typography-global-config, 'h6');
+}
+
+.mat-overline {
+  text-transform: uppercase;
+  @include mat.typography-level($typography-global-config, 'overline');
+}
+
+.mat-typography .mat-stepper-horizontal,
+.mat-typography .mat-stepper-vertical {
+  .mat-step-label:not(.mat-step-label-selected) {
+    @include mat.typography-level($typography-global-config, 'body-1');
+  }
+  .mat-step-label-selected {
+    font-size: mat.font-size($typography-global-config, 'subtitle-1');
+    font-family: mat.font-family($typography-global-config, 'subtitle-1');
+    font-weight: calc(
+      mat.font-weight($typography-global-config, 'body-1') + 100
+    );
+  }
+}

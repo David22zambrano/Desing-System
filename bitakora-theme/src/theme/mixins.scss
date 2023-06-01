@@ -1,44 +1,129 @@
-@use 'sass:map';
-// Conversion de REM to PX
-// 2px  ----  0.1428571428571429
-// 10px ----  0.7142857142857143rem
-// 16px ----  1.142857142857143rem
-// 18px ----  1.285714285714286rem
-// 20px ----  1.428571428571429rem
-// 24px ----  1.714285714285714rem
+@mixin class-color($variants-color) {
+  @each $clase, $color in $variants-color {
+    .color-#{$clase} {
+      color: $color;
+    }
+    .bg-#{$clase} {
+      background-color: $color;
+    }
+  }
+}
 
-// Define valores de width,height y font-size
 @mixin icon-size($tamaño, $font-size) {
   width: $tamaño;
   height: $tamaño;
   font-size: $font-size;
+};
+
+@mixin width-heigth($size) {
+  width: $size;
+  height: $size;
 }
 
-// MIXIN ICON button
-$size: (
-  "small": 28px,
-  "medium": 44px,
-  "large": 56px,
-);
-$size-icon-button: (
-  "small": 20px,
-  "medium": 24px,
-  "large": 36px,
-);
-// ICON BUTTON SIZE
-@mixin icon-button($icono) {
-  @if $icono == small {
-    width: map.get($size, "small");
-    height: map.get($size, "small");
-    padding: calc((map.get($size, "small") - map.get($size-icon-button, "small")) / 2);
-  } @else if $icono == medium {
-    width: map.get($size, "medium");
-    height: map.get($size, "medium");
-    padding: calc((map.get($size, "medium") -  map.get($size-icon-button, "medium")) / 2);
-  } @else if $icono == large {
-    width: map.get($size, "large");
-    height: map.get($size, "large");
-    padding: calc((map.get($size, "large") -  map.get($size-icon-button, "large")) / 2);
+@mixin padding($container, $size-icon) {
+  padding: calc(($container - $size-icon) / 2) !important;
+}
+
+@mixin density($size-container, $size-icon) {
+  width: $size-container !important;
+  height: $size-container !important;
+  padding: calc(($size-container - $size-icon) / 2) !important;
+  [class*="mat-icon"] {
+    width: $size-icon !important;
+    height: $size-icon !important;
+    font-size: $size-icon !important;
+  }
+  [class*="mat-mdc-button-touch-target"] {
+    height: $size-container !important;
   }
 }
 
+@mixin colors-alerts($background, $color, $icon) {
+  background-color: $background;
+  .icon-variant {
+    color: map-get($color, 500);
+    &::before {
+      content: $icon;
+    }
+  }
+}
+
+@mixin alert($propiedades-alerta, $text-color) {
+  @each $type, $color, $icon in $propiedades-alerta {
+    .mat-alert {
+      border-radius: 4px;
+      padding: 6px 16px;
+      color: $text-color;
+      &.#{$type} {
+        &.standard {
+          @include colors-alerts(map-get($color, 50), $color, $icon);
+        }
+        &.filled {
+          @include colors-alerts(map-get($color, 500), $color, $icon);
+          .icon-variant,
+          p {
+            color: #fff;
+          }
+        }
+        &.outlined {
+          @include colors-alerts(transparent, $color, $icon);
+          border: 1px solid map-get($color, 500);
+        }
+      }
+    }
+    .mat-mdc-snack-bar-container {
+      .icon-variant {
+        width: 28px;
+      }
+      &.#{$type} {
+        .mdc-snackbar__surface {
+          background: map-get($color, 50) !important;
+          @include colors-alerts(map-get($color, 50), $color, $icon);
+        }
+        .mat-mdc-snack-bar-label {
+          padding: 6px 16px;
+        }
+      }
+    }
+  }
+}
+
+@mixin chip() {
+  .mat-mdc-standard-chip {
+    &.mat-mdc-chip-selected {
+      padding-inline: 4px;
+      &::ng-deep {
+        .mdc-evolution-chip__graphic {
+          display: none !important;
+        }
+        .mdc-evolution-chip__action {
+          padding: 0 !important;
+        }
+        .mat-mdc-chip-action-label {
+          span {
+            padding-inline: 8px;
+          }
+        }
+      }
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        --mdc-chip-disabled-label-text-color: var(
+          --mdc-chip-elevated-container-color
+        );
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(
+          --mdc-chip-elevated-container-color
+        );
+      }
+    }
+    &.mdc-evolution-chip--disabled {
+      cursor: pointer;
+      pointer-events: auto;
+      opacity: 1;
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+      }
+    }
+  }
+}

@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@sinco/angular": "^1.0.29",
-    "@sinco/angular-bitakora": "^1.1.25-rc.0",
+    "@sinco/angular-bitakora": "^1.1.26",
     "material-icons": "^1.13.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

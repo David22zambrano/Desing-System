@@ -1,0 +1,1247 @@
+@mixin flex-direction($direction) {
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: $direction !important;
+}
+@mixin column($value) {
+  flex-basis: $value !important;
+  max-width: $value !important;
+  width: $value !important;
+}
+
+// *************************************************************************
+// COLUMNS
+// *********************************************
+[class^='col-'],
+[class*=' col-'] {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  padding: 0 0.8rem;
+}
+
+// COLUMNAS
+.col {
+  flex: 1 0 0%;
+  box-sizing: border-box;
+  padding: 0 0.8rem;
+  &-12 {
+    @include column(100%);
+  }
+
+  &-11 {
+    @include column(91.666667%);
+  }
+
+  &-10 {
+    @include column(83.333333%);
+  }
+  &-9 {
+    @include column(75%);
+  }
+
+  &-8 {
+    @include column(66.666667%);
+  }
+
+  &-7 {
+    @include column(58.333333%);
+  }
+
+  &-6 {
+    @include column(50%);
+  }
+
+  &-5 {
+    @include column(40.666667%);
+  }
+
+  &-4 {
+    @include column(33.333333%);
+  }
+
+  &-3 {
+    @include column(25%);
+  }
+
+  &-2 {
+    @include column(16.666667%);
+  }
+
+  &-1 {
+    @include column(8.333333%);
+  }
+}
+
+// *************************************************************************
+// FLEXBOX NORMAL
+// *********************************************
+// DISPLAY FLEX  ****************************************
+
+.d-flex,
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//   DIRECCIONES ********************
+.row {
+  @include flex-direction(row);
+}
+
+.row-reverse {
+  @include flex-direction(row-reverse);
+}
+.column {
+  @include flex-direction(column);
+}
+.column-reverse {
+  @include flex-direction(column-reverse);
+}
+.nowrap {
+  display: flex;
+  flex-wrap: nowrap !important;
+}
+
+// *************************************************************************
+// GRILLAS
+// *********************************************
+.d-grid {
+  display: grid !important;
+}
+
+[class^='grid-'],
+[class*=' grid-'] {
+  display: grid;
+}
+
+// CUANTAS GRILLAS VAN A HABER
+.grid {
+  &-template-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  &-template-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  &-template-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  &-template-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  &-template-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  &-template-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  &-template-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &-template-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &-template-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &-template-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+// *************************************************************************
+// DISTRIBUCION FLEX GRID
+// *********************************************
+
+/*=======================================================================*/
+//Justify
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-baseline {
+  justify-content: baseline;
+}
+.justify-content-stretch {
+  justify-content: stretch;
+}
+
+//align
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+
+// **************************************************************************
+//   RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE ***************************************
+// ***********************************************************************************
+// ***********************************************************************************************
+//   XXL XXL XXL XXL XXL XXL ---------------------   DESKTOP DESKTOP DESKTOP
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-desktop) {
+  //   COL XXL XXL XXL XXL XXL XXL --------------------- col-12-xll   DESKTOP DESKTOP DESKTOP
+  .col {
+    &-xxl-12 {
+      @include column(100%);
+    }
+    &-xxl-11 {
+      @include column(91.666667%);
+    }
+
+    &-xxl-10 {
+      @include column(83.333333%);
+    }
+
+    &-xxl-9 {
+      @include column(75%);
+    }
+
+    &-xxl-8 {
+      @include column(66.666667%);
+    }
+
+    &-xxl-7 {
+      @include column(58.333333%);
+    }
+
+    &-xxl-6 {
+      @include column(50%);
+    }
+
+    &-xxl-5 {
+      @include column(40.666667%);
+    }
+
+    &-xxl-4 {
+      @include column(33.333333%);
+    }
+
+    &-xxl-3 {
+      @include column(25%);
+    }
+
+    &-xxl-2 {
+      @include column(16.666667%);
+    }
+
+    &-xxl-1 {
+      @include column(8.333333%);
+    }
+  }
+  // *************************************************************************
+  // FLEXBOX
+  // *********************************************
+  // DISPLAY FLEX ****************************************
+  .d-flex-xxl,
+  .wrap-xxl {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  //   DIRECCIONES ********************
+  .row-xxl {
+    @include flex-direction(row);
+  }
+  .row-reverse-xxl {
+    @include flex-direction(row-reverse);
+  }
+  .column-xxl {
+    @include flex-direction(column);
+  }
+  .column-reverse-xxl {
+    @include flex-direction(column-reverse);
+  }
+  // GRAW
+  .nowrap-xxl {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+
+  // *************************************************************************
+  // GRILLAS
+  // *********************************************
+  .d-grid-xxl {
+    display: grid !important;
+  }
+
+  // COLUMNAS GRID CONTAINER
+  .grid {
+    &-template-xxl-10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    &-template-xxl-9 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &-template-xxl-8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-template-xxl-7 {
+      grid-template-columns: repeat(7, 1fr);
+    }
+    &-template-xxl-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-template-xxl-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &-template-xxl-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-template-xxl-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-template-xxl-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-template-xxl-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  // *************************************************************************
+  // DISTRIBUCION FLEX GRID
+  // *********************************************
+
+  /*=======================================================================*/
+  //Justify
+  .justify-content-start-xxl {
+    justify-content: flex-start;
+  }
+
+  .justify-content-end-xxl {
+    justify-content: flex-end;
+  }
+
+  .justify-content-center-xxl {
+    justify-content: center;
+  }
+
+  .justify-content-between-xxl {
+    justify-content: space-between;
+  }
+
+  .justify-content-around-xxl {
+    justify-content: space-around;
+  }
+  .justify-content-baseline-xxl {
+    justify-content: baseline;
+  }
+  .justify-content-stretch-xxl {
+    justify-content: stretch;
+  }
+
+  //align
+  .align-items-center-xxl {
+    align-items: center;
+  }
+
+  .align-items-start-xxl {
+    align-items: flex-start;
+  }
+
+  .align-items-end-xxl {
+    align-items: flex-end;
+  }
+
+  .align-items-baseline-xxl {
+    align-items: baseline;
+  }
+  .align-items-stretch-xxl {
+    align-items: stretch;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   xl xl xl xl xl xl xl xl xl xl xl ----------- PORTATIL GRANDE PORTATIL GRANDE
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-laptop-frame) and (max-width: $breakpoint-desktop) {
+  //   COL  xl xl xl xl xl xl xl xl xl xl xl ----------- col-12-xl
+  .col {
+    &-xl-12 {
+      @include column(100%);
+    }
+    &-xl-11 {
+      @include column(91.666667%);
+    }
+
+    &-xl-10 {
+      @include column(83.333333%);
+    }
+
+    &-xl-9 {
+      @include column(75%);
+    }
+
+    &-xl-8 {
+      @include column(66.666667%);
+    }
+
+    &-xl-7 {
+      @include column(58.333333%);
+    }
+
+    &-xl-6 {
+      @include column(50%);
+    }
+
+    &-xl-5 {
+      @include column(40.666667%);
+    }
+
+    &-xl-4 {
+      @include column(33.333333%);
+    }
+
+    &-xl-3 {
+      @include column(25%);
+    }
+
+    &-xl-2 {
+      @include column(16.666667%);
+    }
+    &-xl-1 {
+      @include column(8.333333%);
+    }
+  }
+  // *************************************************************************
+  // FLEXBOX
+  // *********************************************
+  // DISPLAY FLEX ****************************************
+  .d-flex-xl,
+  .wrap-xl {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  //   DIRECCIONES ********************
+  .row-xl {
+    @include flex-direction(row);
+  }
+  .row-reverse-xl {
+    @include flex-direction(row-reverse);
+  }
+  .column-xl {
+    @include flex-direction(column);
+  }
+  .column-reverse-xl {
+    @include flex-direction(column-reverse);
+  }
+  // GRAW
+  .nowrap-xl {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  // *************************************************************************
+  // GRILLAS
+  // *********************************************
+  .d-grid-xl {
+    display: grid !important;
+  }
+
+  // COLUMNAS GRID CONTAINER
+  .grid {
+    &-template-xl-10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    &-template-xl-9 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &-template-xl-8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-template-xl-7 {
+      grid-template-columns: repeat(7, 1fr);
+    }
+    &-template-xl-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-template-xl-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &-template-xl-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-template-xl-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-template-xl-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-template-xl-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  // *************************************************************************
+  // DISTRIBUCION FLEX GRID
+  // *********************************************
+
+  /*=======================================================================*/
+  //Justify
+  .justify-content-start-xl {
+    justify-content: flex-start;
+  }
+
+  .justify-content-end-xl {
+    justify-content: flex-end;
+  }
+
+  .justify-content-center-xl {
+    justify-content: center;
+  }
+
+  .justify-content-between-xl {
+    justify-content: space-between;
+  }
+
+  .justify-content-around-xl {
+    justify-content: space-around;
+  }
+  .justify-content-baseline-xl {
+    justify-content: baseline;
+  }
+  .justify-content-stretch-xl {
+    justify-content: stretch;
+  }
+
+  //align
+  .align-items-center-xl {
+    align-items: center;
+  }
+
+  .align-items-start-xl {
+    align-items: flex-start;
+  }
+
+  .align-items-end-xl {
+    align-items: flex-end;
+  }
+
+  .align-items-baseline-xl {
+    align-items: baseline;
+  }
+  .align-items-stretch-xl {
+    align-items: stretch;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //    l l l ll ll ll l l ll l l l ll l l  l l ----------- PORTATIL PEQUENO PORTATIL PEQUENO PORTATIL PEQUENO
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-laptop) and (max-width: $breakpoint-laptop-frame) {
+  // COL  l l l ll ll ll l l ll l l l ll l l  l l
+  .col {
+    &-l-12 {
+      @include column(100%);
+    }
+    &-l-11 {
+      @include column(91.666667%);
+    }
+
+    &-l-10 {
+      @include column(83.333333%);
+    }
+    &-l-9 {
+      @include column(75%);
+    }
+
+    &-l-8 {
+      @include column(66.666667%);
+    }
+
+    &-l-7 {
+      @include column(58.333333%);
+    }
+
+    &-l-6 {
+      @include column(50%);
+    }
+
+    &-l-5 {
+      @include column(40.666667%);
+    }
+
+    &-l-4 {
+      @include column(33.333333%);
+    }
+
+    &-l-3 {
+      @include column(25%);
+    }
+
+    &-l-2 {
+      @include column(16.666667%);
+    }
+    &-l-1 {
+      @include column(8.333333%);
+    }
+  }
+  // *************************************************************************
+  // FLEXBOX
+  // *********************************************
+  // DISPLAY FLEX ****************************************
+  .d-flex-l,
+  .wrap-l {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  //   DIRECCIONES ********************
+  .row-l {
+    @include flex-direction(row);
+  }
+  .row-reverse-l {
+    @include flex-direction(row-reverse);
+  }
+  .column-l {
+    @include flex-direction(column);
+  }
+  .column-reverse-l {
+    @include flex-direction(column-reverse);
+  }
+  .nowrap-l {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  // *************************************************************************
+  // GRILLAS
+  // *********************************************
+  .d-grid-l {
+    display: grid !important;
+  }
+
+  // COLUMNAS GRID CONTAINER
+  .grid {
+    &-template-l-10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    &-template-l-9 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &-template-l-8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-template-l-7 {
+      grid-template-columns: repeat(7, 1fr);
+    }
+    &-template-l-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-template-l-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &-template-l-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-template-l-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-template-l-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-template-l-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  // *************************************************************************
+  // DISTRIBUCION FLEX GRID
+  // *********************************************
+
+  /*=======================================================================*/
+  //Justify
+  .justify-content-start-l {
+    justify-content: flex-start;
+  }
+
+  .justify-content-end-l {
+    justify-content: flex-end;
+  }
+
+  .justify-content-center-l {
+    justify-content: center;
+  }
+
+  .justify-content-between-l {
+    justify-content: space-between;
+  }
+
+  .justify-content-around-l {
+    justify-content: space-around;
+  }
+  .justify-content-baseline-l {
+    justify-content: baseline;
+  }
+  .justify-content-stretch-l {
+    justify-content: stretch;
+  }
+
+  //align
+  .align-items-center-l {
+    align-items: center;
+  }
+
+  .align-items-start-l {
+    align-items: flex-start;
+  }
+
+  .align-items-end-l {
+    align-items: flex-end;
+  }
+
+  .align-items-baseline-l {
+    align-items: baseline;
+  }
+  .align-items-stretch-l {
+    align-items: stretch;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   M M M M M M M M M M M M M MM M  ----------- TABLETA
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
+  // COL  M M M M M M M M M M M M M MM M  ----------- TABLETA
+  .col {
+    &-m-12 {
+      @include column(100%);
+    }
+    &-m-11 {
+      @include column(91.666667%);
+    }
+
+    &-m-10 {
+      @include column(83.333333%);
+    }
+
+    &-m-9 {
+      @include column(75%);
+    }
+    &-m-8 {
+      @include column(66.666667%);
+    }
+
+    &-m-7 {
+      @include column(58.333333%);
+    }
+
+    &-m-6 {
+      @include column(50%);
+    }
+
+    &-m-5 {
+      @include column(40.666667%);
+    }
+
+    &-m-4 {
+      @include column(33.333333%);
+    }
+
+    &-m-3 {
+      @include column(25%);
+    }
+
+    &-m-2 {
+      @include column(16.666667%);
+    }
+
+    &-m-1 {
+      @include column(8.333333%);
+    }
+  }
+  // *************************************************************************
+  // FLEXBOX
+  // *********************************************
+  // DISPLAY FLEX ****************************************
+  .d-flex-m,
+  .wrap-m {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  //   DIRECCIONES ********************
+  .row-m {
+    @include flex-direction(row);
+  }
+  .row-reverse-m {
+    @include flex-direction(row-reverse);
+  }
+  .column-m {
+    @include flex-direction(column);
+  }
+  .column-reverse-m {
+    @include flex-direction(column-reverse);
+  }
+  .nowrap-m {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  // *************************************************************************
+  // GRILLAS
+  // *********************************************
+  .d-grid-m {
+    display: grid !important;
+  }
+
+  // COLUMNAS GRID CONTAINER
+  .grid {
+    &-template-m-10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    &-template-m-9 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &-template-m-8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-template-m-7 {
+      grid-template-columns: repeat(7, 1fr);
+    }
+    &-template-m-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-template-m-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &-template-m-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-template-m-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-template-m-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-template-m-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  // *************************************************************************
+  // DISTRIBUCION FLEX GRID
+  // *********************************************
+
+  /*=======================================================================*/
+  //Justify
+  .justify-content-start-m {
+    justify-content: flex-start;
+  }
+
+  .justify-content-end-m {
+    justify-content: flex-end;
+  }
+
+  .justify-content-center-m {
+    justify-content: center;
+  }
+
+  .justify-content-between-m {
+    justify-content: space-between;
+  }
+
+  .justify-content-around-m {
+    justify-content: space-around;
+  }
+  .justify-content-baseline-m {
+    justify-content: baseline;
+  }
+  .justify-content-stretch-m {
+    justify-content: stretch;
+  }
+
+  //align
+  .align-items-center-m {
+    align-items: center;
+  }
+
+  .align-items-start-m {
+    align-items: flex-start;
+  }
+
+  .align-items-end-m {
+    align-items: flex-end;
+  }
+
+  .align-items-baseline-m {
+    align-items: baseline;
+  }
+  .align-items-stretch-m {
+    align-items: stretch;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   S S S S S S S S S S S S S S S S S S S S S S S S   ----------- MOBILE
+//  *************************************************************************************************
+@media only screen and (max-width: $breakpoint-tablet) {
+  // COL  S S S S S S S S S S S S S S S S S S S S S S S S   ----------- MOBILE
+  .col {
+    &-s-12 {
+      @include column(100%);
+    }
+    &-s-11 {
+      @include column(91.666667%);
+    }
+
+    &-s-10 {
+      @include column(83.333333%);
+    }
+    &-s-9 {
+      @include column(75%);
+    }
+
+    &-s-8 {
+      @include column(66.666667%);
+    }
+
+    &-s-7 {
+      @include column(58.333333%);
+    }
+
+    &-s-6 {
+      @include column(50%);
+    }
+
+    &-s-5 {
+      @include column(40.666667%);
+    }
+
+    &-s-4 {
+      @include column(33.333333%);
+    }
+
+    &-s-3 {
+      @include column(25%);
+    }
+
+    &-s-2 {
+      @include column(16.666667%);
+    }
+    &-s-1 {
+      @include column(8.333333%);
+    }
+  }
+  // *************************************************************************
+  // FLEXBOX
+  // *********************************************
+  // DISPLAY FLEX ****************************************
+  .d-flex-s,
+  .wrap-s {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  //   DIRECCIONES ********************
+  .row-s {
+    @include flex-direction(row);
+  }
+  .row-reverse-s {
+    @include flex-direction(row-reverse);
+  }
+  .column-s {
+    @include flex-direction(column);
+  }
+  .column-reverse-s {
+    @include flex-direction(column-reverse);
+  }
+  .nowrap-s {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  // *************************************************************************
+  // GRILLAS
+  // *********************************************
+  .d-grid-s {
+    display: grid !important;
+  }
+
+  // COLUMNAS GRID CONTAINER
+  .grid {
+    &-template-s-10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    &-template-s-9 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &-template-s-8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-template-s-7 {
+      grid-template-columns: repeat(7, 1fr);
+    }
+    &-template-s-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-template-s-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &-template-s-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-template-s-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-template-s-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-template-s-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  // *************************************************************************
+  // DISTRIBUCION FLEX GRID
+  // *********************************************
+
+  /*=======================================================================*/
+  //Justify
+  .justify-content-start-s {
+    justify-content: flex-start;
+  }
+
+  .justify-content-end-s {
+    justify-content: flex-end;
+  }
+
+  .justify-content-center-s {
+    justify-content: center;
+  }
+
+  .justify-content-between-s {
+    justify-content: space-between;
+  }
+
+  .justify-content-around-s {
+    justify-content: space-around;
+  }
+  .justify-content-baseline-s {
+    justify-content: baseline;
+  }
+  .justify-content-stretch-s {
+    justify-content: stretch;
+  }
+
+  //align
+  .align-items-center-s {
+    align-items: center;
+  }
+
+  .align-items-start-s {
+    align-items: flex-start;
+  }
+
+  .align-items-end-s {
+    align-items: flex-end;
+  }
+
+  .align-items-baseline-s {
+    align-items: baseline;
+  }
+  .align-items-stretch-s {
+    align-items: stretch;
+  }
+}
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   XS XS XS XS XS XS XS XS XS XS XS XS XS    ----------- MINIMOBILE
+//  *************************************************************************************************
+@media only screen and (max-width: $breakpoint-mobile) {
+  .col {
+    &-xs-12 {
+      @include column(100%);
+    }
+    &-xs-11 {
+      @include column(91.666667%);
+    }
+
+    &-xs-10 {
+      @include column(83.333333%);
+    }
+    &-xs-9 {
+      @include column(75%);
+    }
+
+    &-xs-8 {
+      @include column(66.666667%);
+    }
+
+    &-xs-7 {
+      @include column(58.333333%);
+    }
+
+    &-xs-6 {
+      @include column(50%);
+    }
+
+    &-xs-5 {
+      @include column(40.666667%);
+    }
+
+    &-xs-4 {
+      @include column(33.333333%);
+    }
+
+    &-xs-3 {
+      @include column(25%);
+    }
+
+    &-xs-2 {
+      @include column(16.666667%);
+    }
+    &-xs-1 {
+      @include column(8.333333%);
+    }
+  }
+  // *************************************************************************
+  // FLEXBOX
+  // *********************************************
+  // DISPLAY FLEX ****************************************
+  .d-flex-xs,
+  .wrap-xs {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  //   DIRECCIONES ********************
+  .row-xs {
+    @include flex-direction(row);
+  }
+  .row-reverse-xs {
+    @include flex-direction(row-reverse);
+  }
+  .column-xs {
+    @include flex-direction(column);
+  }
+  .column-reverse-xs {
+    @include flex-direction(column-reverse);
+  }
+  .nowrap-xs {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  // *************************************************************************
+  // GRILLAS
+  // *********************************************
+  .d-grid-xs {
+    display: grid !important;
+  }
+  // COLUMNAS GRID CONTAINER
+  .grid {
+    &-template-xs-10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    &-template-xs-9 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &-template-xs-8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-template-xs-7 {
+      grid-template-columns: repeat(7, 1fr);
+    }
+    &-template-xs-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-template-xs-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &-template-xs-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-template-xs-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-template-xs-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-template-xs-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  // *************************************************************************
+  // DISTRIBUCION FLEX GRID
+  // *********************************************
+
+  /*=======================================================================*/
+  //Justify
+  .justify-content-start-xs {
+    justify-content: flex-start;
+  }
+
+  .justify-content-end-xs {
+    justify-content: flex-end;
+  }
+
+  .justify-content-center-xs {
+    justify-content: center;
+  }
+
+  .justify-content-between-xs {
+    justify-content: space-between;
+  }
+
+  .justify-content-around-xs {
+    justify-content: space-around;
+  }
+  .justify-content-baseline-xs {
+    justify-content: baseline;
+  }
+  .justify-content-stretch-xs {
+    justify-content: stretch;
+  }
+
+  //align
+  .align-items-center-xs {
+    align-items: center;
+  }
+
+  .align-items-start-xs {
+    align-items: flex-start;
+  }
+
+  .align-items-end-xs {
+    align-items: flex-end;
+  }
+
+  .align-items-baseline-xs {
+    align-items: baseline;
+  }
+  .align-items-stretch-xs {
+    align-items: stretch;
+  }
+}

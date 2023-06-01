@@ -1,0 +1,294 @@
+// *************************************************************************
+// ALINEACION DE TEXTO
+// *********************************************
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+// *************************************************************************
+// BLOCK Y NONE
+// *********************************************
+.d-block {
+  display: block !important;
+}
+.d-none {
+  display: none !important;
+}
+.d-inline{
+  display: inline !important;
+}
+// *************************************************************************
+// CURSORES
+.cursor-default {
+  cursor: default;
+}
+.cursor-none {
+  cursor: none;
+}
+.cursor-help {
+  cursor: help;
+}
+
+.cursor-progress {
+  cursor: progress;
+}
+.cursor-wait {
+  cursor: wait;
+}
+.cursor-text {
+  cursor: text;
+}
+.cursor-wrap {
+  cursor: wrap;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// *************************************************************************
+// POSITION (ABSOLUTE, RELATIVE, FIXED,STATIC, STICKY ------ )
+// *********************************************
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.static {
+  position: static;
+}
+.sticky {
+  position: sticky;
+}
+
+// OPACIDAD DE COLORES
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-25 {
+  opacity: 25%;
+}
+.opacity-50 {
+  opacity: 50%;
+}
+.opacity-75 {
+  opacity: 75%;
+}
+.opacity-100 {
+  opacity: 100%;
+}
+
+// SOMBRAS NONE
+.shadow-none {
+  box-shadow: none !important;
+}
+
+//ELLIPSIS
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fit-content{
+  width: fit-content;
+}
+
+// **************************************************************************
+//   RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE ***************************************
+// ***********************************************************************************
+// ***********************************************************************************************
+//   XXL XXL XXL XXL XXL XXL ---------------------   DESKTOP DESKTOP DESKTOP
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-desktop) {
+  // *************************************************************************
+  // ALINEACION DE TEXTO
+  // *********************************************
+  .text-center-xxl {
+    text-align: center !important;
+  }
+  .text-left-xxl {
+    text-align: left !important;
+  }
+  .text-right-xxl {
+    text-align: right !important;
+  }
+  // *************************************************************************
+  // BLOCK Y NONE
+  // *********************************************
+  .d-block-xxl {
+    display: block !important;
+  }
+  .d-none-xxl {
+    display: none !important;
+  }
+  .d-inline-xxl{
+    display: inline !important;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   xl xl xl xl xl xl xl xl xl xl xl ----------- PORTATIL GRANDE PORTATIL GRANDE
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-laptop-frame) and (max-width: $breakpoint-desktop) {
+  // *************************************************************************
+  // ALINEACION DE TEXTO
+  // *********************************************
+  .text-center-xl {
+    text-align: center !important;
+  }
+  .text-left-xl {
+    text-align: left !important;
+  }
+  .text-right-xl {
+    text-align: right !important;
+  }
+  // *************************************************************************
+  // BLOCK Y NONE
+  // *********************************************
+  .d-block-xl {
+    display: block !important;
+  }
+  .d-none-xl {
+    display: none !important;
+  }
+  .d-inline-xl{
+    display: inline !important;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //    l l l ll ll ll l l ll l l l ll l l  l l ----------- PORTATIL PEQUENO PORTATIL PEQUENO PORTATIL PEQUENO
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-laptop) and (max-width: $breakpoint-laptop-frame) {
+  // *************************************************************************
+  // ALINEACION DE TEXTO
+  // *********************************************
+  .text-center-l {
+    text-align: center !important;
+  }
+  .text-left-l {
+    text-align: left !important;
+  }
+  .text-right-l {
+    text-align: right !important;
+  }
+  // *************************************************************************
+  // BLOCK Y NONE
+  // *********************************************
+  .d-block-l {
+    display: block !important;
+  }
+  .d-none-l {
+    display: none !important;
+  }
+  .d-inline-l{
+    display: inline !important;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   M M M M M M M M M M M M M MM M  ----------- TABLETA
+//  *************************************************************************************************
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
+  // *************************************************************************
+  // ALINEACION DE TEXTO
+  // *********************************************
+  .text-center-m {
+    text-align: center !important;
+  }
+  .text-left-m {
+    text-align: left !important;
+  }
+  .text-right-m {
+    text-align: right !important;
+  }
+  // *************************************************************************
+  // BLOCK Y NONE
+  // *********************************************
+  .d-block-m {
+    display: block !important;
+  }
+  .d-none-m {
+    display: none !important;
+  }
+  .d-inline-m{
+    display: inline !important;
+  }
+}
+
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   S S S S S S S S S S S S S S S S S S S S S S S S   ----------- MOBILE
+//  *************************************************************************************************
+@media only screen and (max-width: $breakpoint-tablet) {
+  // *************************************************************************
+  // ALINEACION DE TEXTO
+  // *********************************************
+  .text-center-s {
+    text-align: center !important;
+  }
+  .text-left-s {
+    text-align: left !important;
+  }
+  .text-right-s {
+    text-align: right !important;
+  }
+  // *************************************************************************
+  // BLOCK Y NONE
+  // *********************************************
+  .d-block-s {
+    display: block !important;
+  }
+  .d-none-s {
+    display: none !important;
+  }
+  .d-inline-s{
+    display: inline !important;
+  }
+}
+// ***********************************************************************************
+// ***********************************************************************************************
+//    //   XS XS XS XS XS XS XS XS XS XS XS XS XS    ----------- MINIMOBILE
+//  *************************************************************************************************
+@media only screen and (max-width: $breakpoint-mobile) {
+  // *************************************************************************
+  // ALINEACION DE TEXTO
+  // *********************************************
+  .text-center-xs {
+    text-align: center !important;
+  }
+  .text-left-xs {
+    text-align: left !important;
+  }
+  .text-right-xs {
+    text-align: right !important;
+  }
+  // *************************************************************************
+  // BLOCK Y NONE
+  // *********************************************
+  .d-block-xs {
+    display: block !important;
+  }
+  .d-none-xs {
+    display: none !important;
+  }
+  .d-inline-xs{
+    display: inline !important;
+  }
+}

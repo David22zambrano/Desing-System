@@ -1,0 +1,77 @@
+@use '@material/textfield' as ERPtextfield
+  with($minimum-height-for-filled-label: 32px, $minimum-height: 32px);
+@use './variant-colors.scss' as button-variants;
+@use '@angular/material' as mat;
+@use 'sass:map';
+@include mat.core();
+@import './typography';
+@import './colors.scss';
+@import './mixins.scss';
+@import './orientacion';
+@import './elevaciones';
+@import './size.scss';
+@import './variant-colors.scss';
+@import './_main';
+$primary-color: mat.define-palette($primary);
+$accent-color: mat.define-palette($accent);
+$warn-color: mat.define-palette($warn);
+$success-color: mat.define-palette($success);
+$warning-color: mat.define-palette($warning);
+$info-color: mat.define-palette($info);
+$dark-primary-color: mat.define-palette($dark-primary);
+$dark-accent-color: mat.define-palette($dark-accent);
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-color,
+      accent: $accent-color,
+      warn: $warn-color,
+      success: $success-color,
+      warning: $warning-color,
+      caution: $warning-color,
+      info: $info-color,
+    ),
+    typography: $typography-global-config,
+    density: 0,
+  )
+);
+$light-theme-variants: (
+  success: $success-color,
+  warning: $warning-color,
+  caution: $warning-color,
+  info: $info-color,
+);
+
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary-color,
+      accent: $dark-accent-color,
+      warn: $warn-color,
+      success: $success-color,
+      warning: $warning-color,
+      caution: $warning-color,
+      info: $info-color,
+    ),
+    typography: $typography-global-config,
+    density: 0,
+  )
+);
+$dark-theme-variants: (
+  success: $success-color,
+  warning: $warning-color,
+  info: $info-color,
+);
+$propiedades-alerta: (
+  'info' $accent-color 'info',
+  'error' $warn-color 'error',
+  'success' $success-color 'check_circle',
+  'warning' $warning-color 'warning'
+);
+@include button-variants.color($light-theme, $light-theme-variants);
+
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+@include class-color($color-class);
+@include alert($propiedades-alerta, $text-primary);
