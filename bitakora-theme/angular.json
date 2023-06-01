@@ -30,8 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/theme/_theme.scss"
+              "node_modules/@sinco/angular/src/lib/styles/_main.scss",
+              "node_modules/@sinco/angular-bitakora/src/lib/styles/_main.scss"
             ],
             "scripts": []
           },
@@ -101,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d2125a50-8579-464f-8400-1545dc9b0dd2"
   }
 }

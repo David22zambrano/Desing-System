@@ -28,11 +28,14 @@ import { MatTableModule                       } from '@angular/material/table';
 import { MatExpansionModule                   } from '@angular/material/expansion';
 import { MatCardModule                        } from '@angular/material/card';
 import { MatDialogModule                      } from '@angular/material/dialog';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 import { DirectivesModule                     } from './directivas/directives.module';
 
 import { MatAvatarComponent                   } from './components/mat-avatar/mat-avatar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatRatingComponent } from './components/mat-rating/mat-rating.component';
 
 const modulosMaterial = [
   CommonModule,
@@ -67,15 +70,18 @@ const modulosMaterial = [
   MatCardModule,
   MatDialogModule,
   FormsModule, 
-  ReactiveFormsModule 
+  ReactiveFormsModule,
+  MatSidenavModule
 ];
 const componentes = [
-  MatAvatarComponent
+  MatAvatarComponent,
+  MatRatingComponent
 ];
 
 @NgModule({
   declarations: [
-    componentes
+    componentes,
+    MatRatingComponent
   ],
   imports: [modulosMaterial],
   exports: [

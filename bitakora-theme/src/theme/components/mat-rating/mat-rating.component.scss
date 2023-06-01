@@ -1,0 +1,36 @@
+
+$empty_star:rgba(27, 52, 76, 0.23) ;
+$selected_star:rgba(255, 180, 0, 1);
+
+.rating{
+  position: relative;
+  display: inline-flex;
+  flex-direction: row-reverse;}
+
+.rating > input{
+	display: none;
+}
+
+.rating > label:not(.half):before{
+	content: '\f06f';
+}
+
+.rating > label.half:before{
+	content: '\e839';
+	position: absolute;
+    color: transparent;
+    clip-path: inset(0 50% 0 0);
+}
+
+.rating > label{
+  color: $empty_star;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.rating input:checked ~ label:before,
+.rating input:hover ~ label:before
+{
+  color: $selected_star;
+  content: "\e838";
+}
