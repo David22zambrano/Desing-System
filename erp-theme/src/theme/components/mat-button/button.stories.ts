@@ -19,7 +19,7 @@ type Story = StoryObj
 export const small: Story = {
   name: 'small',
   render: () => ({
-    template: `<button mat-raised-button color="info" size="small">Button</button>`,
+    template: `<button mat-raised-button color="primary" size="small">Button</button>`,
   }),
 };
 export const medium: Story = {
