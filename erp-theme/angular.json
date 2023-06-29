@@ -25,8 +25,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "node_modules/@sinco/angular/src/lib/styles/_main.scss",
-              "node_modules/@sinco/angular-bitakora/src/lib/styles/_main.scss"
+              "node_modules/@sinco/angular/src/lib/styles/theme.scss"
             ],
             "scripts": []
           },
